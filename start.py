@@ -268,7 +268,7 @@ async def mentionall(event):
         usrtxt = ""
 
 
-@client.on(events.NewMessage(pattern='^(?i)/cancel'))
+@elnur.on(events.NewMessage(pattern='^(?i)/cancel'))
 async def cancel(event):
   global tekli_calisan
   tekli_calisan.remove(event.chat_id)
