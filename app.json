@@ -1,0 +1,29 @@
+{
+  "name": "@ElnurGenCeLi",
+  "description": "@ElnurGenCeLi",
+  "env": {
+    "bot_token": {
+      "description": ".",
+      "value": "5746131579:AAEDzPqfVsHst13-AlVCxs3Z2rZqOly8fPw"
+    },
+    "API_ID": {
+      "description": ".",
+      "value": "29918051"
+    },
+    "SAHIB": {
+      "description": ".",
+      "value": "5317589296"
+    },
+    "log_qrup": {
+      "description": ".",
+      "value": "-1001875414285"
+    },
+    "API_HASH": {
+      "description": ".",
+      "value": "793e62b1b2aefe53f84976d38215959e"
+    }
+  },
+  "buildpacks": [{
+    "url": "https://github.com/heroku/heroku-buildpack-python.git"
+  }]
+}
