@@ -210,7 +210,7 @@ adlar = ['Üzümlü kek ✨', 'Nar çiçeği ✨', 'Papatya 🌼', 'Karanfil ✨
 
 @elnur.on(events.NewMessage(pattern="^/adtag ?(.*)"))
 async def mentionall(event):
-  global anlik_calisan
+  global tekli_calisan
   if event.is_private:
     return await event.respond("**Bu əmr kanal və qrup üçündür!**")
   
@@ -234,35 +234,17 @@ async def mentionall(event):
     return await event.respond("**Tağ etməni başlatmaq üçün səbəb yaz!**")
   
   if mode == "text_on_cmd":
-    anlik_calisan.append(event.chat_id)
+    tekli_calisan.append(event.chat_id)
     usrnum = 0
     usrtxt = ""
     async for usr in elnur.iter_participants(event.chat_id):
       usrnum += 1
       usrtxt += f"[{random.choice(adlar)}](tg://user?id={usr.id}) "
-      if event.chat_id not in anlik_calisan:
+      if event.chat_id not in tekli_calisan:
         await event.respond("*tağ etmə dayandırıldı!*")
         return
-      if usrnum == 5:
+      if usrnum == 1:
         await elnur.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
-        await asyncio.sleep(2)
-        usrnum = 0
-        usrtxt = ""
-        
-  
-  if mode == "text_on_reply":
-    anlik_calisan.append(event.chat_id)
- 
-    usrnum = 0
-    usrtxt = ""
-    async for usr in elnur.iter_participants(event.chat_id):
-      usrnum += 1
-      usrtxt += f"[{random.choice(adlar)}](tg://user?id={usr.id}) "
-      if event.chat_id not in anlik_calisan:
-        await event.respond("Modul dayandırıldı.")
-        return
-      if usrnum == 5:
-        await elnur.send_message(event.chat_id, usrtxt, reply_to=msg)
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
@@ -279,18 +261,16 @@ async def mentionall(event):
       if event.chat_id not in tekli_calisan:
         await event.respond("Modul dayandırıldı.")
         return
-      if usrnum == 5:
+      if usrnum == 1:
         await elnur.send_message(event.chat_id, usrtxt, reply_to=msg)
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
 
-
-
 @elnur.on(events.NewMessage(pattern='^(?i)/cancel'))
 async def cancel(event):
-  global anlik_calisan
-  anlik_calisan.remove(event.chat_id)
+  global tekli_calisan
+  tekli_calisan.remove(event.chat_id)
 
 @elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
 @elnur.on(events.NewMessage(pattern='ElnurGenCeLi'))
