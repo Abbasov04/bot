@@ -97,11 +97,11 @@ async def mentionall(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("Əvvəlki  Mesajlara Cavab Verməyin")
+        return await event.respond("Əvvəlki  mesajlara cavab verməyin")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("️Tağ Etmək Üçün Səbəb Yazın Məsələn:\n/tag **Gəlin Qruba**")
+    return await event.respond("️️Tağ etmək üçün səbəb yazın **Məsələn:\n/tag Gəlin Qruba**")
   else:
-    return await event.respond("️Tağ Etmək Üçün Səbəb Yazın Məsələn:\n/tag **Gəlin Qruba**")
+    return await event.respond("️Tağ etmək üçün səbəb yazın **Məsələn:\n/tag Gəlin Qruba**")
   
   if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
@@ -163,9 +163,9 @@ async def mentionall(event):
     if msg == None:
         return await event.respond("Əvvəlki  Mesajlara Cavab Verməyin")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("️Tağ Etmək Üçün Səbəb Yazın Məsələn:\n/tektag **Gəlin Qruba**")
+    return await event.respond("️️Tağ etmək üçün səbəb yazın **Məsələn:\n/tektag Gəlin Qruba**")
   else:
-    return await event.respond("️Tağ Etmək Üçün Səbəb Yazın Məsələn:\n/tektag **Gəlin Qruba**")
+    return await event.respond("️️Tağ etmək üçün səbəb yazın **Məsələn:\n/tektag Gəlin Qruba**")
   
   if mode == "text_on_cmd":
     tekli_calisan.append(event.chat_id)
@@ -229,9 +229,9 @@ async def mentionall(event):
     if msg == None:
         return await event.respond("Əvvəlki  Mesajlara Cavab Verməyin")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("️Tağ Etmək Üçün Səbəb Yazın Məsələn:\n/adtag **Gəlin Qruba**")
+    return await event.respond("️️Tağ etmək üçün səbəb yazın **Məsələn:\n/adtag Gəlin Qruba**")
   else:
-    return await event.respond("️Tağ Etmək Üçün Səbəb Yazın Məsələn:\n/adtag **Gəlin Qruba**")
+    return await event.respond("️️Tağ etmək üçün səbəb yazın **Məsələn:\n/adtag Gəlin Qruba**")
   
   if mode == "text_on_cmd":
     tekli_calisan.append(event.chat_id)
@@ -319,7 +319,7 @@ async def id(event):
 @elnur.on(events.NewMessage(pattern="^/banda ?(.*)"))
 async def banda(event):
     if not event.is_group:
-        return await event.reply("Bu əmr qruplar üçün etibarlıdır!")
+        return await event.reply("ℹ️ Bu əmr qruplar üçün etibarlıdır.")
     info = await event.client.get_entity(event.chat_id)
     title = info.title if info.title else "This chat"
     mentions = f'**{title}** qrupunda olan silinmiş hesaplar:\n'
