@@ -111,7 +111,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"❤️‍🩹 - [{usr.first_name}](tg://user?id={usr.id}) \n"
       if event.chat_id not in anlik_calisan:
-        await event.respond("Modul dayandırıldı.")
+        await event.respond("**Tağ uğurla dayandırıldı ⛔**")
         return
       if usrnum == 5:
         await elnur.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
@@ -129,7 +129,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"❤️‍🩹 - [{usr.first_name}](tg://user?id={usr.id}) \n"
       if event.chat_id not in anlik_calisan:
-        await event.respond("işləmə sonlandırıldı!")
+        await event.respond("**Tağ uğurla dayandırıldı ⛔**")
         return
       if usrnum == 5:
         await elnur.send_message(event.chat_id, usrtxt, reply_to=msg)
@@ -193,7 +193,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"❤️‍🩹 - [{usr.first_name}](tg://user?id={usr.id}) \n"
       if event.chat_id not in tekli_calisan:
-        await event.respond("Modul dəyandırıldı")
+        await event.respond("**Tağ uğurla dayandırıldı ⛔**")
         return
       if usrnum == 1:
         await elnur.send_message(event.chat_id, usrtxt, reply_to=msg)
@@ -241,7 +241,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{random.choice(adlar)}](tg://user?id={usr.id}) "
       if event.chat_id not in tekli_calisan:
-        await event.respond("*tağ etmə dayandırıldı!*")
+        await event.respond("**Tağ uğurla dayandırıldı ⛔**")
         return
       if usrnum == 1:
         await elnur.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
@@ -259,7 +259,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{random.choice(adlar)}](tg://user?id={usr.id}) "
       if event.chat_id not in tekli_calisan:
-        await event.respond("Modul dayandırıldı.")
+        await event.respond("**Tağ uğurla dayandırıldı ⛔**")
         return
       if usrnum == 1:
         await elnur.send_message(event.chat_id, usrtxt, reply_to=msg)
