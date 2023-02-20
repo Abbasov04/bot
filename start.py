@@ -207,9 +207,10 @@ async def cancel(event):
   tekli_calisan.remove(event.chat_id)
 
 adlar = ['Üzümlü kek ✨', 'Nar çiçeği ✨', 'Papatya 🌼', 'Karanfil ✨', 'Gül 🌹', 'Ayıcık 🐻', 'Mutlu panda 🐼', 'Ay pare 🌛', 'Ballı lokma ✨', 'Lale 🌷', 'Ahtapot 🐙', 'Zambak ⚜️', 'Akasya 🌿', 'Akşam Sefası 🌛', 'Begonvil 🥀', 'Begonya 🪴', 'Bambu 🎍', 'Fesleğen 🌿', 'Kasımpatı 🌸', 'Manolya 🌾', 'Boncuk 🧿', 'Badem 🥭', 'Minnoş 🐹', 'Ponçik 🐣', 'Pofuduk 🐼', 'Unicorn 🦄', 'Karamel 🍫', 'Fındık 🌰', 'Fıstık 🥜', 'Pamuk ☁️', 'Minnoş 🥰', 'Zeytin 🫒', 'Afrodit 🧚🏻', 'Nergis ✨', 'Sümbül ☘️', 'Nilüfer ☘️', 'Menekşe ⚜️', 'Lavanta ✨', 'Gül pare 🌺', 'Reyhan 🌷', 'Kaktüs 🌵', 'Buket 💐', 'Başak 🌾', 'Kar Tanesi ❄️', 'Tospik 🐢', 'Kelebek 🦋', 'Tavşan 🐰', 'Şeker 🍬', 'Böğürtlen ☘️', 'Orkide ☘️', 'Manolya ✨', 'Ayçiçeği 🌻', 'Tweety 🐥', 'Star ✨', 'Yonca 🍀', 'Ateş böceği ✨']
+
 @elnur.on(events.NewMessage(pattern="^/adtag ?(.*)"))
 async def mentionall(event):
-  global tekli_calisan
+  global anlik_calisan
   if event.is_private:
     return await event.respond("**Bu əmr kanal və qrup üçündür!**")
   
@@ -233,17 +234,35 @@ async def mentionall(event):
     return await event.respond("**Tağ etməni başlatmaq üçün səbəb yaz!**")
   
   if mode == "text_on_cmd":
-    tekli_calisan.append(event.chat_id)
+    anlik_calisan.append(event.chat_id)
     usrnum = 0
     usrtxt = ""
     async for usr in elnur.iter_participants(event.chat_id):
       usrnum += 1
       usrtxt += f"[{random.choice(adlar)}](tg://user?id={usr.id}) "
-      if event.chat_id not in tekli_calisan:
+      if event.chat_id not in anlik_calisan:
         await event.respond("*tağ etmə dayandırıldı!*")
         return
       if usrnum == 5:
         await elnur.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
+        await asyncio.sleep(2)
+        usrnum = 0
+        usrtxt = ""
+        
+  
+  if mode == "text_on_reply":
+    anlik_calisan.append(event.chat_id)
+ 
+    usrnum = 0
+    usrtxt = ""
+    async for usr in elnur.iter_participants(event.chat_id):
+      usrnum += 1
+      usrtxt += f"[{random.choice(adlar)}](tg://user?id={usr.id}) "
+      if event.chat_id not in anlik_calisan:
+        await event.respond("Modul dayandırıldı.")
+        return
+      if usrnum == 5:
+        await elnur.send_message(event.chat_id, usrtxt, reply_to=msg)
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
