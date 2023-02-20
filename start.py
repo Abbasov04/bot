@@ -82,13 +82,13 @@ async def start(event):
 async def mentionall(event):
   global anlik_calisan
   if event.is_private:
-    return await event.respond("Bu əmr qruplar və kanallar üçündür❗️**")
+    return await event.respond("ℹ️ Bu əmr qruplar üçün etibarlıdır.")
   
   admins = []
   async for admin in elnur.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("**Bu əmri sadəcə adminlər işlədə bilir️**")
+    return await event.respond("Bunu həyata keçirmək üçün admin olmalısınız.")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -97,11 +97,11 @@ async def mentionall(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("əvvəlki  Mesajlara Cavab Verməyin")
+        return await event.respond("Əvvəlki  Mesajlara Cavab Verməyin")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("Tağı başlatmaq üçün səbəb yoxdur❗️")
+    return await event.respond("️Tağ Etmək Üçün Səbəb Yazın Məsələn:\n/tag **Gəlin Qruba**")
   else:
-    return await event.respond("İşləməni başlamaq üçün səbəb yoxdur")
+    return await event.respond("️Tağ Etmək Üçün Səbəb Yazın Məsələn:\n/tag **Gəlin Qruba**")
   
   if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
@@ -146,13 +146,13 @@ async def cancel(event):
 async def mentionall(event):
   global tekli_calisan
   if event.is_private:
-    return await event.respond("**B️u əmr qrup və ya kanal üçündür **")
+    return await event.respond("ℹ️ Bu əmr qruplar üçün etibarlıdır.")
   
   admins = []
   async for admin in elnur.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("**Bu əmr adminlər üçündür!**")
+    return await event.respond("Bunu həyata keçirmək üçün admin olmalısınız.")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -161,11 +161,11 @@ async def mentionall(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("**öncəki mesajı yanıtlaya bilmirəm*")
+        return await event.respond("Əvvəlki  Mesajlara Cavab Verməyin")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("Başlamaq için Səbəb Yazın❗️")
+    return await event.respond("️Tağ Etmək Üçün Səbəb Yazın Məsələn:\n/tektag **Gəlin Qruba**")
   else:
-    return await event.respond("**Tağa başlamağım üçün səbəb yazın..**")
+    return await event.respond("️Tağ Etmək Üçün Səbəb Yazın Məsələn:\n/tektag **Gəlin Qruba**")
   
   if mode == "text_on_cmd":
     tekli_calisan.append(event.chat_id)
@@ -212,13 +212,13 @@ adlar = ['Üzümlü kek ✨', 'Nar çiçeği ✨', 'Papatya 🌼', 'Karanfil ✨
 async def mentionall(event):
   global tekli_calisan
   if event.is_private:
-    return await event.respond("**Bu əmr kanal və qrup üçündür!**")
+    return await event.respond("ℹ️ Bu əmr qruplar üçün etibarlıdır.")
   
   admins = []
   async for admin in elnur.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("**Bu əmr adminlər üçündür**")
+    return await event.respond("Bunu həyata keçirmək üçün admin olmalısınız.")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -227,11 +227,11 @@ async def mentionall(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("**köhnə mesajları tağ edə bilmirəm!**")
+        return await event.respond("Əvvəlki  Mesajlara Cavab Verməyin")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("️Tağ etmək üçün səbəb yazın ")
+    return await event.respond("️Tağ Etmək Üçün Səbəb Yazın Məsələn:\n/adtag **Gəlin Qruba**")
   else:
-    return await event.respond("**Tağ etməni başlatmaq üçün səbəb yaz!**")
+    return await event.respond("️Tağ Etmək Üçün Səbəb Yazın Məsələn:\n/adtag **Gəlin Qruba**")
   
   if mode == "text_on_cmd":
     tekli_calisan.append(event.chat_id)
