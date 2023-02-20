@@ -75,7 +75,7 @@ async def start(event):
 @elnur.on(events.NewMessage(pattern="^/help$"))
 @elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
 async def start(event):
-    await event.respond("**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/GenceliRoBot) Botun Əmirləri:\n\n/start - Botu Başlat\n/help - Əmrlərə Bax\n/id - Qrub Və User ID Göstərir\n/banda - Qrupunda Olan Silinmiş Hesaplar\n/tag - Qrubda Userləri 5- Li Tağ Edər\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər\n/cancel - Tağ Prosesini Dayandırar**")
+    await event.respond("**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/GenceliRoBot) Botun Əmirləri:\n\n/start - Botu Başlat\n/help - Əmrlərə Bax\n/id - Qrub Və User ID Göstərir\n/banda - Qrupunda Olan Silinmiş Hesaplar\n/tag - Qrubda Userləri 5- Li Tağ Edər\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər\n/cancel - Tağ Prosesini Dayandırar**")
     
 
 @elnur.on(events.NewMessage(pattern="^/tag ?(.*)"))
