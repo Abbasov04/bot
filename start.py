@@ -175,7 +175,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"**❤️‍🩹 - [{usr.first_name}](tg://user?id={usr.id}) \n**"
       if event.chat_id not in tekli_calisan:
-        await event.respond("Modul dayandırıldı.")
+        await event.respond("**Tağ uğurla dayandırıldı ⛔**")
         return
       if usrnum == 1:
         await elnur.send_message(event.chat_id, f"{usrtxt} {msg}")
