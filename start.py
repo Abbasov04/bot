@@ -210,7 +210,7 @@ adlar = ['Üzümlü kek ✨', 'Nar çiçeği ✨', 'Papatya 🌼', 'Karanfil ✨
 
 @elnur.on(events.NewMessage(pattern="^/adtag ?(.*)"))
 async def mentionall(event):
-  global tekli_calisan
+  global anlik_calisan
   if event.is_private:
     return await event.respond("**Bu əmr kanal və qrup üçündür!**")
   
@@ -234,13 +234,13 @@ async def mentionall(event):
     return await event.respond("**Tağ etməni başlatmaq üçün səbəb yaz!**")
   
   if mode == "text_on_cmd":
-    tekli_calisan.append(event.chat_id)
+    anlik_calisan.append(event.chat_id)
     usrnum = 0
     usrtxt = ""
     async for usr in elnur.iter_participants(event.chat_id):
       usrnum += 1
       usrtxt += f"[{random.choice(adlar)}](tg://user?id={usr.id}) "
-      if event.chat_id not in tekli_calisan:
+      if event.chat_id not in anlik_calisan:
         await event.respond("*tağ etmə dayandırıldı!*")
         return
       if usrnum == 5:
@@ -251,14 +251,14 @@ async def mentionall(event):
         
   
   if mode == "text_on_reply":
-    tekli_calisan.append(event.chat_id)
+    anlik_calisan.append(event.chat_id)
  
     usrnum = 0
     usrtxt = ""
     async for usr in elnur.iter_participants(event.chat_id):
       usrnum += 1
       usrtxt += f"[{random.choice(adlar)}](tg://user?id={usr.id}) "
-      if event.chat_id not in tekli_calisan:
+      if event.chat_id not in anlik_calisan:
         await event.respond("Modul dayandırıldı.")
         return
       if usrnum == 5:
@@ -270,8 +270,8 @@ async def mentionall(event):
 
 @elnur.on(events.NewMessage(pattern='^(?i)/cancel'))
 async def cancel(event):
-  global tekli_calisan
-  tekli_calisan.remove(event.chat_id)
+  global anlik_calisan
+  anlik_calisan.remove(event.chat_id)
 
 @elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
 @elnur.on(events.NewMessage(pattern='ElnurGenCeLi'))
