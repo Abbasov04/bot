@@ -87,10 +87,10 @@ async def ship(event):
     async for member in elnur.iter_participants(chat):
         members.append(member)
     selected_members = random.sample(members, 2)
-    message = f"{selected_members[0].mention_name} ve {selected_members[1].mention_name} artık bir çiftsiniz! 🚢💕"
+    message = f"{selected_members[0].first_name} ve {selected_members[1].first_name} artık bir çiftsiniz! 🚢💕"
     entities = [
-        types.MessageEntityMentionName(selected_members[0].id, selected_members[0].mention_name),
-        types.MessageEntityMentionName(selected_members[1].id, selected_members[1].mention_name)
+        types.MessageEntityMentionName(selected_members[0].id, selected_members[0].first_name),
+        types.MessageEntityMentionName(selected_members[1].id, selected_members[1].first_name)
     ]
     await elnur.send_message(chat, message, entities=entities)
 
