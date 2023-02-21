@@ -118,6 +118,18 @@ async def guess_handler(event):
     else:
         await event.respond('Daha düşük bir sayı girin.')
 
+@elnur.on(events.NewMessage(pattern='/ship'))
+async def ship(event):
+    chat = await event.get_chat()
+    if not chat.megagroup:
+        return  
+    members = []
+    async for member in elnur.iter_participants(chat):
+        members.append(member)
+    selected_members = random.sample(members, 2)
+    message = f"{selected_members[0].first_name} ve {selected_members[1].first_name} artık bir çiftsiniz! 🚢💕"
+    await elnur.send_message(chat, message)
+
 
 @elnur.on(events.NewMessage(pattern="^/tag ?(.*)"))
 async def mentionall(event):
