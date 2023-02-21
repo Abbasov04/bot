@@ -90,7 +90,18 @@ async def ship(event):
     message = f"@{selected_members[0].username} ve @{selected_members[1].username} artık bir çiftsiniz! 🚢💕\n\n{random.choice(ship)}{random.choice(ship)}"
     await elnur.send_message(chat, message)
 
-ship = ['1,2,3,4,5,6,7,8,9,0']
+ship = (
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7",
+"8",
+"9",
+"0",
+)
 
 @elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
 @elnur.on(events.NewMessage(pattern='ElnurGenCeLi'))
