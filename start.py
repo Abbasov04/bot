@@ -87,10 +87,10 @@ async def ship(event):
     async for member in elnur.iter_participants(chat):
         members.append(member)
     selected_members = random.sample(members, 2)
-    message = f"@{selected_members[0].username} ve @{selected_members[1].username} artık bir çiftsiniz! 🚢💕"
+    message = f"@{selected_members[0].username} ve @{selected_members[1].username} artık bir çiftsiniz! 🚢💕\n\n{random.choice(ship)}{random.choice(ship)}"
     await elnur.send_message(chat, message)
 
-
+ship = ['1,2,3,4,5,6,7,8,9,0']
 
 @elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
 @elnur.on(events.NewMessage(pattern='ElnurGenCeLi'))
