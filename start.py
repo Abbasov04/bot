@@ -77,6 +77,7 @@ async def start(event):
 async def start(event):
     await event.respond("**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/GenceliRoBot) Botun Əmirləri:\n\n/start - Botu Başlat.\n/game - Oyunlara Bax.\n/startgame - Oyunu Başlad.\n/help - Əmrlərə Bax.\n/ship - Qrubda Cütlük Seçər.\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/cancel - Tağ Prosesini Dayandırar**")
 
+ 
 @elnur.on(events.NewMessage(pattern='/ship'))
 async def ship(event):
     chat = await event.get_chat()
@@ -86,8 +87,12 @@ async def ship(event):
     async for member in elnur.iter_participants(chat):
         members.append(member)
     selected_members = random.sample(members, 2)
-    message = f"{selected_members[0].first_name} ve {selected_members[1].first_name} artık bir çiftsiniz! 🚢💕"
-    await elnur.send_message(chat, message)
+    message = f"{selected_members[0].mention_name} ve {selected_members[1].mention_name} artık bir çiftsiniz! 🚢💕"
+    entities = [
+        types.MessageEntityMentionName(selected_members[0].id, selected_members[0].mention_name),
+        types.MessageEntityMentionName(selected_members[1].id, selected_members[1].mention_name)
+    ]
+    await elnur.send_message(chat, message, entities=entities)
 
 
 
