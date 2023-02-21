@@ -88,7 +88,7 @@ async def ship(event):
         members.append(member)
     selected_members = random.sample(members, 2)
     message = f"{selected_members[0].first_name} ve {selected_members[1].first_name} artık bir çiftsiniz! 🚢💕"
-    await elnur.send_message(chat, message, entities=entities)
+    await elnur.send_message(chat, message)
 
 
 
