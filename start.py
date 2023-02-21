@@ -75,7 +75,7 @@ async def start(event):
 @elnur.on(events.NewMessage(pattern="^/help$"))
 @elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
 async def start(event):
-    await event.respond("**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/GenceliRoBot) Botun Əmirləri:\n\n/start - Botu Başlat\n/help - Əmrlərə Bax\n/id - Qrub Və User ID Göstərir\n/banda - Qrupunda Olan Silinmiş Hesaplar\n/tag - Qrubda Userləri 5- Li Tağ Edər\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər\n/cancel - Tağ Prosesini Dayandırar**")
+    await event.respond("**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/GenceliRoBot) Botun Əmirləri:\n\n/start - Botu Başlat.\n/help - Əmrlərə Bax.\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/cancel - Tağ Prosesini Dayandırar**")
     
 
 @elnur.on(events.NewMessage(pattern="^/tag ?(.*)"))
@@ -97,7 +97,7 @@ async def mentionall(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("Əvvəlki  mesajlara cavab verməyin")
+        return await event.respond("Əvvəlki  Mesajlara Cavab Verməyin")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
     return await event.respond("️️Tağ etmək üçün səbəb yazın **Məsələn:\n/tag Gəlin Qruba**")
   else:
