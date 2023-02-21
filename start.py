@@ -80,7 +80,7 @@ async def start(event):
 @elnur.on(events.NewMessage(pattern="^/naza$"))
 async def naza(event):
     await event.reply("Nazadi Danşan?")
-        await asyncio.sleep(2)
+        await sleep(2)
     await event.edit("Nazanin Səsinə Oxşuyur?")
 
 @elnur.on(events.NewMessage(pattern="^/tag ?(.*)"))
