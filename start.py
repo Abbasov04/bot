@@ -33,14 +33,6 @@ secret_number = None
 guesses = 0
 
 
-user_scores = {}
-
-questions = {
-    '2+2': '4',
-    '3x3': '9',
-    '7-5': '2'
-}
-
 #Client 
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
@@ -126,25 +118,6 @@ async def guess_handler(event):
     else:
         await event.respond('Daha düşük bir sayı girin.')
 
-@elnur.on(events.NewMessage(pattern='/answer'))
-async def answer(event):
-    question = random.choice(list(questions.keys()))
-    message = f'{question}= ?'
-    await event.respond(message)
-    answer = await bot.get_response(event.message.to_id)
-    if answer.text == questions[question]:
-        user_id = answer.from_id
-        if user_id not in user_scores:
-            user_scores[user_id] = 0
-        user_scores[user_id] += 1
-
-
-@elnur.on(events.NewMessage(pattern='/end'))
-async def end(event):
-    highest_score = max(user_scores.values())
-    highest_scoring_users = [str(user_id) for user_id, score in user_scores.items() if score == highest_score]
-    message = f'En yüksek puan {highest_score} olan kullanıcı(lar): {", ".join(highest_scoring_users)}'
-    await event.respond(message)
 
 @elnur.on(events.NewMessage(pattern="^/tag ?(.*)"))
 async def mentionall(event):
