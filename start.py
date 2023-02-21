@@ -28,11 +28,6 @@ anlik_calisan = []
 tekli_calisan = []
 
 
-game_started = False
-secret_number = None
-guesses = 0
-
-
 #Client 
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
@@ -81,42 +76,6 @@ async def start(event):
 @elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
 async def start(event):
     await event.respond("**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/GenceliRoBot) Botun Əmirləri:\n\n/start - Botu Başlat.\n/game - Oyunlara Bax.\n/startgame - Oyunu Başlad.\n/help - Əmrlərə Bax.\n/ship - Qrubda Cütlük Seçər.\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/cancel - Tağ Prosesini Dayandırar**")
-
-
-@elnur.on(events.NewMessage(pattern='/startgame'))
-async def start_game_handler(event):
-    global game_started, secret_number, guesses
-    
-    if game_started:
-        await event.respond('Oyun zaten başlamış!')
-    else:
-        game_started = True
-        secret_number = random.randint(1, 100)
-        guesses = 0
-        await event.respond('Sayı tahmin oyununa hoş geldiniz! 1 ile 100 arasında bir sayı tuttum. Tahminlerinizi girin.')
-
-@elnur.on(events.NewMessage)
-async def guess_handler(event):
-    global game_started, secret_number, guesses
-    
-    if not game_started:
-        return
-    
-    try:
-        guess = int(event.text)
-    except ValueError:
-        await event.respond('Bol Şans')
-        return
-    
-    guesses += 1
-    
-    if guess == secret_number:
-        await event.respond(f'Tebrikler, {guesses} tahminde sayıyı buldunuz!')
-        game_started = False
-    elif guess < secret_number:
-        await event.respond('Daha yüksek bir sayı girin.')
-    else:
-        await event.respond('Daha düşük bir sayı girin.')
 
 @elnur.on(events.NewMessage(pattern='/ship'))
 async def ship(event):
