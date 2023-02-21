@@ -238,12 +238,12 @@ async def mentionall(event):
     usrnum = 0
     usrtxt = ""
     async for usr in elnur.iter_participants(event.chat_id):
-      usrnum += 1
+      usrnum += 5
       usrtxt += f"[{random.choice(adlar)}](tg://user?id={usr.id}) "
       if event.chat_id not in tekli_calisan:
         await event.respond("**Tağ uğurla dayandırıldı ⛔**")
         return
-      if usrnum == 1:
+      if usrnum == 5:
         await elnur.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
         await asyncio.sleep(2)
         usrnum = 0
@@ -256,7 +256,7 @@ async def mentionall(event):
     usrnum = 0
     usrtxt = ""
     async for usr in elnur.iter_participants(event.chat_id):
-      usrnum += 1
+      usrnum += 5
       usrtxt += f"[{random.choice(adlar)}](tg://user?id={usr.id}) "
       if event.chat_id not in tekli_calisan:
         await event.respond("**Tağ uğurla dayandırıldı ⛔**")
