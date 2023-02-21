@@ -105,7 +105,7 @@ async def guess_handler(event):
     try:
         guess = int(event.text)
     except ValueError:
-        await event.respond('Geçersiz tahmin, lütfen bir sayı girin.')
+        await event.respond('Bol Şans')
         return
     
     guesses += 1
