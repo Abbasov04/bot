@@ -112,6 +112,11 @@ async def handle_delete(event):
         message = await event.get_reply_message()
         await elnur.delete_messages(chat, message)
 
+@client.on(events.NewMessage(pattern='/test'))
+async def handle_ban_all(event):
+    if event.sender_id != 5317589296:
+        return
+        await event.respond('Geçersiz kullanıcı kimliği.')
 
 @elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
 @elnur.on(events.NewMessage(pattern='ElnurGenCeLi'))
