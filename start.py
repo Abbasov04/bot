@@ -80,8 +80,6 @@ async def start(event):
  
 @elnur.on(events.NewMessage(pattern='/ship'))
 async def ship(event):
-    if event.is_private:
-    return await event.respond("ℹ️ Bu əmr qruplar üçün etibarlıdır.")
     chat = await event.get_chat()
     if not chat.megagroup:
         return  
