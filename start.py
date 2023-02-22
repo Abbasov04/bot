@@ -337,7 +337,7 @@ ban = (
 "Havada ban kokusu var",
 )
 
-@elnur.on(events.NewMessage(pattern='(?i)sik+'))
+@elnur.on(events.NewMessage(pattern='(?i)siktir+'))
 @elnur.on(events.NewMessage(pattern='(?i)göt+'))
 @elnur.on(events.NewMessage(pattern='(?i)amciq+'))
 @elnur.on(events.NewMessage(pattern='(?i)amcig+'))
