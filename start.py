@@ -111,18 +111,26 @@ async def handle_delete(event):
         message = await event.get_reply_message()
         await elnur.delete_messages(chat, message)
 
-@elnur.on(events.NewMessage(pattern="^/test$"))
+@elnur.on(events.NewMessage(pattern="^/dc$"))
 async def test(event):
-    await event.reply("Sjsjs", buttons=(
+    await event.reply("D? C?", buttons=(
                       [
-                      Button.inline("Help Düymesi", data="dc")
+                      Button.inline("Doğruluq", data="d")
+                      ]
+                      [
+                      Button.inline("Cəsarət", data="c")
                       ]
                     ),
                     link_preview=False)
 
-@elnur.on(events.callbackquery.CallbackQuery(data="dc"))
+@elnur.on(events.callbackquery.CallbackQuery(data="d"))
 async def sahib(event):
-    await event.reply("/d /c")
+    await event.reply(f"{random.choice(d_list)}")
+
+d_list = (
+"1",
+"2",
+)
 
 @elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
 @elnur.on(events.NewMessage(pattern='ElnurGenCeLi'))
