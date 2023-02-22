@@ -8,7 +8,8 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.sessions import StringSession
 from os import remove
 from telethon.tl.functions.users import GetFullUserRequest
-
+from youtube_search import YoutubeSearch
+import yt_dlp
 
 logging.basicConfig(
     level=logging.INFO,
@@ -112,11 +113,59 @@ async def handle_delete(event):
         message = await event.get_reply_message()
         await elnur.delete_messages(chat, message)
 
-@elnur.on(events.NewMessage(pattern='/test'))
-async def alive(event):
-    if event.sender_id != 5317589296:
+
+@elnur.on(events.NewMessage(pattern='/song'))
+async def handle_new_message(event):
+    message = event.message
+    user_id = message.from_id
+    user_name = message.sender.first_name
+    rpk = f"[{user_name}](tg://user?id={user_id})"
+
+    query = "".join(" " + str(i) for i in message.text.split()[1:])
+    print(query)
+    m = await message.reply("<b>Endirmə başladı\n\nYükləmə sürəti yavaş ola bilər. Zəhmət olmasa, saxlayın..</b>")
+    ydl_opts = {"format": "bestaudio[ext=m4a]"}
+    try:
+        results = YoutubeSearch(query, max_results=5).to_dict()
+        link = f"https://youtube.com{results[0]['url_suffix']}"
+        # print(results)
+        title = results[0]["title"][:40]
+        thumbnail = results[0]["thumbnails"][0]
+        thumb_name = f"thumb{title}.jpg"
+        thumb = requests.get(thumbnail, allow_redirects=True)
+        open(thumb_name, "wb").write(thumb.content)
+
+        duration = results[0]["duration"]
+        url_suffix = results[0]["url_suffix"]
+        views = results[0]["views"]
+
+    except Exception as e:
+        await m.edit(
+            "<b>Musiqi Tapılmadı\n\nSəbəb: Musiqi Adı Səf Yazılıbdır Düzgün Şəkildə Yazın</b>"
+        )
+        print(str(e))
         return
-        await event.respond('Geçersiz kullanıcı kimliği.')
+    await m.edit("<b>Yükləmə Başladı\n\nYükləmə sürəti yavaş ola bilər. Zəhmət olmasa, saxlayın..</b>")
+    try:
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info_dict = ydl.extract_info(link, download=False)
+            audio_file = ydl.prepare_filename(info_dict)
+            ydl.process_info(info_dict)
+        rep = f"[{title[:35]}]({link})"
+        secmul, dur, dur_arr = 1, 0, duration.split(":")
+        for i in range(len(dur_arr) - 1, -1, -1):
+            dur += int(dur_arr[i]) * secmul
+            secmul *= 60
+        await message.reply_audio(
+            audio_file,
+            caption=rep,
+            thumb=thumb_name,
+            parse_mode="md",
+            title=title,
+            duration=dur,
+        )
+        await m.delete()
+
 
 @elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
 @elnur.on(events.NewMessage(pattern='ElnurGenCeLi'))
