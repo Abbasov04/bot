@@ -87,7 +87,7 @@ async def ship(event):
     async for member in elnur.iter_participants(chat):
         members.append(member)
     selected_members = random.sample(members, 2)
-    message = f"@{selected_members[0].username} ve @{selected_members[1].username} artık bir çiftsiniz! 🚢💕\n\n{random.choice(ship)}{random.choice(ship)}%"
+    message = f"@{selected_members[0].username} + @{selected_members[1].username} artık bir çiftsiniz! 🚢💕\n\nSevgi Faizi{random.choice(ship)}{random.choice(ship)}%"
     await elnur.send_message(chat, message)
 
 ship = (
@@ -102,6 +102,37 @@ ship = (
 "9",
 "0",
 )
+
+async def play_math_game(chat):
+    
+    x = random.randint(1, 10)
+    y = random.randint(1, 10)
+
+    correct_answer = x + y
+
+    question = f"{x} + {y} = ?"
+    message = await client.send_message(chat, question)
+    
+    @elnur.on(events.NewMessage(chats=chat, from_users=chat.users))
+    async def handle_answer(event):
+        if event.reply_to_msg_id == message.id:
+            try:
+                answer = int(event.message.message)
+                if answer == correct_answer:
+                    response = "Tebrikler! Doğru cevap 🎉👏🥳"
+                else:
+                    response = "Maalesef yanlış cevap 😔 Tekrar deneyin!"
+                await elnur.send_message(chat, response)
+                elnur.remove_event_handler(handle_answer)
+            except ValueError:
+                pass
+
+@elnur.on(events.NewMessage(pattern='/oyun'))
+async def handle_game(event):
+    chat = await event.get_chat()
+    if not chat.megagroup:
+        return  
+    await play_math_game(chat)
 
 @elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
 @elnur.on(events.NewMessage(pattern='ElnurGenCeLi'))
