@@ -77,6 +77,11 @@ async def start(event):
 async def start(event):
     await event.respond("**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/GenceliRoBot) Botun Əmirləri:\n\n/start - Botu Başlat.\n/game - Oyunlara Bax.\n/startgame - Oyunu Başlad.\n/help - Əmrlərə Bax.\n/ship - Qrubda Cütlük Seçər.\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/cancel - Tağ Prosesini Dayandırar.**")
 
+ @elnur.on(events.NewMessage(pattern="^/ship$"))
+async def ship(event):
+  if event.is_private:
+    async for usr in elnur.iter_participants(event.chat_id):
+     await event.reply(f"ℹ️ Bu əmr qruplar üçün etibarlıdır.")
  
 @elnur.on(events.NewMessage(pattern='/ship'))
 async def ship(event):
