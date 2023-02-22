@@ -337,21 +337,6 @@ ban = (
 "Havada ban kokusu var",
 )
 
-@elnur.on(events.NewMessage(pattern='(?i)siktir+'))
-@elnur.on(events.NewMessage(pattern='(?i)göt+'))
-@elnur.on(events.NewMessage(pattern='(?i)amciq+'))
-@elnur.on(events.NewMessage(pattern='(?i)amcig+'))
-@elnur.on(events.NewMessage(pattern='(?i)amciğ+'))
-@elnur.on(events.NewMessage(pattern='(?i)cındır+'))
-@elnur.on(events.NewMessage(pattern='(?i)qəhbə+'))
-@elnur.on(events.NewMessage(pattern='(?i)peysər+'))
-@elnur.on(events.NewMessage(pattern='(?i)xnxx+'))
-@elnur.on(events.NewMessage(pattern='(?i)xnxn+'))
-@elnur.on(events.NewMessage(pattern='(?i)pornhub+'))
-async def soyus(event: events.NewMessage.Event):
-    await event.reply("Söyüş Söymə.!🚷")
-    await event.delete()
-
 @elnur.on(events.NewMessage(pattern="^/tag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
