@@ -87,7 +87,7 @@ async def ship(event):
     async for member in elnur.iter_participants(chat):
         members.append(member)
     selected_members = random.sample(members, 2)
-    message = f"@{selected_members[0].username} + @{selected_members[1].username} artık bir çiftsiniz! 🚢💕\n\nSevgi Faizi {random.choice(ship)}{random.choice(ship)}%"
+    message = f"@{selected_members[0].username} + @{selected_members[1].username} artık bir çiftsiniz! 🚢💕\n\nSevgi Faizi ❤️‍🩹 {random.choice(ship)}{random.choice(ship)}%"
     await elnur.send_message(chat, message)
 
 ship = (
@@ -111,23 +111,6 @@ async def handle_delete(event):
     if event.is_reply:
         message = await event.get_reply_message()
         await elnur.delete_messages(chat, message)
-
-@elnur.on(events.NewMessage(pattern='/pin'))
-async def handle_pin(event):
-    if not isinstance(event.chat_peer, types.PeerChat):
-        return
-    chat = await event.get_chat()
-    if not chat.is_group:
-        return
-    participant = await elnur.get_participant(chat.id, 'me')
-    if not participant.admin_rights and not participant.creator:
-        return
-    if not event.is_reply:
-        await event.respond('Bu bir yanıt değil. Lütfen bir mesaj yanıtlayın.')
-        return
-    message = await event.get_reply_message()
-    await message.pin()
-    await event.respond('Mesaj sabitlendi.')
 
 
 @elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
