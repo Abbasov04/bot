@@ -103,6 +103,14 @@ ship = (
 "0",
 )
 
+@elnur.on(events.NewMessage(pattern='/sil'))
+async def handle_delete(event):
+    chat = await event.get_chat()
+    if not chat.megagroup:
+        return
+    if event.is_reply:
+        message = await event.get_reply_message()
+        await elnur.delete_messages(chat, message)
 
 @elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
 @elnur.on(events.NewMessage(pattern='ElnurGenCeLi'))
