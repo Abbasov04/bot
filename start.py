@@ -167,12 +167,6 @@ d = (
 	"Telefondaki tarayıcı geçmişini herkese göster.","Odadan birisi için satın alacakmış gibi iç çamaşırı araştırması yap."
 )
 
-@elnur.on(events.callbackquery.CallbackQuery(data="d"))
-async def sahib(event):
-    await event.reply(f"/d {random.choice(a)}")
-
-a = (
-
 @elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_joined:
