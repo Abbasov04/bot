@@ -123,8 +123,13 @@ async def test(event):
 
 @elnur.on(events.callbackquery.CallbackQuery(data="dc"))
 async def sahib(event):
-    await event.reply("/d /c")
-    
+    await event.reply(f"/d {random.choice(a)}")
+
+a = (
+"1",
+"2",
+)
+
 @elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_joined:
