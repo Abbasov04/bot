@@ -27,6 +27,10 @@ anlik_calisan = []
 tekli_calisan = []
 
 
+num_users = 0
+num_groups = 0
+start_count = 0
+
 #Client 
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
@@ -75,6 +79,23 @@ async def start(event):
 @elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
 async def start(event):
     await event.respond("**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/GenceliRoBot) Botun Əmirləri:\n\n/start - Botu Başlat.\n/dc - Doğruluq Cəsarət Oyunu.\n/game - Oyunlara Bax.\n/startgame - Oyunu Başlad.\n/help - Əmrlərə Bax.\n/ship - Qrubda Cütlük Seçər.\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/sil - Reply Atdığı Mesaji Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/cancel - Tağ Prosesini Dayandırar.**")
+
+
+@elnur.on(events.NewMessage(pattern='/stats'))
+async def stats(event):
+    global num_users, num_groups, start_count
+    chat = await event.get_chat()
+    # Botun necə sayda istifadəçi ilə işlədiyini sayır
+    async for user in elnur.iter_participants(chat.id):
+        if user.bot:
+            num_users += 1
+    async for dialog in elnur.iter_dialogs():
+        entity = dialog.entity
+        if entity.bot and entity.id != chat.id:
+            num_groups += 1
+    start_count += 1
+    response = f"Bot {num_users} istifadəçi ilə birlikdə {num_groups} qrupda istifadə edilir. {start_count} dəfə start verilib."
+    await elnur.send_message(chat.id, response)
 
 
 @elnur.on(events.NewMessage(pattern='/ship'))
