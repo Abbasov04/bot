@@ -86,13 +86,8 @@ async def ship(event):
     async for member in elnur.iter_participants(chat):
         members.append(member)
     selected_members = random.sample(members, 2)
-    message = f"Artık bir çiftsiniz! 🚢💕\n@{selected_members[0].username}\n@{selected_members[1].username}\n\n❤️‍🩹Sevgilərin Faizi {random.choice(ship)}{random.choice(ship)}%\n👩‍❤️‍💋‍👨 Evlənəcəksinizmi:\n👉🏻 {random.choice(faiz)}"
+    message = f"Artık bir çiftsiniz! 🚢💕\n@{selected_members[0].username}\n@{selected_members[1].username}\n\n❤️‍🩹Sevgilərin Faizi {random.choice(ship)}{random.choice(ship)}%\n👩‍❤️‍💋‍👨"
     await elnur.send_message(chat, message)
-
-faiz = (
-  "Bəli"
-  "Xeyr"
-  )
   
 ship = (
 "1",
