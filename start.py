@@ -113,16 +113,16 @@ async def handle_delete(event):
 
 @elnur.on(events.NewMessage(pattern="^/game$"))
 async def test(event):
-    await event.reply("Sjsjs", buttons=(
+    await event.reply("Salam Doğruluq Cəsarət Oyununa Xoş Gəldin", buttons=(
                       [
-                      Button.inline("Help Düymesi", data="dc")
+                      Button.inline("Doğruluq", data="dogruluq")
                       ]
                     ),
                     link_preview=False)
 
-@elnur.on(events.callbackquery.CallbackQuery(data="dc"))
+@elnur.on(events.callbackquery.CallbackQuery(data="dogruluq"))
 async def sahib(event):
-    await event.reply(f"/d {random.choice(a)}")
+    await event.reply(f" {random.choice(a)}")
 
 a = (
 "1",
