@@ -111,15 +111,20 @@ async def handle_delete(event):
         message = await event.get_reply_message()
         await elnur.delete_messages(chat, message)
 
-@elnur.on(events.NewMessage(pattern="/game"))
-async def game(event):
-    await event.respond("Haa" buttons=(
+
+@elnur.on(events.NewMessage(pattern="^/test$"))
+async def test(event):
+    await event.reply("Sjsjs", buttons=(
                       [
-                       Button.inline("sjsj", data="d")
+                      Button.inline("Help Düymesi", data="dc")
+                      ]
                     ),
                     link_preview=False)
 
-
+@elnur.on(events.callbackquery.CallbackQuery(data="dc"))
+async def sahib(event):
+    await event.reply("/d /c")
+    
 @elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_joined:
