@@ -115,10 +115,14 @@ async def handle_delete(event):
 async def test(event):
     await event.reply("Sjsjs", buttons=(
                       [
-                      Button.inline("Help Düymesi", data="help")
+                      Button.inline("Help Düymesi", data="dc")
                       ]
                     ),
                     link_preview=False)
+
+@elnur.on(events.callbackquery.CallbackQuery(data="dc"))
+async def sahib(event):
+    await event.reply("/d /c")
 
 @elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
 @elnur.on(events.NewMessage(pattern='ElnurGenCeLi'))
