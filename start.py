@@ -119,14 +119,6 @@ async def game(event):
                     ),
                     link_preview=False)
 
-@elnur.on(events.callbackquery.CallbackQuery(data="d"))
-async def d(event):
-    await event.respond("an")
-
-@elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
-@elnur.on(events.NewMessage(pattern='ElnurGenCeLi'))
-async def sahib(event):
-    await event.reply("🚷 Sahibimi Az Tağ Elə")
 
 @elnur.on(events.ChatAction)
 async def handler(event):
