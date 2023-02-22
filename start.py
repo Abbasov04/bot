@@ -116,7 +116,7 @@ async def test(event):
     await event.reply("Salam Doğruluq Cəsarət Oyununa Xoş Gəldin", buttons=(
                       [
                       Button.inline("Doğruluq", data="dogruluq")
-                      ]
+                      ],
                       [
                       Button.inline("Cəsarət", data="cesaret")
                       ]
