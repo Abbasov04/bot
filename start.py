@@ -111,7 +111,7 @@ async def play_math_game(chat):
     correct_answer = x + y
 
     question = f"{x} + {y} = ?"
-    message = await client.send_message(chat, question)
+    message = await elnur.send_message(chat, question)
     
     @elnur.on(events.NewMessage(chats=chat, from_users=chat.users))
     async def handle_answer(event):
