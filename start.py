@@ -103,36 +103,6 @@ ship = (
 "0",
 )
 
-async def play_math_game(chat):
-    
-    x = random.randint(1, 10)
-    y = random.randint(1, 10)
-
-    correct_answer = x + y
-
-    question = f"{x} + {y} = ?"
-    message = await elnur.send_message(chat, question)
-    
-    @elnur.on(events.NewMessage(chats=chat, from_users=chat.users))
-    async def handle_answer(event):
-        if event.reply_to_msg_id == message.id:
-            try:
-                answer = int(event.message.message)
-                if answer == correct_answer:
-                    response = "Tebrikler! Doğru cevap 🎉👏🥳"
-                else:
-                    response = "Maalesef yanlış cevap 😔 Tekrar deneyin!"
-                await elnur.send_message(chat, response)
-                elnur.remove_event_handler(handle_answer)
-            except ValueError:
-                pass
-
-@elnur.on(events.NewMessage(pattern='/oyun'))
-async def handle_game(event):
-    chat = await event.get_chat()
-    if not chat.megagroup:
-        return  
-    await play_math_game(chat)
 
 @elnur.on(events.NewMessage(pattern='@ElnurGenCeLi'))
 @elnur.on(events.NewMessage(pattern='ElnurGenCeLi'))
