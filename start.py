@@ -209,7 +209,7 @@ c = (
 	"Telegramda son konuşmanı ss at.","🎀 ŞANSLI MESAJ🎊 Grupdan İstediğin Birinin Google/Youtube/İnstagram Arama Geçmişini İste",
 	"Galerinin En Alttan 7. Fotosunu gönder",
 	"Sonraki 3 tur boyunca şiveyle konuş. Farklı şivelere kayış olursa /zar Komutunu kullanarak 6 ya en cok yaklaşan oyuncu sana ceza verecek",
-	"Üç çorba kaşığı acı salça (veya buna benzer
+	"Üç çorba kaşığı acı salça veya buna benzer
 )
 
 @elnur.on(events.ChatAction)
