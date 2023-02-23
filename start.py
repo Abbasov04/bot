@@ -8,6 +8,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.sessions import StringSession
 from os import remove
 from telethon.tl.functions.users import GetFullUserRequest
+from telethon.sync import types
 
 logging.basicConfig(
     level=logging.INFO,
@@ -32,7 +33,19 @@ elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 SUDO_USERS = 5317589296
 log_qrup = -1001875414285
-    
+
+@elnur.on(events.NewMessage(pattern='/bots'))
+async def show_bots(event):
+    all_users = await event.client.get_participants(event.chat_id)
+    bot_list = []
+    for user in all_users:
+        if isinstance(user, types.User) and user.bot:
+            bot_list.append(user.first_name)
+    if bot_list:
+        await event.reply(f"{len(bot_list)} bot tapıldı:\n\n" + "\n".join(bot_list))
+    else:
+        await event.reply("Bu qrupda heç bir bot yoxdur.")
+
 @elnur.on(events.NewMessage(pattern="^/start$"))
 @elnur.on(events.NewMessage(pattern="^/start@GenceliRoBot$"))
 async def start(event):
