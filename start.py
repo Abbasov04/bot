@@ -34,17 +34,7 @@ elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 SUDO_USERS = 5317589296
 log_qrup = -1001875414285
 
-@elnur.on(events.NewMessage(pattern='/bots'))
-async def show_bots(event):
-    all_users = await event.client.get_participants(event.chat_id)
-    bot_list = []
-    for user in all_users:
-        if isinstance(user, types.User) and user.bot:
-            bot_list.append(user.username)
-    if bot_list:
-        await event.reply(f"{len(bot_list)} bot tapıldı:\n\n@" + "\n@".join(bot_list))
-    else:
-        await event.reply("Bu qrupda heç bir bot yoxdur.")
+
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
 @elnur.on(events.NewMessage(pattern="^/start@GenceliRoBot$"))
@@ -87,7 +77,7 @@ async def start(event):
 @elnur.on(events.NewMessage(pattern="^/help$"))
 @elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
 async def start(event):
-    await event.respond("**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/GenceliRoBot) Botun Əmirləri:\n\n/start - Botu Başlat.\n/dc - Doğruluq Cəsarət Oyunu.\n/game - Oyunlara Bax.\n/startgame - Oyunu Başlad.\n/help - Əmrlərə Bax.\n/ship - Qrubda Cütlük Seçər.\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/sil - Reply Atdığı Mesaji Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/cancel - Tağ Prosesini Dayandırar.**")
+    await event.respond("**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/GenceliRoBot) Botun Əmirləri:\n\n/start - Botu Başlat.\n/dc - Doğruluq Cəsarət Oyunu.\n/game - Oyunlara Bax.\n/startgame - Oyunu Başlad.\n/help - Əmrlərə Bax.\n/ship - Qrubda Cütlük Seçər.\n/bots\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/sil - Reply Atdığı Mesaji Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/cancel - Tağ Prosesini Dayandırar.**")
 
 
 @elnur.on(events.NewMessage(pattern='/ship'))
@@ -123,6 +113,18 @@ async def handle_delete(event):
     if event.is_reply:
         message = await event.get_reply_message()
         await elnur.delete_messages(chat, message)
+
+@elnur.on(events.NewMessage(pattern='/bots'))
+async def show_bots(event):
+    all_users = await event.client.get_participants(event.chat_id)
+    bot_list = []
+    for user in all_users:
+        if isinstance(user, types.User) and user.bot:
+            bot_list.append(user.username)
+    if bot_list:
+        await event.reply(f"{len(bot_list)} bot tapıldı:\n\n@" + "\n@".join(bot_list))
+    else:
+        await event.reply("Bu qrupda heç bir bot yoxdur.")
 
 @elnur.on(events.NewMessage(pattern="^/dc$"))
 async def test(event):
