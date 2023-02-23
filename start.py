@@ -132,8 +132,9 @@ async def show_admins(event):
     admins = await event.client.get_participants(chat, filter=types.ChannelParticipantsAdmins)
     admin_list = ""
     for admin in admins:
-        admin_list += f"\n{admin.first_name}  (@{admin.username})"
-    await event.respond(f"Qrupda olan adminlər: {admin_list}")
+        admin_list += f"\n{admin.last_name}"
+        admin_list2 += f"\n@{admin.username}"
+    await event.respond(f"Qrupda olan adminlər: {admin_list} {admin_list2}")
 
 @elnur.on(events.NewMessage(pattern="^/dc$"))
 async def test(event):
