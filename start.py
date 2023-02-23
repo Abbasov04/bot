@@ -35,10 +35,6 @@ SUDO_USERS = 5317589296
 log_qrup = -1001875414285
 
 
-@elnur.on(events.NewMessage(chats=YOUR_GROUP_CHAT))
-async def handler(event):
-    if event.message.from_id == YOUR_BOT_ID:
-        await event.respond('Məni Əlavə Etdiyin Üçün Təşəkkür Edirəm')
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
 @elnur.on(events.NewMessage(pattern="^/start@GenceliRoBot$"))
