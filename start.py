@@ -126,6 +126,15 @@ async def show_bots(event):
     else:
         await event.reply("Bu qrupda heç bir bot yoxdur.")
 
+@elnur.on(events.NewMessage(pattern='/admins'))
+async def show_admins(event):
+    chat = await event.get_chat()
+    admins = await event.client.get_participants(chat, filter=types.ChannelParticipantsAdmins)
+    admin_list = ""
+    for admin in admins:
+        admin_list += f"\n{admin.first_name} {admin.last_name} ({admin.username})"
+    await event.respond(f"Qrupda olan adminlər: {admin_list}")
+
 @elnur.on(events.NewMessage(pattern="^/dc$"))
 async def test(event):
     await event.reply("Salam Doğruluq Cəsarət Oyununa Xoş Gəldin", buttons=(
