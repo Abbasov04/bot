@@ -33,7 +33,7 @@ elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 SUDO_USERS = 5317589296
 log_qrup = -1001875414285
-
+BOT_USERNAME = "GenceliRoBot"
 
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
@@ -78,6 +78,13 @@ async def start(event):
 @elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
 async def start(event):
     await event.respond("**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/GenceliRoBot) Botun Əmirləri:\n\n/start - Botu Başlat.\n/dc - Doğruluq Cəsarət Oyunu.\n/game - Oyunlara Bax.\n/startgame - Oyunu Başlad.\n/help - Əmrlərə Bax.\n/ship - Qrubda Cütlük Seçər.\n/bots - Qrubdaki Botları Göstərir.\n/admins - Qrubdaki Adminləri Göstərir.\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/sil - Reply Atdığı Mesaji Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/cancel - Tağ Prosesini Dayandırar.**")
+
+@elnur.on(events.NewMessage(pattern='/alive'))
+async def alive(event):
+    chat = await event.get_chat()
+    if event.sender_id == SUDO_USERS:
+        message = f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [v5]\n║\n║▻ 💠 Python versiyası: Error\n║▻ 💻 Telethon versiyası: 1.27.0\n╚═════════════════"
+        await elnur.send_message(chat, message)
 
 
 @elnur.on(events.NewMessage(pattern='/ship'))
