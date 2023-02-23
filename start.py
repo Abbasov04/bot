@@ -133,7 +133,7 @@ async def show_admins(event):
     admin_list = ""
     for admin in admins:
         admin_list += f"\n{admin.username}"
-    await event.respond(f"Qrupda olan adminlər: {admin_list}")
+    await event.respond(f"Qrupda olan adminlər: @{admin_list}")
 
 @elnur.on(events.NewMessage(pattern="^/dc$"))
 async def test(event):
@@ -291,75 +291,6 @@ async def banda(event):
     mentions += f"\nSilinmiş hesaplar` = {deleted}`\n\n__• By @GenceliRoBot__"
     await event.reply(mentions)
 
-
-@elnur.on(events.NewMessage(pattern='(?i)salam+'))
-async def salam(event: events.NewMessage.Event):
-    await event.reply(f"{random.choice(salam)}")
-
-salam = (
-"Salam",
-"Salam Kişi",
-"Salam Balam",
-"Salamdaa",
-"Uşş balama salam",
-"Salam Cənab 🫶",
-"Salam Lələ 🔥",
-)
-
-@elnur.on(events.NewMessage(pattern='(?i)necəsən+'))
-async def necesen(event: events.NewMessage.Event):
-    await event.reply(f"{random.choice(necesen)}")
-
-necesen = (
-"Saol",
-"Həkimsən ?",
-"Ə belədana 😂",
-"What",
-"İyyim aşkım sen ?",
-"yaxşı olmağa çalışıram",
-"Mən başımı buraxe sən necəsən 😂",
-)
-
-@elnur.on(events.NewMessage(pattern='(?i)sağol+'))
-async def sagol(event: events.NewMessage.Event):
-    await event.reply(f"{random.choice(sagol)}")
-
-sagol = (
-"Salam Sağol",
-"Hara gedsən",
-"Yatıram demə🥲",
-"Sağolunnn yenə gözləyəriyy🙈",
-"Uşş balam Sağol",
-"Sağol canım benim 🫶",
-"Sağol Kişi 🔥",
-)
-
-@elnur.on(events.NewMessage(pattern='(?i)getdim+'))
-async def getdim(event: events.NewMessage.Event):
-    await event.reply(f"{random.choice(getdim)}")
-
-getdim = (
-"Hara",
-)
-
-@elnur.on(events.NewMessage(pattern='(?i)gəldim+'))
-async def geldim(event: events.NewMessage.Event):
-    await event.reply(f"{random.choice(geldim)}")
-
-geldim = (
-"Xoş Gəldin ❤️",
-)
-
-@elnur.on(events.NewMessage(pattern='(?i)ban+'))
-async def ban(event: events.NewMessage.Event):
-    await event.reply(f"{random.choice(ban)}")
-
-ban = (
-"Vəhşii",
-"Həri Vəhşii",
-"Vəhşi Panteramm kimə ban atdın",
-"Havada ban kokusu var",
-)
 
 @elnur.on(events.NewMessage(pattern="^/tag ?(.*)"))
 async def mentionall(event):
