@@ -34,13 +34,13 @@ elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 SUDO_USERS = 5317589296
 log_qrup = -1001875414285
 
-@elnur.on(events.NewMessage(pattern='/start'))
+
+@elnur.on(events.ChatAction)
 async def welcome(event):
     chat = await event.get_chat()
     if event.sender_id == SUDO_USERS:
         message = f"Botun sahibi, {chat.first_name} indicə çata daxil oldu."
         await elnur.send_message(chat, message)
-
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
 @elnur.on(events.NewMessage(pattern="^/start@GenceliRoBot$"))
