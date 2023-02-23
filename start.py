@@ -120,7 +120,7 @@ async def handle_delete(event):
         await elnur.delete_messages(chat, message)
 
 
-@elnur.register(events.NewMessage(pattern='/purge'))
+@elnur.on(events.NewMessage(pattern='/purge'))
 async def delete_all_messages(event):
     msg = await event.reply('Bütün mesajlar silinir...')
     messages = await event.elnuf.get_messages(event.chat_id)
