@@ -42,7 +42,7 @@ async def show_bots(event):
         if isinstance(user, types.User) and user.bot:
             bot_list.append(user.username)
     if bot_list:
-        await event.reply(f"{len(bot_list)} bot tapıldı:\n\n" + "\n".join(bot_list))
+        await event.reply(f"{len(bot_list)} bot tapıldı:\n\n" + "\n"@.join(bot_list))
     else:
         await event.reply("Bu qrupda heç bir bot yoxdur.")
 
