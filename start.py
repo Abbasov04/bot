@@ -83,7 +83,6 @@ async def start(event):
 async def alive(event):
     if event.sender_id == SUDO_USERS:
         await event.reply"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [v5]\n║\n║▻ 💠 Python versiyası: 3.11.1\n║▻ 💻 Telethon versiyası: 1.27.0\n╚═════════════════"
-        await elnur.send_message(chat, message)
 
 
 @elnur.on(events.NewMessage(pattern='/ship'))
