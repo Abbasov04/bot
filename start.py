@@ -119,6 +119,15 @@ async def handle_delete(event):
         message = await event.get_reply_message()
         await elnur.delete_messages(chat, message)
 
+
+@elnur.register(events.NewMessage(pattern='/purge'))
+async def delete_all_messages(event):
+    msg = await event.reply('Bütün mesajlar silinir...')
+    messages = await event.elnuf.get_messages(event.chat_id)
+    await event.elnur.delete_messages(event.chat_id, messages)
+    await msg.edit('Bütün mesajlar silindi.')
+
+
 @elnur.on(events.NewMessage(pattern='/bots'))
 async def show_bots(event):
     all_users = await event.client.get_participants(event.chat_id)
