@@ -36,7 +36,7 @@ log_qrup = -1001875414285
 
 @elnur.on(events.NewMessage(pattern='/bots'))
 async def show_bots(event):
-    all_users = await event.elnur.get_participants(event.chat_id)
+    all_users = await event.client.get_participants(event.chat_id)
     bot_list = []
     for user in all_users:
         if isinstance(user, types.User) and user.bot:
