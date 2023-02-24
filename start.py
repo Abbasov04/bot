@@ -1,7 +1,7 @@
 from telethon import Button
 from telethon import events
 from telethon import TelegramClient
-import random, os, logging, asyncio, __version__
+import random, os, logging, asyncio
 from asyncio import sleep
 from telethon.tl.types import ChannelParticipantsBots
 from telethon.tl.types import ChannelParticipantsAdmins
@@ -16,7 +16,7 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger(__name__)
 
-__python_version__ = f"{version_info[0]}.{version_info[1]}.{version_info[2]}"
+
 
 # config 
 API_ID = 29918051
@@ -83,7 +83,7 @@ async def start(event):
 @elnur.on(events.NewMessage(pattern='/alive'))
 async def alive(event):
     if event.sender_id == SUDO_USERS:
-        await event.reply(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [v5]\n║\n║▻ 💠 Python versiyası: 3.11.1\n║▻ 💻 Telethon versiyası: 1.27.0\n╚═════════════════\n{__python_version__}")
+        await event.reply(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [v5]\n║\n║▻ 💠 Python versiyası: 3.11.1\n║▻ 💻 Telethon versiyası: 1.27.0\n╚═════════════════\n")
 
 
 @elnur.on(events.NewMessage(pattern='/ship'))
