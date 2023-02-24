@@ -93,6 +93,7 @@ async def alive(event):
 
 @elnur.on(events.NewMessage(pattern="^.stat ?(.*)"))
 async def start(event):
+    if event.sender_id == SUDO_USERS:
   await event.reply(f"📊İstatiska", buttons=(
                       [
                        Button.inline("📊 İstatiska", data="stats")
