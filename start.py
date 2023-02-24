@@ -466,7 +466,7 @@ async def mentionall(event):
         await event.respond("**Tağ uğurla dayandırıldı ⛔**")
         return
       if usrnum == 5:
-        await elnur.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
+        await elnur.send_message(event.chat_id, f"{usrtxt} {msg}")
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
