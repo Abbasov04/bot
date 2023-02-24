@@ -413,7 +413,7 @@ async def mentionall(event):
     usrtxt = ""
     async for usr in elnur.iter_participants(event.chat_id):
       usrnum += 1
-      usrtxt += f"↯ - [{usr.first_name}](tg://user?id={usr.id}) \n"
+      usrtxt += f"↯ - [{usr.first_name}](tg://user?id={usr.id})"
       if event.chat_id not in tekli_calisan:
         await event.respond("**Tağ uğurla dayandırıldı ⛔**")
         return
