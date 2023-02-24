@@ -9,10 +9,6 @@ from telethon.sessions import StringSession
 from os import remove
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.sync import types
-from telethon.tl.functions.messages import SendMessageRequest
-from pyrogram import Client as PyrogramClient
-
-
 
 
 logging.basicConfig(
@@ -22,30 +18,11 @@ logging.basicConfig(
 LOGGER = logging.getLogger(__name__)
 
 
-
 # config 
 API_ID = 29918051
 API_HASH = "793e62b1b2aefe53f84976d38215959e"
 bot_token = "5746131579:AAEDzPqfVsHst13-AlVCxs3Z2rZqOly8fPw"
 
-pyrogram_api_id = 29918051
-pyrogram_api_hash = '5746131579:AAEDzPqfVsHst13-AlVCxs3Z2rZqOly8fPw'
-
-telethon_client = TelegramClient('telethon_session', api_id, api_hash)
-telethon_client.connect()
-if not telethon_client.is_user_authorized():
-    telethon_client.send_code_request(phone_number)
-    telethon_client.sign_in(phone_number, input('Enter the code: '))
-
-pyrogram_client = PyrogramClient('pyrogram_session', api_id=pyrogram_api_id, api_hash=pyrogram_api_hash)
-pyrogram_client.start()
-
-telethon_client(SendMessageRequest('me', 'Hello from Telethon!'))
-
-pyrogram_client.send_message('me', 'Hello from Pyrogram!')
-
-telethon_client.disconnect()
-pyrogram_client.stop()
 
 anlik_calisan = []
 
