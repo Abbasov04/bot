@@ -1,7 +1,7 @@
 from telethon import Button
 from telethon import events
 from telethon import TelegramClient
-import random, os, logging, asyncio, version
+import random, os, logging, asyncio, __version__
 from asyncio import sleep
 from telethon.tl.types import ChannelParticipantsBots
 from telethon.tl.types import ChannelParticipantsAdmins
