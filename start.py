@@ -28,6 +28,9 @@ anlik_calisan = []
 
 tekli_calisan = []
 
+grup_sayi = []
+
+user_sayi = []
 
 #Client 
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
@@ -85,6 +88,23 @@ async def alive(event):
     if event.sender_id == SUDO_USERS:
         await event.reply(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [v5]\n║\n║▻ 💠 Python versiyası: 3.11.2\n║▻ 💻 Telethon versiyası: 1.27.0\n╚═════════════════")
 
+
+
+
+@elnur.on(events.NewMessage(pattern="^.stat ?(.*)"))
+async def start(event):
+  await event.reply(f"📊İstatiska", buttons=(
+                      [
+                       Button.inline("📊 İstatiska", data="stats")
+                      ],
+                    ),
+                    link_preview=False)
+
+
+@elnur.on(events.callbackquery.CallbackQuery(data="stats"))
+async def handler(event):
+    await event.edit(f"📋 Toplam Qrup: `{len(grup_sayi)}`\n📈 Aktuv Qruplar: `{len(anlik_calisan)}`\n👤 İsdifadəçi Sayı: `{len(user_sayi)}`")
+	              
 
 @elnur.on(events.NewMessage(pattern='/ship'))
 async def ship(event):
