@@ -9,12 +9,7 @@ from telethon.sessions import StringSession
 from os import remove
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.sync import types
-from pytgcalls import (__version__ as pytover)
-from pyrogram import Client, filters, __version__ as pyrover
-from program import __version__
-from sys import version_info
 
-__python_version__ = f"{version_info[0]}.{version_info[1]}.{version_info[2]}"
 
 
 
@@ -91,7 +86,7 @@ async def start(event):
 @elnur.on(events.NewMessage(pattern='/alive'))
 async def alive(event):
     if event.sender_id == SUDO_USERS:
-        await event.reply(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [v5]\n║\n║▻ 💠 Python versiyası: 3.11.1\n║▻ 💻 Telethon versiyası: 1.27.0\n╚═════════════════\n{__version__}`\n🔥 Pragram versiyası: `{pyrover}`\n🐍 Python versiyası: `{__python_version__}`\n✨ PyTgCalls versiyası: `{pytover.__version__}`\n🆙 İşləmək durumu: `{uptime}")
+        await event.reply(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [v5]\n║\n║▻ 💠 Python versiyası: 3.11.1\n║▻ 💻 Telethon versiyası: 1.27.0\n╚═════════════════")
 
 
 @elnur.on(events.NewMessage(pattern='/ship'))
