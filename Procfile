@@ -1,1 +1,1 @@
-worker: python3 -m Plugin
+worker: python3 -m GenceliRoBot
