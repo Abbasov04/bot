@@ -1,7 +1,5 @@
-from os.path import dirname, basename, isfile, join
-import glob
+from .telegram_client import TelegramClient
 
-plugin = glob.glob(join(dirname(file), "*.py"))
-all = [
-    basename(f)[:-3] for f in modules if isfile(f) and not f.endswith("init.py")
-]
+__version__ = '1.23.0'
+__author__ = 'Lonami Exo <lonamiwebs@gmail.com> and contributors'
+__all__ = ('TelegramClient',)
