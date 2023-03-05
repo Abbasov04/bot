@@ -1,6 +1,6 @@
 import logging
 from pyrogram import Client
-from GenceliRoBot.elnur import elnur
+from GenceliRoBot.config import Config
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
