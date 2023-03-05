@@ -1,4 +1,4 @@
-from .telegram_client import TelegramClient
+from .elnur import TelegramClient
 
 __version__ = '1.23.0'
 __author__ = 'Lonami Exo <lonamiwebs@gmail.com> and contributors'
