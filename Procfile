@@ -1,1 +1,1 @@
-worker: python3 -m GenceliRoBot
+worker: python3 start.py
