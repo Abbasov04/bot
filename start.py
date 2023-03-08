@@ -45,12 +45,7 @@ BOT_USERNAME = "GenceliRoBot"
 async def start(event):
     await event.respond(f"**🚸 Salam Aleykum Mən @{OWNER_USERNAME} - Tərəfindən Yaradılmış Asistant Botuyam💓\n🚷 Botu Qrupda İstifadə Etmək Üçün Yetki Verilməlidi.**")
 
-@elnur.on(events.NewMessage(pattern="^/start$"))
-async def start(event):
-  if event.is_private:
-    async for usr in elnur.iter_participants(event.chat_id):
-      ad = f"{usr.first_name} "
-     await event.respond(f"**🧔🏻‍♂️Sənin Adın:\n**")
+
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
