@@ -25,15 +25,17 @@ bot_token = "5746131579:AAEDzPqfVsHst13-AlVCxs3Z2rZqOly8fPw"
 
 
 anlik_calisan = []
-
 tekli_calisan = []
 
 grup_sayi = []
-
 user_sayi = []
 
 #Client 
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
+
+ad = f"{usr.first_name}"
+idd = f"{usr.id}"
+profil = f"[{usr.first_name}](tg://user?id={usr.id})"
 
 SUDO_USERS = 5317589296
 OWNER_USERNAME = "ElnurGenCeLi"
@@ -50,21 +52,18 @@ async def start(event):
 async def start(event):
   if event.is_private:
     async for usr in elnur.iter_participants(event.chat_id):
-     ad = f"{usr.first_name}"
      await event.respond(f"**🧔🏻‍♂️Sənin Adın:\n{ad}**")
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   if event.is_private:
     async for usr in elnur.iter_participants(event.chat_id):
-     idd = f"{usr.id} "
      await event.respond(f"**🆔Sənin ID:\n`{idd}`**")
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   if event.is_private:
     async for usr in elnur.iter_participants(event.chat_id):
-     profil = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await elnur.send_message(log_qrup, f"ℹ️ **Yeni istifadəçi -** {profil}")
      await event.respond(f"**👤Sənin Profilin:\n{profil}**")
 
