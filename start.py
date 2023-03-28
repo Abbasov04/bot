@@ -662,10 +662,5 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
 
-@elnur.on(events.NewMessage(pattern='^(?i)/cancel'))
-async def cancel(event):
-  global anlik_calisan
-  anlik_calisan.remove(event.chat_id)
-
 print(">> Bot işləyir narahat olmayın.<<")
 elnur.run_until_disconnected()
