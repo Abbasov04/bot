@@ -380,11 +380,6 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
 
-@elnur.on(events.NewMessage(pattern='^(?i)/cancel'))
-async def cancel(event):
-  global anlik_calisan
-  anlik_calisan.remove(event.chat_id)
-
 @elnur.on(events.NewMessage(pattern="^/tektag ?(.*)"))
 async def mentionall(event):
   global tekli_calisan
