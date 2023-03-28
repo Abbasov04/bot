@@ -707,5 +707,11 @@ async def test(event):
         await event.reply("Sahibimdi")
 
 
+@elnur.on(events.NewMessage(pattern="^/zar ?(.*)"))
+async def zar(event):
+               mrt = await event.reply("🔄 Lütfen Bekleyin..\n\n🎲 Zar Atıyorum..")
+                await asyncio.sleep(2)
+                await mrt.edit(f"🎲 Zar: {random.randint(1, 6)}")
+
 print(">> Bot işləyir narahat olmayın.<<")
 elnur.run_until_disconnected()
