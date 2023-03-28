@@ -500,12 +500,6 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
 
-@elnur.on(events.NewMessage(pattern='^(?i)/cancel'))
-async def cancel(event):
-  global tekli_calisan
-  tekli_calisan.remove(event.chat_id)
-
-
 mafia = (
 "Sənin oyundakı rolun 👮🏼 Çavuş!",
 "Sənin oyundakı rolun 🐺 Oboroten!",
