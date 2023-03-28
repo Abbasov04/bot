@@ -662,5 +662,48 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
 
+
+# aykhan026 | aykhan_s
+# 0-dan yığılıb sənöl
+# öz adına çıxaran papa de
+
+isleyen = []
+
+@elnur.on(events.NewMessage(pattern="^/test ?(.*)"))
+async def chatbot(event):
+    global isleyen
+    emr = event.pattern_match.group(1)
+    qrup = event.chat_id
+    if emr == "ON" or emr == "on" or emr == "On":
+        if qrup not in isleyen:
+            isleyen.append(qrup)
+            aktiv_olundu = "✅ **ChatBot bu qrupda aktiv olundu !**"
+            await event.reply(aktiv_olundu)
+            return
+        await event.reply("⚠️ **ChatBot onsuzda aktivdir !**")
+        return
+    elif emr == "OFF" or emr == "off" or emr == "Off":
+        if qrup in isleyen:
+            isleyen.remove(qrup)
+            await event.reply("⛔️ **ChatBot bu qrupda deaktiv olundu !**")
+            return # aykhan026 | aykhan_s
+        await event.reply("⚠️ **ChatBot onsuzda deaktivdir !**")
+        return
+    
+    else:
+        await event.reply("On və yaxud Off yazmadınız")
+
+
+@elnur.on(events.NewMessage)
+async def test(event):
+    global isleyen
+    mesaj = str(event.raw_text)
+    qrup = event.chat_id
+    if qrup not in isleyen:
+        return
+    if "test1" in mesaj or "test2" in mesaj or "test3" in mesaj:
+        await event.reply("İşləyir")
+
+
 print(">> Bot işləyir narahat olmayın.<<")
 elnur.run_until_disconnected()
