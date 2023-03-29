@@ -36,7 +36,6 @@ elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 SUDO_USERS = 5317589296
 OWNER_USERNAME = "ElnurGenCeLi"
-OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊 👑"
 log_qrup = -1001875414285
 BOT_USERNAME = "GenceliRoBot"
 
@@ -718,7 +717,7 @@ async def zar(event):
 async def zar(event):
     mrt = await event.reply("Sudo istifadəçilərinin siyahısı əldə edilir...")
     await asyncio.sleep(2)
-    await mrt.edit(f"👨🏻‍💻 Bot Sahibi:\n1➤ ({OWNERNAME})[https://t.me/{OWNER_USERNAME}]")
+    await mrt.edit(f"👨🏻‍💻 Bot Sahibi:\n1➤ (𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊 👑)[https://t.me/{OWNER_USERNAME}]")
 
 print(">> Bot işləyir narahat olmayın.<<")
 elnur.run_until_disconnected()
