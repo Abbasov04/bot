@@ -82,7 +82,7 @@ async def start(event):
 @elnur.on(events.NewMessage(pattern="^/help$"))
 @elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
 async def start(event):
-    await event.respond(f"**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/start - Botu Başlat.\n/dc - Doğruluq Cəsarət Oyunu.\n/game - Oyunlara Bax.\n/startgame - Oyunu Başlad.\n/help - Əmrlərə Bax.\n/ship - Qrubda Cütlük Seçər.\n/bots - Qrubdaki Botları Göstərir.\n/admins - Qrubdaki Adminləri Göstərir.\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/sil - Reply Atdığı Mesaji Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/cancel - Tağ Prosesini Dayandırar.**")
+    await event.respond(f"**[ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/start - Botu Başlat.\n/dc - Doğruluq Cəsarət Oyunu.\n/help - Əmrlərə Bax.\n/sudolist - Bot-un Sudo İstifadəçilərini yoxlayın\n/ship - Qrubda Cütlük Seçər.\n/bots - Qrubdaki Botları Göstərir.\n/admins - Qrubdaki Adminləri Göstərir.\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/sil - Reply Atdığı Mesaji Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/cancel - Tağ Prosesini Dayandırar.**")
 
 @elnur.on(events.NewMessage(pattern='/alive'))
 async def alive(event):
@@ -657,7 +657,7 @@ async def mentionall(event):
 
 isleyen = []
 
-@elnur.on(events.NewMessage(pattern="^/test ?(.*)"))
+@elnur.on(events.NewMessage(pattern="^/chatmesaj ?(.*)"))
 async def chatbot(event):
     global isleyen
     emr = event.pattern_match.group(1)
@@ -694,12 +694,6 @@ async def test(event):
     if "elnur" in mesaj:
         await event.reply("Sahibimdi")
 
-
-@elnur.on(events.NewMessage(pattern="^/zar ?(.*)"))
-async def zar(event):
-    mrt = await event.reply("🔄 Lütfen Bekleyin..\n\n🎲 Zar Atıyorum..")
-    await asyncio.sleep(2)
-    await mrt.edit(f"🎲 Zar: {random.randint(1, 6)}")
 
 @elnur.on(events.NewMessage(pattern="^/sudolist ?(.*)"))
 async def zar(event):
