@@ -1,3 +1,5 @@
+# @ElnurGenCeLi @aykhan_s @sjrvan @guliyev_di @edalet_22
+
 from telethon import Button
 from telethon import events
 from telethon import TelegramClient
