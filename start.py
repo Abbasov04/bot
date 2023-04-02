@@ -48,7 +48,7 @@ BOT_USERNAME = "GenceliRoBot"
 
 # Random şəkil fayl adlarınızı burada yerləş
 image_files = ['https://telegra.ph/file/dc88688a0c2b967fcde61.jpg', 'https://telegra.ph/file/dc88688a0c2b967fcde61.jpg', 'https://telegra.ph/file/dc88688a0c2b967fcde61.jpg']
-
+@elnur.on(events.NewMessage(pattern="^/soxri$"))
 async def send_random_photo(chat_id):
     # Random şəkil seçimi
     random_image = random.choice(image_files)
