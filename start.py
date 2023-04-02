@@ -8,6 +8,7 @@ from asyncio import sleep
 from time import time
 from telethon.tl.types import ChannelParticipantsBots
 from telethon.tl.types import ChannelParticipantsAdmins
+from telethon.tl.functions.messages import SendFileRequest
 from telethon.sessions import StringSession
 from os import remove
 from telethon.tl.functions.users import GetFullUserRequest
@@ -42,6 +43,28 @@ OWNER_USERNAME = "ElnurGenCeLi"
 OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊 👑"
 log_qrup = -1001875414285
 BOT_USERNAME = "GenceliRoBot"
+
+
+
+# Random şəkil fayl adlarınızı burada yerləş
+image_files = ['https://telegra.ph/file/dc88688a0c2b967fcde61.jpg', 'https://telegra.ph/file/dc88688a0c2b967fcde61.jpg', 'https://telegra.ph/file/dc88688a0c2b967fcde61.jpg']
+
+async def send_random_photo(chat_id):
+    # Random şəkil seçimi
+    random_image = random.choice(image_files)
+    
+    # Şəkli Telegram üzərində göndərmək üçün əməliyyat
+    result = await client(SendFileRequest(
+        peer=chat_id,
+        file=random_image,
+        caption='Random şəkil'
+    ))
+    
+    return result
+
+# Bot işə düşdükdə funksiyamızı çağıraq
+with client:
+    client.loop.run_until_complete(send_random_photo('CHAT_ID'))
 
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
