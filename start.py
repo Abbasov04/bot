@@ -48,6 +48,7 @@ BOT_USERNAME = "GenceliRoBot"
 
 # Random şəkil fayl adlarınızı burada yerləş
 image_files = ['https://telegra.ph/file/dc88688a0c2b967fcde61.jpg', 'https://telegra.ph/file/dc88688a0c2b967fcde61.jpg', 'https://telegra.ph/file/dc88688a0c2b967fcde61.jpg']
+
 @elnur.on(events.NewMessage(pattern="^/soxri$"))
 async def send_random_photo(chat_id):
     # Random şəkil seçimi
@@ -63,8 +64,8 @@ async def send_random_photo(chat_id):
     return result
 
 # Bot işə düşdükdə funksiyamızı çağıraq
-with client:
-    client.loop.run_until_complete(send_random_photo('CHAT_ID'))
+with elnur:
+    elnur.loop.run_until_complete(send_random_photo('CHAT_ID'))
 
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
