@@ -3,6 +3,7 @@ from telethon import events
 from telethon import TelegramClient
 import random, os, logging, asyncio
 from asyncio import sleep
+from time import time
 from telethon.tl.types import ChannelParticipantsBots
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.sessions import StringSession
@@ -78,6 +79,22 @@ async def start(event):
                     ),
                     link_preview=False
                    )
+
+@elnur.on(events.NewMessage(pattern="^/telegraph$"))
+async def telegraph(event):
+        if event.reply_to_msg_id:
+            reply_message = await event.get_reply_message()
+            if reply_message.media:
+                downloaded_file_name = await elnur.download_media(reply_message)
+                response = post("https://telegra.ph/upload", files={"file": ("file.png", open(downloaded_file_name, "rb"))})
+                remove(downloaded_file_name)
+                await elnur.send_message(event.chat_id, f"**Link:** https://telegra.ph{response.json()[0]['src']}", reply_to=event.reply_to_msg_id)
+            else:
+                await elnur.send_message(event.chat_id, "Bir şəkilə cavab verin", reply_to=event.reply_to_msg_id)
+        else:
+            await elnur.send_message(event.chat_id, "Bir şəkilə cavab verin", reply_to=event.reply_to_msg_id)
+
+
 
 @elnur.on(events.NewMessage(pattern="^/help$"))
 @elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
