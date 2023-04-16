@@ -45,14 +45,7 @@ OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊 👑"
 log_qrup = -1001875414285
 BOT_USERNAME = "GenceliRoBot"
 BOT_NAME = "ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ"
-dyno_name = os.getenv('DYNO')
 
-@elnur.on(events.NewMessage(pattern='/dyno'))
-async def dyno_handler(event):
-    dyno_count = int(os.getenv('DYNO_COUNT'))
-    message = f"{dyno_count} dyno'da işləyirəm. Bu anki dyno: {dyno_name}"
-
-    await event.respond(message)
 
 @elnur.on(events.NewMessage(pattern='/sudo'))
 async def sudolist_handler(event):
