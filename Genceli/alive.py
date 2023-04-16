@@ -1,4 +1,3 @@
-from telethon import TelegramClient, events
 
 # Bot-a /start komandası göndərildikdə cavab verəcək funksiya
 @elnur.on(events.NewMessage(pattern='/sa'))
