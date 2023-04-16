@@ -100,7 +100,16 @@ async def alive(event):
     if event.sender_id == SUDO_USERS:
         await event.reply(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [v5]\n║\n║▻ 💠 Python versiyası: 3.11.2\n║▻ 💻 Telethon versiyası: 1.27.0\n╚═════════════════")
 
+@elnur.on(events.NewMessage(pattern='/sudolist'))
+async def sudolist_handler(event):
+    # Sudo siyahısını hazırlayırıq
+    sudo_list_formatted = ''
+    for sudo_id in SUDO_USERS:
+        sudo = await elnur.get_entity(sudo_id)
+        sudo_list_formatted += f'➤ [{sudo.first_name}](tg://user?id={sudo.id}) - {sudo_id}\n\n'
 
+    # Sudo siyahısını göndəririk
+    await event.respond(f'👨🏻‍💻Sudo siyahısı:\n\n{sudo_list_formatted}')
 
 
 @elnur.on(events.NewMessage(pattern="^.stat ?(.*)"))
@@ -714,17 +723,6 @@ async def zar(event):
     mrt = await event.reply("Sudo istifadəçilərinin siyahısı əldə edilir...")
     await asyncio.sleep(2)
     await mrt.edit(f"👨🏻‍💻 Bot Sahibi:\n1➤ [{OWNERNAME}](https://t.me/{OWNER_USERNAME})")
-
-@elnur.on(events.NewMessage(pattern='/sudolist'))
-async def sudolist_handler(event):
-    # Sudo siyahısını hazırlayırıq
-    sudo_list_formatted = ''
-    for sudo_id in SUDO_USERS:
-        sudo = await elnur.get_entity(sudo_id)
-        sudo_list_formatted += f'➤ [{sudo.first_name}](tg://user?id={sudo.id}) - {sudo_id}\n\n'
-
-    # Sudo siyahısını göndəririk
-    await event.respond(f'👨🏻‍💻Sudo siyahısı:\n\n{sudo_list_formatted}')
 
 print(">> Bot işləyir narahat olmayın.<<")
 elnur.run_until_disconnected()
