@@ -56,7 +56,7 @@ async def sudolist_handler(event):
         sudo_list_formatted += f'[{sudo.first_name}](http://t.me/{sudo.username}) - {sudo_id}\n\n'
 
     # Sudo siyahısını göndəririk
-    await event.respond(f'Sudo siyahısı:\n\n{sudo_list_formatted}')
+    await event.respond(f'👨🏻‍💻Sudo siyahısı:\n\n➤ {sudo_list_formatted}')
 
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
