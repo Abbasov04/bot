@@ -1,6 +1,5 @@
 from telethon import TelegramClient, events
 from Genceli.start import *
-from Genceli.alive import *
 
 
 api_id = 29918051  # API ID-nizi burada daxil edin
