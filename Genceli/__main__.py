@@ -1,5 +1,7 @@
 from telethon import TelegramClient, events
 from start import *
+from start2 import *
+
 
 api_id = 29918051  # API ID-nizi burada daxil edin
 api_hash = '793e62b1b2aefe53f84976d38215959e'  # API HASH-nizi burada daxil edin
