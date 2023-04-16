@@ -88,15 +88,6 @@ async def start(event):
                    )
 
 
-@elnur.on(events.NewMessage(pattern='/addsudo'))
-async def add_sudo_handler(event):
-    # Mesajın cavab verildiyi istifadəçi haqqında məlumatları götürürük
-    user = await event.get_reply_message().sender
-    if user.id in SUDO_USERS:
-        await event.respond('Bu istifadəçi artıq Sudo siyahısındadır.')
-    else:
-        SUDO_USERS.append(user.id)
-        await event.respond('Sudo siyahısı yeniləndi.')'
 
 @elnur.on(events.NewMessage(pattern="^/help$"))
 @elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
