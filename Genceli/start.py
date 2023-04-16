@@ -39,7 +39,7 @@ isleyen = []
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 
-SUDO_USERS = [5317589296, 5535357180]
+SUDO_USERS = [5317589296, 5535357180, 6264090082]
 OWNER_USERNAME = "ElnurGenCeLi"
 OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊 👑"
 log_qrup = -1001875414285
@@ -56,7 +56,7 @@ async def sudolist_handler(event):
         sudo_list_formatted += f'[{sudo.first_name}](http://t.me/{sudo.username}) - {sudo_id}\n\n'
 
     # Sudo siyahısını göndəririk
-    await event.respond(f'👨🏻‍💻Sudo siyahısı:\n\n➤ {sudo_list_formatted}')
+    await event.respond(f'👨🏻‍💻Sudo siyahısı:\n\n{sudo_list_formatted}')
 
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
