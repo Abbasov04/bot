@@ -56,7 +56,7 @@ async def sudolist_handler(event):
     sudo_list_formatted = ''
     for sudo_id in SUDO_USERS:
         sudo = await elnur.get_entity(sudo_id)
-        sudo_list_formatted += f'➤ [{sudo.first_name}](t.me/{sudo.username}) - {sudo_id}\n\n'
+        sudo_list_formatted += f'➤ [{sudo.first_name}](tg://user?id={sudo.id}) - {sudo_id}\n\n'
 
     # Sudo siyahısını göndəririk
     await event.respond(f'👨🏻‍💻Sudo siyahısı:\n\n{sudo_list_formatted}')
