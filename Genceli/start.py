@@ -12,6 +12,7 @@ from telethon.sessions import StringSession
 from os import remove
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.sync import types
+import requests
 
 logging.basicConfig(
     level=logging.INFO,
@@ -45,6 +46,27 @@ OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊 👑"
 log_qrup = -1001875414285
 BOT_USERNAME = "GenceliRoBot"
 BOT_NAME = "ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ"
+
+
+@elnur.on(events.NewMessage(pattern='/song'))
+async def song_handler(event):
+    song_name = event.message.text.split('/song ')[1]
+    response = requests.get(f'https://musicbrainz.org/ws/2/recording/?query={song_name}&limit=1&fmt=json')
+    if response.status_code == 200:
+        recording = response.json()['recordings'][0]
+        title = recording['title']
+        artist = recording['artist-credit'][0]['artist']['name']
+        length = int(recording['length'] / 1000)
+        search_query = f"{artist} {title}"
+        search_results = requests.get(f'https://www.youtube.com/results?search_query={search_query}').text
+        video_id = search_results.split('"videoId":"')[1].split('"')[0]
+        audio_url = f"https://www.yt-download.org/api/button/mp3/{video_id}"
+        response = requests.get(audio_url)
+        audio_file_name = f"{title} - {artist}.mp3"
+        with open(audio_file_name, 'wb') as f:
+            f.write(response.content)
+        await elnur.send_file(event.chat_id, audio_file_name, attributes=[DocumentAttributeAudio(duration=length)])
+
 
 
 @elnur.on(events.NewMessage(pattern='/sudo'))
