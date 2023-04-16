@@ -12,7 +12,7 @@ from telethon.sessions import StringSession
 from os import remove
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.sync import types
-from start2 
+from start2.py
 
 logging.basicConfig(
     level=logging.INFO,
