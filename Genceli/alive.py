@@ -7,7 +7,7 @@ bot_token = "5746131579:AAEL2ySw1sVRwsFdqekn9L4QO6mix6do9zE"
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 # Bot-a /start komandası göndərildikdə cavab verəcək funksiya
-@elnur.on(events.NewMessage(pattern='/start'))
+@elnur.on(events.NewMessage(pattern='/sa'))
 async def start_handler(event):
     await event.respond('Salam!')
 
