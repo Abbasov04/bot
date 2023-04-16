@@ -11,4 +11,4 @@ async def handler(event):
     await event.respond('Hello, World!')
 
 if __name__ == '__main__':
-    bot.run_until_disconnected()
+    elnur.run_until_disconnected()
