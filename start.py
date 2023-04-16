@@ -675,19 +675,7 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
 
-@elnur.on(events.NewMessage(pattern='^.cancel ?(.*)'))
-async def cancel(event):
-  global anlik_calisan
-  anlik_calisan.remove(event.chat_id)
-  
-  if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📊 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`")
 
-@elnur.on(events.NewMessage(pattern='^.cancel ?(.*)'))
-async def cancel(event):
-  global tekli_calisan
-  tekli_calisan.remove(event.chat_id)
-  
-  if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📊 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`")
 
 @elnur.on(events.NewMessage(pattern="^/chatmesaj ?(.*)"))
 async def chatbot(event):
