@@ -65,7 +65,7 @@ async def song_handler(event):
         audio_file_name = f"{title} - {artist}.mp3"
         with open(audio_file_name, 'wb') as f:
             f.write(response.content)
-        await elnur.send_file(event.chat_id, audio_file_name, attributes=[DocumentAttributeAudio(duration=length)])
+        await client.send_file(event.chat_id, audio_file_name, attributes=[DocumentAttributeAudio(duration=length)])
 
 
 
