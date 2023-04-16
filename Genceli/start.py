@@ -137,7 +137,7 @@ async def ship(event):
     async for member in elnur.iter_participants(chat):
         members.append(member)
     selected_members = random.sample(members, 2)
-    message = f"Artık bir çiftsiniz! 🚢💕\n@{selected_members[0].username}\n@{selected_members[1].username}\n\n❤️‍🩹Sevgilərin Faizi {random.randint(10, 100)}%"
+    message = f"Artık bir çiftsiniz! 🚢💕\n@{selected_members[0].first_name}](tg://user?id={sudo.id})\n@{selected_members[1].first_name}](tg://user?id={sudo.id})\n\n❤️‍🩹Sevgilərin Faizi {random.randint(10, 100)}%"
     await elnur.send_message(chat, message)
   
 @elnur.on(events.NewMessage(pattern='/sil'))
