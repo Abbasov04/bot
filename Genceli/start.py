@@ -50,18 +50,6 @@ BOT_NAME = "ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ"
 
 
 
-@elnur.on(events.NewMessage(pattern='/sudo'))
-async def sudolist_handler(event):
-    # Sudo siyahısını hazırlayırıq
-    sudo_list_formatted = ''
-    for sudo_id in SUDO_USERS:
-        sudo = await elnur.get_entity(sudo_id)
-        sudo_list_formatted += f'➤ [{sudo.first_name}](tg://user?id={sudo.id}) - {sudo_id}\n\n'
-
-    # Sudo siyahısını göndəririk
-    await event.respond(f'👨🏻‍💻Sudo siyahısı:\n\n{sudo_list_formatted}')
-
-
 @elnur.on(events.NewMessage(pattern="^/start$"))
 @elnur.on(events.NewMessage(pattern="^/start@GenceliRoBot$"))
 async def start(event):
@@ -721,11 +709,22 @@ async def test(event):
         await event.reply("Sahibimdi")
 
 
-@elnur.on(events.NewMessage(pattern="^/sudolist ?(.*)"))
+@elnur.on(events.NewMessage(pattern="^/testt ?(.*)"))
 async def zar(event):
     mrt = await event.reply("Sudo istifadəçilərinin siyahısı əldə edilir...")
     await asyncio.sleep(2)
     await mrt.edit(f"👨🏻‍💻 Bot Sahibi:\n1➤ [{OWNERNAME}](https://t.me/{OWNER_USERNAME})")
+
+@elnur.on(events.NewMessage(pattern='/sudolist'))
+async def sudolist_handler(event):
+    # Sudo siyahısını hazırlayırıq
+    sudo_list_formatted = ''
+    for sudo_id in SUDO_USERS:
+        sudo = await elnur.get_entity(sudo_id)
+        sudo_list_formatted += f'➤ [{sudo.first_name}](tg://user?id={sudo.id}) - {sudo_id}\n\n'
+
+    # Sudo siyahısını göndəririk
+    await event.respond(f'👨🏻‍💻Sudo siyahısı:\n\n{sudo_list_formatted}')
 
 print(">> Bot işləyir narahat olmayın.<<")
 elnur.run_until_disconnected()
