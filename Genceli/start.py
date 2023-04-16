@@ -47,6 +47,16 @@ BOT_USERNAME = "GenceliRoBot"
 BOT_NAME = "ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ"
 
 
+@elnur.on(events.NewMessage(pattern='/sudo'))
+async def sudolist_handler(event):
+    # Sudo siyahısını hazırlayırıq
+    sudo_list_formatted = ''
+    for sudo_id in SUDO_USERS:
+        sudo = await client.get_entity(sudo_id)
+        sudo_list_formatted += f'{sudo.first_name} {sudo.last_name} ({sudo.username}) - {sudo_id}\n'
+
+    # Sudo siyahısını göndəririk
+    await event.respond(f'Sudo siyahısı:\n\n{sudo_list_formatted}')
 
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
