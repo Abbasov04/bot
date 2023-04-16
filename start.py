@@ -29,9 +29,12 @@ bot_token = "5746131579:AAEL2ySw1sVRwsFdqekn9L4QO6mix6do9zE"
 
 anlik_calisan = []
 tekli_calisan = []
+rxyzdev_tagTot = []
 
 grup_sayi = []
 user_sayi = []
+
+isleyen = []
 
 #Client 
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
@@ -672,12 +675,19 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
 
+@elnur.on(events.NewMessage(pattern='^.cancel ?(.*)'))
+async def cancel(event):
+  global anlik_calisan
+  anlik_calisan.remove(event.chat_id)
+  
+  if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📊 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`")
 
-# aykhan026 | aykhan_s
-# 0-dan yığılıb sənöl
-# öz adına çıxaran papa de
-
-isleyen = []
+@elnur.on(events.NewMessage(pattern='^.cancel ?(.*)'))
+async def cancel(event):
+  global tekli_calisan
+  tekli_calisan.remove(event.chat_id)
+  
+  if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📊 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`")
 
 @elnur.on(events.NewMessage(pattern="^/chatmesaj ?(.*)"))
 async def chatbot(event):
