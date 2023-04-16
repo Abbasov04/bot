@@ -11,7 +11,4 @@ elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 async def start_handler(event):
     await event.respond('Salam!')
 
-# Telegram-a qoşuluruq
-with client:
-    elnur.loop.run_until_complete(client.send_message('me', '/start'))
     elnurr.run_until_disconnected()
