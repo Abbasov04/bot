@@ -39,7 +39,7 @@ isleyen = []
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 
-SUDO_USERS = 5317589296
+SUDO_USERS = [5317589296]
 OWNER_USERNAME = "ElnurGenCeLi"
 OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊 👑"
 log_qrup = -1001875414285
@@ -87,6 +87,16 @@ async def start(event):
                     link_preview=False
                    )
 
+
+@elnur.on(events.NewMessage(pattern='/addsudo'))
+async def add_sudo_handler(event):
+    # Mesajın cavab verildiyi istifadəçi haqqında məlumatları götürürük
+    user = await event.get_reply_message().sender
+    if user.id in SUDO_USERS:
+        await event.respond('Bu istifadəçi artıq Sudo siyahısındadır.')
+    else:
+        SUDO_USERS.append(user.id)
+        await event.respond('Sudo siyahısı yeniləndi.')'
 
 @elnur.on(events.NewMessage(pattern="^/help$"))
 @elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
