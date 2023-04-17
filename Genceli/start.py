@@ -2,6 +2,7 @@
 
 from telethon import Button
 from telethon import events
+from telethon import errors
 from telethon import TelegramClient
 import random, os, logging, asyncio
 from asyncio import sleep
@@ -12,6 +13,11 @@ from telethon.sessions import StringSession
 from os import remove
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.sync import types
+from telethon.tl.types import
+from telethon.tl.functions.channels
+
+
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -52,6 +58,57 @@ BOT_NAME = "ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ"
 __python__ = "3.11.2"
 __telethon__ = "1.27.0"
 __version__ = "v5"
+
+
+
+
+
+@elnur.on(events.NewMessage(incoming=True, pattern="^[!/]purge$"))
+async def purge_messages(event):
+    start = time.perf_counter()
+    if event.is_private:
+        await event.respond("Bu əmri yalnız qruplarda icra edə bilərsiniz.", parse_mode='markdown')
+        return
+
+    if not await is_group_admin(event):
+        await event.respond("Bu əmri yalnız qrup yönəticiləri icra edə bilər.", parse_mode='markdown')
+        return
+
+    reply_msg = await event.get_reply_message()
+    if not reply_msg:
+        await event.respond("Silməyə başlayacağım mesaja yanıt ver.")
+        return
+
+    messages = []
+    message_id = reply_msg.id
+    delete_to = event.message.id
+
+    messages.append(event.reply_to_msg_id)
+    for msg_id in range(message_id, delete_to + 1):
+        messages.append(msg_id)
+        if len(messages) == 100:
+            await event.elnur.delete_messages(event.chat_id, messages)
+            messages = []
+
+    await event.elnur.delete_messages(event.chat_id, messages)
+    time_ = time.perf_counter() - start
+    text = f"✅ Təmizləmə prosesi {time_:0.2f} saniyədə tamamlandı"
+    await event.respond(text, parse_mode='markdown')
+
+
+async def is_group_admin(event):
+    """
+    Checks if the user is a group admin
+    """
+    try:
+        user = await event.elnur.get_entity(event.input_chat)
+        user_info = await event.client.get_participants(user, filter=ChannelParticipantsAdmins, limit=100)
+        for u in user_info:
+            if u.id == event.sender_id:
+                return True
+    except errors.rpcerrorlist.ChatAdminRequiredError:
+        pass
+    return False
 
 
 
