@@ -61,51 +61,6 @@ __version__ = "v5"
 
 
 
-@elnur.on(events.NewMessage(incoming=True, pattern="^[!/]purge$"))
-async def purge_messages(event):
-    if event.is_private:
-        await event.respond("Bu əmri yalnız qruplarda icra edə bilərsiniz.", parse_mode='markdown')
-        return
-
-    if not await is_group_admin(event):
-        await event.respond("Bu əmri yalnız qrup yönəticiləri icra edə bilər.", parse_mode='markdown')
-        return
-
-    reply_msg = await event.get_reply_message()
-    if not reply_msg:
-        await event.respond("Silməyə başlayacağım mesaja yanıt ver.")
-        return
-
-    messages = []
-    message_id = reply_msg.id
-    delete_to = event.message.id
-
-    messages.append(event.reply_to_msg_id)
-    for msg_id in range(message_id, delete_to + 1):
-        messages.append(msg_id)
-        if len(messages) == 100:
-            await event.client.delete_messages(event.chat_id, messages)
-            messages = []
-
-    await event.client.delete_messages(event.chat_id, messages)
-    time_ = time.perf_counter() - start
-    text = f"✅ Təmizləmə prosesi {time_:0.2f} saniyədə tamamlandı"
-    await event.respond(text, parse_mode='markdown')
-
-
-async def is_group_admin(event):
-    """
-    Checks if the user is a group admin
-    """
-    try:
-        user = await event.client.get_entity(event.input_chat)
-        user_info = await event.client.get_participants(user, filter=ChannelParticipantsAdmins, limit=100)
-        for u in user_info:
-            if u.id == event.sender_id:
-                return True
-    except errors.rpcerrorlist.ChatAdminRequiredError:
-        pass
-    return False
 
 
 
@@ -152,7 +107,7 @@ async def start(event):
 @elnur.on(events.NewMessage(pattern="^/help$"))
 @elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
 async def start(event):
-    await event.respond(f"**[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/start - Botu Başlat.\n/dc - Doğruluq Cəsarət Oyunu.\n/help - Əmrlərə Bax.\n/sudolist - Bot-un Sudo İstifadəçilərini yoxlayın.\n/chatmesaj - ON - OFF.\n/ship - Qrubda Cütlük Seçər.\n/bots - Qrubdaki Botları Göstərir.\n/admins - Qrubdaki Adminləri Göstərir.\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/sil - Reply Atdığı Mesaji Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.\n/cancel - Tağ Prosesini Dayandırar.**")
+    await event.respond(f"**[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/start - Botu Başlat.\n/dc - Doğruluq Cəsarət Oyunu.\n/help - Əmrlərə Bax.\n/sudolist - Bot-un Sudo İstifadəçilərini yoxlayın.\n/chatmesaj - ON - OFF.\n/ship - Qrubda Cütlük Seçər.\n/bots - Qrubdaki Botları Göstərir.\n/admins - Qrubdaki Adminləri Göstərir.\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/sil - Reply Atdığı Mesaji Silər.\purge - Reply Atılmış Söhbətləri Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.\n/cancel - Tağ Prosesini Dayandırar.**")
 
 @elnur.on(events.NewMessage(pattern='/alive'))
 async def alive(event):
@@ -214,6 +169,51 @@ async def handle_delete(event):
         message = await event.get_reply_message()
         await elnur.delete_messages(chat, message)
 
+@elnur.on(events.NewMessage(incoming=True, pattern="^[!/]purge$"))
+async def purge_messages(event):
+    if event.is_private:
+        await event.respond("Bu əmri yalnız qruplarda icra edə bilərsiniz.", parse_mode='markdown')
+        return
+
+    if not await is_group_admin(event):
+        await event.respond("Bu əmri yalnız qrup yönəticiləri icra edə bilər.", parse_mode='markdown')
+        return
+
+    reply_msg = await event.get_reply_message()
+    if not reply_msg:
+        await event.respond("Silməyə başlayacağım mesaja yanıt ver.")
+        return
+
+    messages = []
+    message_id = reply_msg.id
+    delete_to = event.message.id
+
+    messages.append(event.reply_to_msg_id)
+    for msg_id in range(message_id, delete_to + 1):
+        messages.append(msg_id)
+        if len(messages) == 100:
+            await event.client.delete_messages(event.chat_id, messages)
+            messages = []
+
+    await event.client.delete_messages(event.chat_id, messages)
+    time_ = time.perf_counter() - start
+    text = f"✅ Təmizləmə prosesi {time_:0.2f} saniyədə tamamlandı"
+    await event.respond(text, parse_mode='markdown')
+
+
+async def is_group_admin(event):
+    """
+    Checks if the user is a group admin
+    """
+    try:
+        user = await event.client.get_entity(event.input_chat)
+        user_info = await event.client.get_participants(user, filter=ChannelParticipantsAdmins, limit=100)
+        for u in user_info:
+            if u.id == event.sender_id:
+                return True
+    except errors.rpcerrorlist.ChatAdminRequiredError:
+        pass
+    return False
 
 
 @elnur.on(events.NewMessage(pattern='/bots'))
