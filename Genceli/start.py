@@ -102,7 +102,27 @@ async def start(event):
                     link_preview=False
                    )
 
+@elnur.on(events.NewMessage(pattern="^.help ?(.*)"))
+async def help(event):
+        await event.reply(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:",
+        buttons=(
+                      [
+                       Button.inline("Sudo", data="sudo")
+                      ],
+                      [
+                       Button.inline("Hami", data="hami")
+                      ],
+                    ),
+                    link_preview=False)
+                    
 
+@elnur.on(events.callbackquery.CallbackQuery(data="sudo"))
+async def handler(event):
+    await event.edit(f"📋")
+    
+@elnur.on(events.callbackquery.CallbackQuery(data="hami"))
+async def handler(event):
+    await event.edit(f"📋")
 
 @elnur.on(events.NewMessage(pattern="^/help$"))
 @elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
