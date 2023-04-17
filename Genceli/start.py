@@ -108,8 +108,7 @@ async def help(event):
         buttons=(
                       [
                        Button.inline("Sudo", data="sudo")
-                      ],
-                      [
+                      ],[
                        Button.inline("Hami", data="hami")
                       ],
                     ),
@@ -122,8 +121,7 @@ async def handler(event):
         buttons=(
                       [
                        Button.inline("Sudo", data="sudo")
-                      ],
-                      [
+                      ],[
                        Button.inline("Hami", data="hami")
                       ],
                     ),
