@@ -84,10 +84,10 @@ async def purge_messages(event):
     for msg_id in range(message_id, delete_to + 1):
         messages.append(msg_id)
         if len(messages) == 100:
-            await event.elnur.delete_messages(event.chat_id, messages)
+            await event.client.delete_messages(event.chat_id, messages)
             messages = []
 
-    await event.elnur.delete_messages(event.chat_id, messages)
+    await event.client.delete_messages(event.chat_id, messages)
     time_ = time.perf_counter() - start
     text = f"✅ Təmizləmə prosesi {time_:0.2f} saniyədə tamamlandı"
     await event.respond(text, parse_mode='markdown')
