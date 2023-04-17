@@ -107,12 +107,12 @@ async def sudolist_handler(event):
     sudo_list_formatted = ''
     for sudo_id in SUDO_USERS:
         sudo = await elnur.get_entity(sudo_id)
-        sudo_list_formatted += f'➤ [{sudo.first_name}](tg://user?id={sudo.id})\n'
+        sudo_list_formatted += f'➤ [{sudo.first_name}](tg://user?id={sudo.id})'
     # Owner siyahısını hazırlayırıq
     owner_list_formatted = ''
     for owner_id in OWNER_ID:
         owner = await elnur.get_entity(owner_id)
-        owner_list_formatted += f'➤ [{owner.first_name}](tg://user?id={owner.id})\n'
+        owner_list_formatted += f'➤ [{owner.first_name}](tg://user?id={owner.id})'
 
     # Sudo və Owner siyahısını göndəririk
     await event.respond(f'👨🏻‍💻 Sahiblər:\n{owner_list_formatted}\n\n⭐️ Sudo İstifadəçiləri:\n{sudo_list_formatted}')
