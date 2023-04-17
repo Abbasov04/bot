@@ -40,9 +40,9 @@ elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 
 SUDO_USERS = 5317589296 
-SUDO_USERS = [5317589296]
+SUDO = [5317589296]
 OWNER_ID = 5317589296 
-OWNER_ID = [5317589296]
+OWNER = [5317589296]
 OWNER_USERNAME = "ElnurGenCeLi"
 OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊 👑"
 log_qrup = -1001875414285
@@ -109,12 +109,12 @@ async def alive(event):
 async def sudolist_handler(event):
     # Sudo siyahısını hazırlayırıq
     sudo_list_formatted = ''
-    for sudo_id in SUDO_USERS:
+    for sudo_id in SUDO:
         sudo = await elnur.get_entity(sudo_id)
         sudo_list_formatted += f'➤ [{sudo.first_name}](tg://user?id={sudo.id})'
     # Owner siyahısını hazırlayırıq
     owner_list_formatted = ''
-    for owner_id in OWNER_ID:
+    for owner_id in OWNER:
         owner = await elnur.get_entity(owner_id)
         owner_list_formatted += f'➤ [{owner.first_name}](tg://user?id={owner.id})'
 
