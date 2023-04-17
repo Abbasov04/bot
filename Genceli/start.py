@@ -39,7 +39,7 @@ isleyen = []
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 
-SUDO_USERS = [5317589296, {OWNER_ID}]
+SUDO_USERS = [5317589296]
 OWNER_ID = [5317589296]
 OWNER_USERNAME = "ElnurGenCeLi"
 OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊 👑"
