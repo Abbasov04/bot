@@ -114,7 +114,7 @@ async def sudolist_handler(event):
         owner = await elnur.get_entity(owner_id)
         owner_list_formatted += f'➤ [{owner.first_name}](tg://user?id={owner.id}) - {owner_id}\n'
 
-    # Sudo siyahısını göndəririk
+    # Sudo və Owner siyahısını göndəririk
     await event.respond(f'⭐️ Sahiblər:\n{owner_list_formatted}\n\n⭐️ Sudo İstifadəçiləri:\n{sudo_list_formatted}')
 
 
@@ -175,7 +175,7 @@ async def show_admins(event):
     admins = await event.client.get_participants(chat, filter=types.ChannelParticipantsAdmins)
     admin_list = ""
     for admin in admins:
-        admin_list += f"\n@{admin.username}"
+        admin_list += f"\n[{admin.username}](tg://user?id={admin.id})"
     await event.respond(f"Qrupda olan adminlər: {admin_list}")
 
 @elnur.on(events.NewMessage(pattern="^/dc$"))
