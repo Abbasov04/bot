@@ -63,7 +63,6 @@ __version__ = "v5"
 
 @elnur.on(events.NewMessage(incoming=True, pattern="^[!/]purge$"))
 async def purge_messages(event):
-    start = time.perf_counter()
     if event.is_private:
         await event.respond("Bu əmri yalnız qruplarda icra edə bilərsiniz.", parse_mode='markdown')
         return
