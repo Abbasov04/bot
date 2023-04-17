@@ -51,7 +51,7 @@ BOT_NAME = "ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ"
 
 __python__ = "3.11.2"
 __telethon__ = "1.27.0"
-
+__version__ = "v5"
 
 
 
@@ -103,7 +103,7 @@ async def start(event):
 @elnur.on(events.NewMessage(pattern='/alive'))
 async def alive(event):
     if event.sender_id == SUDO_USERS:
-        await event.reply(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [v5]\n║\n║▻ 💠 Python versiyası: {__python__}\n║▻ 💻 Telethon versiyası: {__telethon__}\n╚═════════════════")
+        await event.reply(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [{__version__}]\n║\n║▻ 💠 Python versiyası: {__python__}\n║▻ 💻 Telethon versiyası: {__telethon__}\n╚═════════════════")
 
 @elnur.on(events.NewMessage(pattern='/sudolist'))
 async def sudolist_handler(event):
