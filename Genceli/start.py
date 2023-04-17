@@ -115,12 +115,13 @@ async def sudolist_handler(event):
         owner_list_formatted += f'➤ [{owner.first_name}](tg://user?id={owner.id}) - {owner_id}\n'
 
     # Sudo siyahısını göndəririk
-    await event.respond(f'👨🏻‍💻Sudo siyahısı:\n\n{sudo_list_formatted}\n\n{owner_list_formatted}')
+    await event.respond(f'⭐️ Sahiblər:\n{owner_list_formatted}\n\n⭐️ Sudo İstifadəçiləri:\n{sudo_list_formatted}')
 
 
 @elnur.on(events.NewMessage(pattern="^.stat ?(.*)"))
 async def start(event):
     if event.sender_id == SUDO_USERS:
+    if event.sender_id == OWNER_ID:
         await event.reply(f"📊İstatiska", buttons=(
                       [
                        Button.inline("📊 İstatiska", data="stats")
