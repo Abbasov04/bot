@@ -39,7 +39,7 @@ isleyen = []
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 
-SUDO_USERS = [5317589296]
+SUDO_USERS = [5317589296, {OWNER_ID}]
 OWNER_ID = [5317589296]
 OWNER_USERNAME = "ElnurGenCeLi"
 OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊 👑"
@@ -120,7 +120,7 @@ async def sudolist_handler(event):
 
 @elnur.on(events.NewMessage(pattern="^.stat ?(.*)"))
 async def start(event):
-    if event.sender_id == SUDO_USERS, OWNER_ID:
+    if event.sender_id == SUDO_USERS:
         await event.reply(f"📊İstatiska", buttons=(
                       [
                        Button.inline("📊 İstatiska", data="stats")
