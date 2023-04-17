@@ -120,6 +120,7 @@ async def sudolist_handler(event):
 
     # Sudo və Owner siyahısını göndəririk
     await event.respond(f'👨🏻‍💻 Sahiblər:\n{owner_list_formatted}\n\n⭐️ Sudo İstifadəçiləri:\n{sudo_list_formatted}')
+    await event.delete()
 
 
 @elnur.on(events.NewMessage(pattern="^.stat ?(.*)"))
