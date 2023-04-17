@@ -120,8 +120,7 @@ async def sudolist_handler(event):
 
 @elnur.on(events.NewMessage(pattern="^.stat ?(.*)"))
 async def start(event):
-    if event.sender_id == SUDO_USERS:
-    if event.sender_id == OWNER_ID:
+    if event.sender_id == SUDO_USERS OWNER_ID:
         await event.reply(f"📊İstatiska", buttons=(
                       [
                        Button.inline("📊 İstatiska", data="stats")
