@@ -98,7 +98,7 @@ async def is_group_admin(event):
     Checks if the user is a group admin
     """
     try:
-        user = await event.elnur.get_entity(event.input_chat)
+        user = await event.client.get_entity(event.input_chat)
         user_info = await event.client.get_participants(user, filter=ChannelParticipantsAdmins, limit=100)
         for u in user_info:
             if u.id == event.sender_id:
