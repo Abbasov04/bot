@@ -13,7 +13,6 @@ from telethon.sessions import StringSession
 from os import remove
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.sync import types
-from telethon.tl.types import
 from telethon.tl.functions.channels
 
 
