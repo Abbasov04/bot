@@ -1,4 +1,4 @@
-# @ElnurGenCeLi @aykhan_s @sjrvan @guliyev_di @edalet_22
+# @ElnurGenCeLi @aykhan_s @edalet_22
 
 from telethon import Button
 from telethon import events
@@ -182,6 +182,12 @@ async def handler(event):
 async def alive(event):
     if event.sender_id == SUDO_USERS:
         await event.reply(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [{__version__}]\n║\n║▻ 💠 Python versiyası: {__python__}\n║▻ 💻 Telethon versiyası: {__telethon__}\n╚═════════════════")
+
+@elnur.on(events.NewMessage(pattern="^/alive ?(.*)"))
+async def alive(event):
+    genceli = await event.reply("╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [{__version__}]\n║\n║▻ 💠 Python versiyası: {__python__}\n║▻ 💻 Telethon versiyası: {__telethon__}\n╚═════════════════\n\n20 Saniyə Sora Siləcəm🎊")
+    await asyncio.sleep(20)
+    await genceli.edit(f"Mesajı Sildim👾")
 
 @elnur.on(events.NewMessage(pattern='/sudolist'))
 async def sudolist_handler(event):
