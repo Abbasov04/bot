@@ -90,7 +90,6 @@ async def handler(event):
                        
                        Button.inline("Hami", data="hami")
                       ],
-                      ],
                     ),
                     link_preview=False)
 
