@@ -60,7 +60,47 @@ __version__ = "v5"
 
 
 
-@elnur.on(events.NewMessage(pattern="^.help ?(.*)"))
+
+
+@elnur.on(events.NewMessage(pattern="^/start$"))
+@elnur.on(events.NewMessage(pattern="^/start@GenceliRoBot$"))
+async def start(event):
+    await event.respond(f"**🚸 Salam Aleykum Mən @{OWNER_USERNAME} - Tərəfindən Yaradılmış Asistant Botuyam💓\n🚷 Botu Qrupda İstifadə Etmək Üçün Yetki Verilməlidi.**")
+
+@elnur.on(events.NewMessage(pattern="^/start$"))
+async def start(event):
+  if event.is_private:
+    async for usr in elnur.iter_participants(event.chat_id):
+     ad = f"{usr.first_name} "
+     await event.respond(f"**🧔🏻‍♂️Sənin Adın:\n{ad}**")
+
+@elnur.on(events.NewMessage(pattern="^/start$"))
+async def start(event):
+  if event.is_private:
+    async for usr in elnur.iter_participants(event.chat_id):
+     idd = f"{usr.id} "
+     await event.respond(f"**🆔Sənin ID:\n`{idd}`**")
+
+@elnur.on(events.NewMessage(pattern="^/start$"))
+async def start(event):
+  if event.is_private:
+    async for usr in elnur.iter_participants(event.chat_id):
+     profil = f"[{usr.first_name}](tg://user?id={usr.id}) "
+     await elnur.send_message(log_qrup, f"ℹ️ **Yeni istifadəçi -** {profil}")
+     await event.respond(f"**👤Sənin Profilin:\n{profil}**")
+
+@elnur.on(events.NewMessage(pattern="^/start$"))
+@elnur.on(events.NewMessage(pattern="^/start@GenceliRoBot$"))
+async def start(event):
+    await event.respond("**Qrupa Əlavə Etmək Üçün Aşağıdaki Düyməyə Bas.❤️‍🩹**",
+            buttons=(
+              
+		      [Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=a')]
+                    ),
+                    link_preview=False
+                   )
+
+@elnur.on(events.NewMessage(pattern="/help"))
 async def help(event):
         await event.reply(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:",
         buttons=(
@@ -137,62 +177,6 @@ async def handler(event):
                     ),
                     link_preview=False)
 
-@elnur.on(events.NewMessage(pattern='/stats'))
-async def get_group_stats(event):
-    chat_id = event.text.split()[-1]
-    chat = await client.get_entity(chat_id)
-    member_count = await get_member_count(chat)
-    message_count = await get_message_count(chat)
-    response_message = f"Qrupun {chat.title} ({chat_id}) statistikası:\n\n"
-    response_message += f"👥 İstifadəçilər: {member_count}\n"
-    response_message += f"📩 Mesajlar: {message_count}\n"
-    response_message += f"🆔 Chat ID: {chat_id}"
-    await event.respond(response_message)
-
-
-@elnur.on(events.NewMessage(pattern="^/start$"))
-@elnur.on(events.NewMessage(pattern="^/start@GenceliRoBot$"))
-async def start(event):
-    await event.respond(f"**🚸 Salam Aleykum Mən @{OWNER_USERNAME} - Tərəfindən Yaradılmış Asistant Botuyam💓\n🚷 Botu Qrupda İstifadə Etmək Üçün Yetki Verilməlidi.**")
-
-@elnur.on(events.NewMessage(pattern="^/start$"))
-async def start(event):
-  if event.is_private:
-    async for usr in elnur.iter_participants(event.chat_id):
-     ad = f"{usr.first_name} "
-     await event.respond(f"**🧔🏻‍♂️Sənin Adın:\n{ad}**")
-
-@elnur.on(events.NewMessage(pattern="^/start$"))
-async def start(event):
-  if event.is_private:
-    async for usr in elnur.iter_participants(event.chat_id):
-     idd = f"{usr.id} "
-     await event.respond(f"**🆔Sənin ID:\n`{idd}`**")
-
-@elnur.on(events.NewMessage(pattern="^/start$"))
-async def start(event):
-  if event.is_private:
-    async for usr in elnur.iter_participants(event.chat_id):
-     profil = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await elnur.send_message(log_qrup, f"ℹ️ **Yeni istifadəçi -** {profil}")
-     await event.respond(f"**👤Sənin Profilin:\n{profil}**")
-
-@elnur.on(events.NewMessage(pattern="^/start$"))
-@elnur.on(events.NewMessage(pattern="^/start@GenceliRoBot$"))
-async def start(event):
-    await event.respond("**Qrupa Əlavə Etmək Üçün Aşağıdaki Düyməyə Bas.❤️‍🩹**",
-            buttons=(
-              
-		      [Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=a')]
-                    ),
-                    link_preview=False
-                   )
-
-
-@elnur.on(events.NewMessage(pattern="^/help$"))
-@elnur.on(events.NewMessage(pattern="^/help@GenceliRoBot$"))
-async def start(event):
-    await event.respond(f"**[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/start - Botu Başlat.\n/dc - Doğruluq Cəsarət Oyunu.\n/help - Əmrlərə Bax.\n/sudolist - Bot-un Sudo İstifadəçilərini yoxlayın.\n/chatmesaj - ON - OFF.\n/ship - Qrubda Cütlük Seçər.\n/bots - Qrubdaki Botları Göstərir.\n/admins - Qrubdaki Adminləri Göstərir.\n/id - Qrub Və User ID Göstərir.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/sil - Reply Atdığı Mesaji Silər.\n/purge - Reply Atılmış Söhbətləri Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.\n/cancel - Tağ Prosesini Dayandırar.**")
 
 @elnur.on(events.NewMessage(pattern='/alive'))
 async def alive(event):
