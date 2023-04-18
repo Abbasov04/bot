@@ -169,7 +169,7 @@ async def handler(event):
 
 @elnur.on(events.callbackquery.CallbackQuery(data="sudo"))
 async def handler(event):
-  sender = await event.get_sender()
+sender = await event.get_sender()
 if sender.id == 5317589296:
      await client.send_message(event.chat_id,"Sen Sudo Deyilsən!")
      return
