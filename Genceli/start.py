@@ -253,11 +253,11 @@ async def handle_delete(event):
 @elnur.on(events.NewMessage(incoming=True, pattern="^[!/]purge$"))
 async def purge_messages(event):
     if event.is_private:
-        await event.respond("Bu əmri yalnız qruplarda icra edə bilərsiniz.", parse_mode='markdown')
+        await event.respond("ℹ️ Bu əmr qruplar üçün etibarlıdır.", parse_mode='markdown')
         return
 
     if not await is_group_admin(event):
-        await event.respond("Bu əmri yalnız qrup yönəticiləri icra edə bilər.", parse_mode='markdown')
+        await event.respond("Bunu həyata keçirmək üçün admin olmalısınız.", parse_mode='markdown')
         return
 
     reply_msg = await event.get_reply_message()
