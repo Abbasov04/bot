@@ -68,10 +68,11 @@ async def help(event):
                        Button.inline("Sudo", data="sudo"),
                        
                        Button.inline("Admin", data="admin"),
-                       
+                      [
                        Button.inline("Oyun", data="oyun"),
                        
                        Button.inline("Hami", data="hami")
+                      ],
                       ],
                     ),
                     link_preview=False)
@@ -85,10 +86,11 @@ async def handler(event):
                        Button.inline("Sudo", data="sudo"),
                        
                        Button.inline("Admin", data="admin"),
-                       
+                      [
                        Button.inline("Oyun", data="oyun"),
                        
                        Button.inline("Hami", data="hami")
+                      ],
                       ],
                     ),
                     link_preview=False)
