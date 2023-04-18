@@ -138,14 +138,6 @@ async def handler(event):
                     link_preview=False)
 
 
-@elnur.on(events.NewMessage(pattern='/s'))
-async def handler(event):
-    # get the two usernames from the user's message
-    usernames = event.message.text.split()[1:]
-    # randomly select a ship outcome
-    outcome = random.choice(ships)
-    # send the ship outcome back to the user
-    await event.reply(f"{usernames[0]} and {usernames[1]}? {outcome} ❤️")
 
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
