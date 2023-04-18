@@ -65,38 +65,38 @@ async def help(event):
         await event.reply(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:",
         buttons=(
                       [
-                       Button.inline("Sudo", data="sudo"),
+                       Button.inline("Hərkəs", data="hami"),
                        
                        Button.inline("Admin", data="admin"),
                       ],[
                        Button.inline("Oyun", data="oyun"),
                        
-                       Button.inline("Hami", data="hami")
+                       Button.inline("Sudo", data="sudo")
                       ],
                     ),
                     link_preview=False)
-                    
+
 
 @elnur.on(events.callbackquery.CallbackQuery(data="helpdata"))
 async def handler(event):
     await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:",
         buttons=(
                       [
-                       Button.inline("Sudo", data="sudo"),
+                       Button.inline("Hərkəs", data="hami"),
                        
                        Button.inline("Admin", data="admin"),
                       ],[
                        Button.inline("Oyun", data="oyun"),
                        
-                       Button.inline("Hami", data="hami")
+                       Button.inline("Sudo", data="sudo")
                       ],
                     ),
                     link_preview=False)
 
 
-@elnur.on(events.callbackquery.CallbackQuery(data="sudo"))
+@elnur.on(events.callbackquery.CallbackQuery(data="hami"))
 async def handler(event):
-    await event.edit(f"📋",
+    await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/start - Botu Başlat.\n/help - Əmrlərə Bax.\n/sudolist - Bot-un Sudo İstifadəçilərini yoxlayın.\n/ship - Qrubda Cütlük Seçər.\n/bots - Qrubdaki Botları Göstərir.\n/admins - Qrubdaki Adminləri Göstərir.\n/id - Qrub Və User ID Göstərir.\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.",
       buttons=(
                       [
                        Button.inline("Geri", data="helpdata")
@@ -107,7 +107,7 @@ async def handler(event):
 
 @elnur.on(events.callbackquery.CallbackQuery(data="admin"))
 async def handler(event):
-    await event.edit(f"📋",
+    await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/chatmesaj - ON - OFF.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/sil - Reply Atdığı Mesaji Silər.\n/purge - Reply Atılmış Söhbətləri Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/cancel - Tağ Prosesini Dayandırar.",
       buttons=(
                       [
                        Button.inline("Geri", data="helpdata")
@@ -118,7 +118,7 @@ async def handler(event):
 
 @elnur.on(events.callbackquery.CallbackQuery(data="oyun"))
 async def handler(event):
-    await event.edit(f"📋",
+    await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:",
       buttons=(
                       [
                        Button.inline("Geri", data="helpdata")
@@ -127,15 +127,16 @@ async def handler(event):
                     link_preview=False)
 
 
-@elnur.on(events.callbackquery.CallbackQuery(data="hami"))
+@elnur.on(events.callbackquery.CallbackQuery(data="sudo"))
 async def handler(event):
-    await event.edit(f"📋",
+    await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.",
       buttons=(
                       [
                        Button.inline("Geri", data="helpdata")
                       ],
                     ),
                     link_preview=False)
+
 
 
 
