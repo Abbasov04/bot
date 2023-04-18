@@ -66,14 +66,8 @@ async def help(event):
         buttons=(
                       [
                        Button.inline("Sudo", data="sudo")
-                      ],
-                      [
                        Button.inline("Admin", data="admin")
-                      ],
-                      [
                        Button.inline("Oyun", data="oyun")
-                      ],
-                      [
                        Button.inline("Hami", data="hami")
                       ],
                     ),
