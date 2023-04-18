@@ -171,7 +171,7 @@ async def handler(event):
 @elnur.on(events.callbackquery.CallbackQuery(data="sudo"))
 async def handler(event):
        sender = await event.get_sender()
-       if sender.id in OWNER:
+       if sender.id in OWNER_ID:
             await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.",
       buttons=(
                       [
