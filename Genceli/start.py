@@ -169,9 +169,9 @@ async def handler(event):
 
 @elnur.on(events.callbackquery.CallbackQuery(data="sudo"))
 async def handler(event):
-sender = await event.get_sender()
-if sender.id == 5317589296:
-     await client.send_message(event.chat_id,"Sen Sudo Deyilsən!")
+       sender = await event.get_sender()
+       if sender.id == 5317589296:
+           await client.send_message(event.chat_id,"Sen Sudo Deyilsən!")
      return
     await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.",
       buttons=(
@@ -180,7 +180,6 @@ if sender.id == 5317589296:
                       ],
                     ),
                     link_preview=False)
-
 
 
 
