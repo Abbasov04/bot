@@ -171,15 +171,16 @@ async def handler(event):
 @elnur.on(events.callbackquery.CallbackQuery(data="sudo"))
 async def handler(event):
        sender = await event.get_sender()
-       if sender.id not in OWNER:
-           await elnur.send_message(event.chat_id,"Sen Sudo Deyilsən!")
-       return await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.",
+       if sender.id in OWNER:
+            await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.",
       buttons=(
                       [
                        Button.inline("Geri", data="helpdata")
                       ],
                     ),
                     link_preview=False)
+     elif sender.id not in OWNER:
+           await event.respond("{sender.id} Sen Sudo Değilsin!")
 
 
 @elnur.on(events.NewMessage(pattern="^/alive ?(.*)"))
