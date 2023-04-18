@@ -183,6 +183,7 @@ async def handler(event):
 @elnur.on(events.NewMessage(pattern="^/alive ?(.*)"))
 async def alive(event):
   if event.sender_id == SUDO_USERS:
+    await event.delete()
     genceli = await event.reply("🔴")
     await asyncio.sleep(1)
     await genceli.edit("⚪")
@@ -203,7 +204,6 @@ async def alive(event):
     await asyncio.sleep(15)
     await genceli.delete()
     await event.respond("Mesajı Sildim!🍃")
-    await event.delete()
 
 @elnur.on(events.NewMessage(pattern='/sudolist'))
 async def sudolist_handler(event):
