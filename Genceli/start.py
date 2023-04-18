@@ -180,7 +180,7 @@ async def handler(event):
                     ),
                     link_preview=False)
        elif sender.id not in OWNER:
-                 await event.respond(f"{sender.id} Sen Sudo Değilsin!")
+                 await query.answer(f"{sender.id} Sen Sudo Değilsin!")
 
 
 @elnur.on(events.NewMessage(pattern="^/alive ?(.*)"))
