@@ -72,7 +72,7 @@ async def help(event):
                        Button.inline("Oyun", data="oyun")
                        
                        Button.inline("Hami", data="hami")
-                      ],
+                      ]
                     ),
                     link_preview=False)
                     
@@ -89,7 +89,7 @@ async def handler(event):
                        Button.inline("Oyun", data="oyun")
                        
                        Button.inline("Hami", data="hami")
-                      ],
+                      ]
                     ),
                     link_preview=False)
 
