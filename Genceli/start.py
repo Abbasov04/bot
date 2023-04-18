@@ -178,10 +178,7 @@ async def handler(event):
                     link_preview=False)
 
 
-@elnur.on(events.NewMessage(pattern='/alive'))
-async def alive(event):
-    if event.sender_id == SUDO_USERS:
-        await event.reply(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [{__version__}]\n║\n║▻ 💠 Python versiyası: {__python__}\n║▻ 💻 Telethon versiyası: {__telethon__}\n╚═════════════════")
+
 
 @elnur.on(events.NewMessage(pattern="^/alive ?(.*)"))
 async def alive(event):
