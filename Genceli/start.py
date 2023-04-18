@@ -200,7 +200,9 @@ async def alive(event):
     await genceli.edit("⚪Mən Aktif")
     await asyncio.sleep(1)
     await genceli.edit("🔴Mən Aktifəm")
-    
+    await asyncio.sleep(5)
+    await genceli.delete()
+    await event.respond("⚪ Mesajı Sildim!")
 
 @elnur.on(events.NewMessage(pattern='/sudolist'))
 async def sudolist_handler(event):
