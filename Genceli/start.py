@@ -65,14 +65,14 @@ async def help(event):
         await event.reply(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:",
         buttons=(
                       [
-                       Button.inline("Sudo", data="sudo")
+                       Button.inline("Sudo", data="sudo"),
                        
-                       Button.inline("Admin", data="admin")
+                       Button.inline("Admin", data="admin"),
                        
-                       Button.inline("Oyun", data="oyun")
+                       Button.inline("Oyun", data="oyun"),
                        
                        Button.inline("Hami", data="hami")
-                      ]
+                      ],
                     ),
                     link_preview=False)
                     
@@ -82,14 +82,14 @@ async def handler(event):
     await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:",
         buttons=(
                       [
-                       Button.inline("Sudo", data="sudo")
+                       Button.inline("Sudo", data="sudo"),
                        
-                       Button.inline("Admin", data="admin")
+                       Button.inline("Admin", data="admin"),
                        
-                       Button.inline("Oyun", data="oyun")
+                       Button.inline("Oyun", data="oyun"),
                        
                        Button.inline("Hami", data="hami")
-                      ]
+                      ],
                     ),
                     link_preview=False)
 
