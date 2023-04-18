@@ -4,7 +4,7 @@ from telethon import Button
 from telethon import events
 from telethon import errors
 from telethon import TelegramClient
-import random, os, logging, asyncio, query
+import random, os, logging, asyncio
 from asyncio import sleep
 from time import time
 from telethon.tl.types import ChannelParticipantsBots
