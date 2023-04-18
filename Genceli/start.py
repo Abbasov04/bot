@@ -53,8 +53,8 @@ log_qrup = -1001875414285
 BOT_USERNAME = "GenceliRoBot"
 BOT_NAME = "ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ"
 
-__python__ = "3.11.2"
-__telethon__ = "1.27.0"
+__python__ = "3.11.3"
+__telethon__ = "1.28.5"
 __version__ = "v5"
 
 
