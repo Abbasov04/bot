@@ -172,7 +172,7 @@ async def handler(event):
 async def handler(event):
        sender = await event.get_sender()
        if sender.id not in OWNER:
-           await client.send_message(event.chat_id,"Sen Sudo Deyilsən!")
+           await elnur.send_message(event.chat_id,"Sen Sudo Deyilsən!")
        return await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.",
       buttons=(
                       [
