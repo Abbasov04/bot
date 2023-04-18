@@ -140,7 +140,7 @@ async def handler(event):
 @elnur.on(events.NewMessage(pattern='/stats'))
 async def get_group_stats(event):
     chat_id = event.text.split()[-1]
-    chat = await elnur.get_entity(chat_id)
+    chat = await client.get_entity(chat_id)
     member_count = await get_member_count(chat)
     message_count = await get_message_count(chat)
     response_message = f"Qrupun {chat.title} ({chat_id}) statistikası:\n\n"
