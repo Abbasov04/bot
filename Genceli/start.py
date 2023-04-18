@@ -158,7 +158,7 @@ async def handler(event):
 
 @elnur.on(events.callbackquery.CallbackQuery(data="oyun"))
 async def handler(event):
-    await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:",
+    await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/dc - Doğruluq Cəsarət Oyunu.",
       buttons=(
                       [
                        Button.inline("Geri", data="helpdata")
