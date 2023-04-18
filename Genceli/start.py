@@ -179,7 +179,7 @@ async def handler(event):
                       ],
                     ),
                     link_preview=False)
-         elif sender.id not in OWNER_ID:
+       elif sender.id not in OWNER_ID:
                  await event.respond(f"{sender.id} Sen Sudo Değilsin!")
 
 
