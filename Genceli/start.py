@@ -182,9 +182,25 @@ async def handler(event):
 
 @elnur.on(events.NewMessage(pattern="^/alive ?(.*)"))
 async def alive(event):
-    genceli = await event.reply("╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [{__version__}]\n║\n║▻ 💠 Python versiyası: {__python__}\n║▻ 💻 Telethon versiyası: {__telethon__}\n╚═════════════════\n\n20 Saniyə Sora Siləcəm🎊")
-    await asyncio.sleep(20)
-    await genceli.edit(f"Mesajı Sildim👾")
+  if event.sender_id == SUDO_USERS:
+    genceli = await event.reply("🔴")
+    await asyncio.sleep(1)
+    await genceli.edit("⚪")
+    await asyncio.sleep(1)
+    await genceli.edit("🔴")
+    await asyncio.sleep(1)
+    await genceli.edit("⚪")
+    await asyncio.sleep(1)
+    await genceli.edit("🔴")
+    await asyncio.sleep(1)
+    await genceli.edit("⚪Mən")
+    await asyncio.sleep(1)
+    await genceli.edit("🔴Mən Ak")
+    await asyncio.sleep(1)
+    await genceli.edit("⚪Mən Aktif")
+    await asyncio.sleep(1)
+    await genceli.edit("🔴Mən Aktifəm")
+    
 
 @elnur.on(events.NewMessage(pattern='/sudolist'))
 async def sudolist_handler(event):
