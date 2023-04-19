@@ -63,7 +63,39 @@ __version__ = "v2"
 
 
 
-
+@elnur.on(events.NewMessage(pattern="^/reklam$"))
+async def reklam(event):
+    if not event.is_reply:
+        return await event.edit("`Xahiş edirəm bir mesaja cavab verin.`")
+    
+    vaxt = event.pattern_match.group(1)
+    if (vaxt == ''):
+        vaxt = 1.5
+    else:
+        try:
+            vaxt = float(vaxt)
+        except:
+            vaxt = 1.5
+    await event.edit(f'```{vaxt} saniyə gözləyirəm...```')
+    mesaj = await event.get_reply_message()
+    await event.edit('```Qruplar gətirilir...```')
+    gruplar = await event.client.get_dialogs()
+    await event.edit(f'```{len(gruplar)} ədəd qrup tapdım! Qruplar seçilir...```')
+    
+    i = 0
+    for grup in gruplar:
+        if grup.is_group:
+            await event.edit(f'```{grup.name} qrupuna mesajınız göndərilir...```')
+            try:
+                await grup.send_message(mesaj)
+            except:
+                await event.edit(f'```❌ {grup.name} qrupuna mesajınız göndərilə bilmədi!```')
+                await asyncio.sleep(vaxt)
+                continue
+            i += 1
+            await event.edit(f'```✅ {grup.name} qrupuna mesajınız göndərildi!```')
+            await asyncio.sleep(vaxt)
+    await event.edit(f'```✅ {i} ədəd qrupa mesajınız göndərildi!```')
 
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
