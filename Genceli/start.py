@@ -69,9 +69,9 @@ async def ekle_grup(event):
 
 @elnur.on(events.NewMessage(pattern='/gruplar'))
 async def ogren(event):
-    global gruplar,OWNER_ID
+    global gruplar,OWNER
     sender = await event.get_sender()
-  if sender.id not in OWNER_ID:
+  if sender.id not in OWNER:
     await event.reply(f"🕊️ Toplam Gruplar\n\n☢️ Algılanan Gruplar: {len(gruplar)}")
 
 
