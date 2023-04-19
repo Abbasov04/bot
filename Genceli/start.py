@@ -57,44 +57,12 @@ __python__ = "3.11.3"
 __telethon__ = "1.28.5"
 __version__ = "v5"
 
-min_number = 1
-max_number = 100
-max_guesses = 50
 
-@elnur.on(events.NewMessage(pattern='/oyun'))
-async def start(event):
-    # Oyunu başlatın
-    await event.respond('Sayı tahmin oyununa hoş geldiniz! 1 ile 100 arasında bir sayı tuttum. 5 tahmin hakkınız var. Tahmininizi girin:')
 
-number = random.randint(min_number, max_number)
 
-    guesses = 1
 
-    @elnur.on(events.NewMessage)
-    async def handle_guess(event):
-        nonlocal guesses
-        try:
-            guess = int(event.message.text)
-        except ValueError:
-            await event.respond('Lütfen bir sayı girin.')
-            return
 
-        if guess < min_number or guess > max_number:
-            await event.respond(f'Lütfen {min_number} ile {max_number} arasında bir sayı girin.')
-            return
 
-        guesses += 1
-
-        if guess == number:
-            await event.respond(f'Tebrikler! {guess} sayısını {guesses} tahminde buldunuz.')
-            client.remove_event_handler(handle_guess)
-        elif guesses == max_guesses:
-            await event.respond(f'Maalesef, {max_guesses} tahmin hakkınız bitti. Doğru sayı {number} idi.')
-            client.remove_event_handler(handle_guess)
-        elif guess < number:
-            await event.respond(f'Daha Yüksek Söyle')
-        else:
-            await event.respond(f'Daha Düşük Söyle')
 
 
 
