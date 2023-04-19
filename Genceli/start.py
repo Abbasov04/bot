@@ -56,7 +56,23 @@ BOT_NAME = "ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ"
 __python__ = "3.11.1"
 __telethon__ = "1.27.0"
 __version__ = "v2"
+gruplar = []
+OWNER = [5333072972]
 
+@elnur.on(events.NewMessage)
+async def ekle_grup(event):
+    global gruplar
+    if event.chat_id in gruplar:
+         return
+    gruplar.append(event.chat_id)
+
+
+@elnur.on(events.NewMessage(pattern='/gruplar')
+async def ogren(event):
+    global gruplar,OWNER_ID
+    sender = await event.get_sender()
+  if sender.id not in OWNER_ID:
+    await event.reply(f"🕊️ Toplam Gruplar\n\n☢️ Algılanan Gruplar: {len(gruplar)}")
 
 
 
