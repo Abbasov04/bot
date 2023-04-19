@@ -4,7 +4,7 @@ from telethon import Button
 from telethon import events
 from telethon import errors
 from telethon import TelegramClient
-import random, os, logging, asyncio
+import random, os, logging, asyncio, register
 from asyncio import sleep
 from time import time
 from telethon.tl.types import ChannelParticipantsBots
@@ -63,8 +63,8 @@ __version__ = "v2"
 
 
 
-@elnur(outgoing=True, pattern="^.reklam ?(.*)")
-@elnur(outgoing=True, pattern="^.broadcast ?(.*)")
+@register(outgoing=True, pattern="^.reklam ?(.*)")
+@register(outgoing=True, pattern="^.broadcast ?(.*)")
 async def reklam(event):
     if not event.is_reply:
         return await event.edit("`Xahiş edirəm bir mesaja cavab verin.`")
