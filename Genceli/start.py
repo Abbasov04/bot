@@ -61,7 +61,7 @@ min_number = 1
 max_number = 100
 max_guesses = 50
 
-@elnur.on(events.NewMessage(pattern='/start'))
+@elnur.on(events.NewMessage(pattern='/oyun'))
 async def start(event):
     # Oyunu başlatın
     await event.respond('Sayı tahmin oyununa hoş geldiniz! 1 ile 100 arasında bir sayı tuttum. 5 tahmin hakkınız var. Tahmininizi girin:')
