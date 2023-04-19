@@ -68,7 +68,7 @@ async def start(event):
 
 number = random.randint(min_number, max_number)
 
-    guesses = 0
+    guesses = 1
 
     @elnur.on(events.NewMessage)
     async def handle_guess(event):
