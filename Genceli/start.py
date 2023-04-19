@@ -55,7 +55,7 @@ BOT_NAME = "ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ"
 
 __python__ = "3.11.1"
 __telethon__ = "1.27.0"
-__version__ = "v2.11.1"
+__version__ = "v2"
 
 
 
@@ -198,7 +198,7 @@ async def alive(event):
     await genceli.edit("🟢")
     await asyncio.sleep(1.5)
     await genceli.edit(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [{__version__}]\n║\n║▻ 💠 Python versiyası: {__python__}\n║▻ 💻 Telethon versiyası: {__telethon__}\n╚═════════════════")
-    await asyncio.sleep(15)
+    await asyncio.sleep(20)
     await genceli.delete()
     await event.respond("Mesajı Sildim!🍃")
 
