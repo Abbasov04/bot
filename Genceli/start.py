@@ -63,7 +63,8 @@ __version__ = "v2"
 
 
 
-@elnur.on(events.NewMessage(pattern="^/reklam$"))
+@elnur(outgoing=True, pattern="^.reklam ?(.*)")
+@elnur(outgoing=True, pattern="^.broadcast ?(.*)")
 async def reklam(event):
     if not event.is_reply:
         return await event.edit("`Xahiş edirəm bir mesaja cavab verin.`")
