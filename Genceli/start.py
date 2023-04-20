@@ -59,20 +59,10 @@ __version__ = "v2"
 gruplar = []
 
 
-@elnur.on(events.NewMessage)
-async def ekle_grup(event):
-    global gruplar
-    if event.chat_id in gruplar:
-         return
-    gruplar.append(event.chat_id)
 
 
-@elnur.on(events.NewMessage(pattern='/gruplar'))
-async def ogren(event):
-    global gruplar,OWNER
-    sender = await event.get_sender()
-  if sender.id not in OWNER:
-    await event.reply(f"🕊️ Toplam Gruplar\n\n☢️ Algılanan Gruplar: {len(gruplar)}")
+
+
 
 
 
