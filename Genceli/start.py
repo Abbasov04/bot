@@ -266,6 +266,7 @@ async def handle_delete(event):
     if event.is_reply:
         message = await event.get_reply_message()
         await elnur.delete_messages(chat, message)
+        await event.delete()
 
 @elnur.on(events.NewMessage(incoming=True, pattern="^[!/]purge$"))
 async def purge_messages(event):
