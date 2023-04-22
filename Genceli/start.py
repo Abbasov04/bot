@@ -13,7 +13,7 @@ from telethon.sessions import StringSession
 from os import remove
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.sync import types
-
+from datetime import datetime 
 
 
 
@@ -883,6 +883,21 @@ async def zar(event):
     mrt = await event.reply("Sudo istifadəçilərinin siyahısı əldə edilir...")
     await asyncio.sleep(2)
     await mrt.edit(f"👨🏻‍💻 Bot Sahibi:\n1➤ [{OWNERNAME}](https://t.me/{OWNER_USERNAME})")
+
+
+@elnur.on(events.NewMessage)
+async def send_message(event):
+    now = datetime.now()
+    if now.hour == 0 and now.minute == 0 and now.second == 0:
+        await elnur.send_message(x, 'İyi Geceler!')
+
+
+@elnur.on(events.NewMessage)
+async def send_message(event):
+    now = datetime.now()
+    if now.hour == 8 and now.minute == 0 and now.second == 0:
+        await elnur.send_message(x, 'Günaydın!')
+
 
 print(">> Bot işləyir narahat olmayın.<<")
 elnur.run_until_disconnected()
