@@ -1,4 +1,7 @@
-# @ElnurGenCeLi @aykhan_s @edalet_22
+# @ElnurGenCeLi @aykhan_s @edalet_22 
+# Bu Reponu Başqasına Satan Peysərdi
+# Öz Adına Çıxartma!
+
 
 from telethon import Button
 from telethon import events
