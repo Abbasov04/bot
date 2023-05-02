@@ -83,7 +83,7 @@ async def start(event):
      ad = f"{usr.first_name} "
      idd = f"{usr.id} "
      profil = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await elnur.send_message(log_qrup, f"ℹ️ **Yeni istifadəçi -** {profil}")
+     await elnur.send_message(log_qrup, f"ℹ️ **Yeni istifadəçi -** \n{ad}\n{profil}\n{idd}")
     await event.respond(f"**🚸 Salam Aleykum Mən @{OWNER_USERNAME} - Tərəfindən Yaradılmış Asistant Botuyam💓\n🚷 Botu Qrupda İstifadə Etmək Üçün Yetki Verilməlidi.**")
     await event.respond(f"**🧔🏻‍♂️Sənin Adın:\n{ad}**")
     await event.respond(f"**🆔Sənin ID:\n`{idd}`**")
