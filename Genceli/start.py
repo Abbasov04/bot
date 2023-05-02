@@ -79,7 +79,7 @@ gruplar = []
 @elnur.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   if event.is_group:
-    return await elnur.send_message(event.chat_id, f"**{BOT_NAME}'un Əmrlər üçün?.Bot'a daxil olub.**",
+    return await elnur.send_message(event.chat_id, f"**[{BOT_NAME}](http://t.me/{BOT_USERNAME})'un Əmrlər üçün?.Bot'a daxil olub.**",
     buttons=(
               
 		      [Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?start=start')]
