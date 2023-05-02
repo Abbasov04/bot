@@ -78,6 +78,8 @@ gruplar = []
 
 @elnur.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
+  if event.is_group:
+    return await elnur.send_message(event.chat_id, f"Məni qrupunuza aldığınız üçün təşşəkür edirəm",)
   if event.is_private:
     async for usr in elnur.iter_participants(event.chat_id):
      ad = f"{usr.first_name} "
@@ -95,8 +97,6 @@ async def start(event):
                     ),
                     link_preview=False
                    )
-if event.is_group:
-    return await elnur.send_message(event.chat_id, f"Məni qrupunuza aldığınız üçün təşşəkür edirəm",)
     
 
 
