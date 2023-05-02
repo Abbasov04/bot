@@ -82,7 +82,7 @@ async def start(event):
     return await elnur.send_message(event.chat_id, f"**[{BOT_NAME}](http://t.me/{BOT_USERNAME})'un Əmrlər üçün?.Bot'a daxil olub.**",
     buttons=(
               
-		      [Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?start=start')]
+		      [Button.url('💡 Bota Keç', f'http://t.me/{BOT_USERNAME}?start=start')]
                     ),
                     link_preview=False
                    )
