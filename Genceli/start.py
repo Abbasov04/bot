@@ -51,7 +51,7 @@ SUDO = [5317589296]
 OWNER_ID = 5317589296 
 OWNER = [5317589296]
 OWNER_USERNAME = "ElnurGenCeLi"
-OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊 👑"
+OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊"
 log_qrup = -1001875414285
 BOT_USERNAME = "GenceliRoBot"
 BOT_NAME = "ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ"
@@ -83,7 +83,7 @@ async def start(event):
      ad = f"{usr.first_name} "
      idd = f"{usr.id} "
      profil = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await elnur.send_message(log_qrup, f"ℹ️ **Yeni istifadəçi -** \n{ad}\n{profil}\n{idd}")
+     await elnur.send_message(log_qrup, f"ℹ️ **Yeni istifadəçi -**\n- {profil}\n- {idd}")
     await event.respond(f"**🚸 Salam Aleykum Mən @{OWNER_USERNAME} - Tərəfindən Yaradılmış Asistant Botuyam💓\n🚷 Botu Qrupda İstifadə Etmək Üçün Yetki Verilməlidi.**")
     await event.respond(f"**🧔🏻‍♂️Sənin Adın:\n{ad}**")
     await event.respond(f"**🆔Sənin ID:\n`{idd}`**")
@@ -176,7 +176,7 @@ async def handler(event):
                     ),
                     link_preview=False)
        elif sender.id not in OWNER:
-                 await event.respond(f"{sender.id} Sen Sudo Değilsin!")
+                 await event.respond(f"{sender.id} Sən Sudo Değilsən!")
 
 
 @elnur.on(events.NewMessage(pattern="^/alive ?(.*)"))
@@ -190,7 +190,7 @@ async def alive(event):
     await genceli.edit("Aktivəm")
     await asyncio.sleep(1.5)
     await genceli.edit(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [{__version__}]\n║\n║▻ 💠 Python versiyası: {__python__}\n║▻ 💻 Telethon versiyası: {__telethon__}\n╚═════════════════")
-    await asyncio.sleep(20)
+    await asyncio.sleep(15)
     await genceli.delete()
     await event.respond("Mesajı Sildim!🍃")
 
