@@ -183,11 +183,11 @@ async def handler(event):
 async def alive(event):
   if event.sender_id == SUDO_USERS:
     await event.delete()
-    genceli = await event.reply("🔴")
+    genceli = await event.reply("Ak")
     await asyncio.sleep(1.5)
-    await genceli.edit("🟡")
+    await genceli.edit("Aktiv")
     await asyncio.sleep(1.5)
-    await genceli.edit("🟢")
+    await genceli.edit("Aktivəm")
     await asyncio.sleep(1.5)
     await genceli.edit(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [{__version__}]\n║\n║▻ 💠 Python versiyası: {__python__}\n║▻ 💻 Telethon versiyası: {__telethon__}\n╚═════════════════")
     await asyncio.sleep(20)
@@ -884,6 +884,6 @@ async def send_message(event):
     if now.hour == 8 and now.minute == 0 and now.second == 0:
         await elnur.send_message(x, 'Günaydın!')
 
-
-print(">> Bot işləyir narahat olmayın.<<")
+#print i silmə.!
+print(">>Aktiv ... @GenCeLiRoBot Sahib @ElnurGenCeLi .<<")
 elnur.run_until_disconnected()
