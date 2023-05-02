@@ -96,6 +96,18 @@ async def start(event):
                     link_preview=False
                    )
 
+@elnur.on(events.NewMessage(pattern="^/start$"))
+async def start(event):
+  if event.is_group:
+    async for usr in elnur.iter_participants(event.chat_id):
+      await event.reply(f"**{BOT_NAME}'un Əmrlər üçün?.Bot'a daxil olub.**",
+      buttons=(
+              
+		      [Button.url('💡 Bota Keç', f'http://t.me/{BOT_USERNAME}?start=start')]
+                    ),
+                    link_preview=False
+                   )
+
 @elnur.on(events.NewMessage(pattern="/help"))
 async def help(event):
         await event.reply(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:",
