@@ -54,7 +54,7 @@ OWNER_USERNAME = "ElnurGenCeLi"
 OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊"
 log_qrup = -1001875414285
 BOT_USERNAME = "GenceliRoBot"
-BOT_NAME = "ɢᴇɴᴄᴇʟɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ"
+BOT_NAME = "ɢᴇɴᴄᴇʟɪ"
 
 __python__ = "3.11.1"
 __telethon__ = "1.27.0"
