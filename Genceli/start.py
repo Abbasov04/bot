@@ -79,7 +79,13 @@ gruplar = []
 @elnur.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   if event.is_group:
-    return await elnur.send_message(event.chat_id, f"Məni qrupunuza aldığınız üçün təşşəkür edirəm",)
+    return await elnur.send_message(event.chat_id, f"**{BOT_NAME}'un Əmrlər üçün?.Bot'a daxil olub.**",
+    buttons=(
+              
+		      [Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?start=start')]
+                    ),
+                    link_preview=False
+                   )
   if event.is_private:
     async for usr in elnur.iter_participants(event.chat_id):
      ad = f"{usr.first_name} "
