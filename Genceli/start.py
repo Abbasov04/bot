@@ -82,7 +82,7 @@ async def start(event):
     return await elnur.send_message(event.chat_id, f"**[{BOT_NAME}](http://t.me/{BOT_USERNAME})'un Əmrlər üçün?.Bot'a daxil olub.**",
     buttons=(
               
-		      [Button.url('💡 Bota Keç', f'tg://openmessage?user_id=5746131579')]
+		      [Button.url('💡 Bota Keç', f'https://t.me/{BOT_USERNAME}?start=start')]
                     ),
                     link_preview=False
                    )
