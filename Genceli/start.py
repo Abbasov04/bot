@@ -110,36 +110,7 @@ async def sudoadd(event):
         except:
             return await event.respond("Sudo istifadəçi əlavə etmək alınmadı ❌")
 
-@elnur.register(events.NewMessage(pattern=r'^delsudo|^rmsudo', from_users=[OWNER_ID]))
-async def del_sudo(event):
-    try:
-        await event.delete()
-    except:
-        pass
-    if not event.is_reply:
-        # Yanıtlanan bir mesaj yoksa, kullanıcı adı/ID alınır
-        if len(event.text.split()) != 2:
-            return await event.respond(
-                "Kullanıcının mesajına yanıt verin veya kullanıcı adı/ID girin"
-            )
-        user = event.text.split()[1]
-        if "@" in user:
-            user = user.replace("@", "")
-        try:
-            user = await event.client.get_entity(user)
-            if isinstance(user, User):
-                user_id = user.id
-            else:
-                return await event.respond("Böyle bir kullanıcı bulunamadı")
-        except:
-            return await event.respond("Sudo kullanıcısı silinemedi")
-    else:
-        # Yanıtlanan bir mesaj varsa, mesajın gönderen kullanıcısı seçilir
-        user_id = (await event.get_reply_message()).sender_id
-    if user_id not in SUDO_USERS:
-        return await event.respond(f"{user.mention} sudo kullanıcısı değil ❌")
-    SUDO_USERS.remove(user_id)
-    return await event.respond(f"{user.mention} sudo kullanıcısı olarak silindi 🗑️")
+
     
 
 
