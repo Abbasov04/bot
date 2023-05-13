@@ -52,6 +52,7 @@ OWNER_ID = 5317589296
 OWNER = [5317589296]
 OWNER_USERNAME = "ElnurGenCeLi"
 OWNERNAME = "𝐆Ξ𝐍𝐂Ξ𝐋𝐈✸🥃🧊"
+SUPPORT_KANAL = "GenceliReklam"
 log_qrup = -1001875414285
 BOT_USERNAME = "GenceliRoBot"
 BOT_NAME = "ɢᴇɴᴄᴇʟɪ"
@@ -137,8 +138,13 @@ async def start(event):
               
 		      [
 		        Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=a')
-		      ],[
-		        Button.inline("Əmrlər❤️", data="helpdata")]
+		        ],[
+		        Button.inline("Əmrlər❤️", data="helpdata")
+		        
+		        Button.url('Kanal📣', f'http://t.me/{SUPPORT_KANAL}')
+		        ],[
+		        Button.url('Bot Sahibi🧑🏻‍💻', f'http://t.me/{OWNER_USERNAME}')
+		          ],
                     ),
                     link_preview=False
                    )
