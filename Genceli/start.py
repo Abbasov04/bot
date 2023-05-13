@@ -150,6 +150,24 @@ async def start(event):
                    )
     
 
+@elnur.on(events.callbackquery.CallbackQuery(data="start"))
+async def handler(event):
+    await event.edit(f"Qrupa Əlavə Etmək Üçün Aşağıdaki Düyməyə Bas.❤️‍🩹**",
+            buttons=(
+              
+		      [
+		        Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=a'),
+		        ],[
+		        Button.inline("Əmrlər❤️", data="helpdata"),
+		        
+		        Button.url('Kanal📣', f'http://t.me/{SUPPORT_KANAL}'),
+		        ],[
+		        Button.url('Bot Sahibi🧑🏻‍💻', f'http://t.me/{OWNER_USERNAME}')
+		          ],
+                    ),
+                    link_preview=False
+                   )
+
 
 @elnur.on(events.NewMessage(pattern="/help"))
 async def help(event):
@@ -162,7 +180,9 @@ async def help(event):
                       ],[
                        Button.inline("Oyun", data="oyun"),
                        
-                       Button.inline("Sudo", data="sudo")
+                       Button.inline("Sudo", data="sudo"),
+                       ],[
+                       Button.inline("Geri◀️", data="start"),
                       ],
                     ),
                     link_preview=False)
