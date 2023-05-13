@@ -137,11 +137,11 @@ async def start(event):
             buttons=(
               
 		      [
-		        Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=a')
+		        Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=a'),
 		        ],[
-		         Button.inline("Əmrlər❤️", data="helpdata")
+		        Button.inline("Əmrlər❤️", data="helpdata"),
 		        
-		        Button.url('Kanal📣', f'http://t.me/{SUPPORT_KANAL}')
+		        Button.url('Kanal📣', f'http://t.me/{SUPPORT_KANAL}'),
 		        ],[
 		        Button.url('Bot Sahibi🧑🏻‍💻', f'http://t.me/{OWNER_USERNAME}')
 		          ],
