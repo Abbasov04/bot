@@ -88,7 +88,7 @@ async def start(event):
     await event.reply(f"**[{BOT_NAME}](http://t.me/{BOT_USERNAME})'un Əmrlər üçün?.Bot'a daxil olub.**",
     buttons=(
               
-		      [Button.url('💡 Bota Keç', f'https://t.me/{BOT_USERNAME}?start=start'),
+		      [Button.url('💡 Bota Keç', f'https://t.me/{BOT_USERNAME}?start'),
 		      
 		      Button.url('👨🏻‍💻 Sahib', f'https://t.me/{OWNER_USERNAME}')]
                     ),
