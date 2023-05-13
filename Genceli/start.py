@@ -132,14 +132,12 @@ async def start(event):
      idd = f"{usr.id} "
      profil = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await elnur.send_message(log_qrup, f"ℹ️ **Yeni istifadəçi -**\n- {profil}\n- {idd}")
-    await event.respond(f"**🚸 Salam Aleykum Mən @{OWNER_USERNAME} - Tərəfindən Yaradılmış Asistant Botuyam💓\n🚷 Botu Qrupda İstifadə Etmək Üçün Yetki Verilməlidi.**")
-    await event.respond(f"**🧔🏻‍♂️Sənin Adın:\n{ad}**")
-    await event.respond(f"**🆔Sənin ID:\n`{idd}`**")
-    await event.respond(f"**👤Sənin Profilin:\n{profil}**")
     await event.respond("**Qrupa Əlavə Etmək Üçün Aşağıdaki Düyməyə Bas.❤️‍🩹**",
             buttons=(
               
-		      [Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=a')]
+		      [Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=a'),]
+		      
+		      [Button.inline("Əmrlər❤️", data="helpdata")]
                     ),
                     link_preview=False
                    )
