@@ -42,7 +42,7 @@ user_sayi = []
 
 isleyen = []
 
-#Client 
+#Client i silmə !
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 
@@ -218,7 +218,7 @@ async def handler(event):
 async def handler(event):
        sender = await event.get_sender()
        if sender.id in OWNER:
-            await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.",
+            await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.\n/addsudo - Sudo Siyahısına Əlavə Edir.",
       buttons=(
                       [
                        Button.inline("Geri", data="helpdata")
@@ -935,5 +935,5 @@ async def send_message(event):
         await elnur.send_message(x, 'Günaydın!')
 
 #print i silmə.!
-print(">>Aktiv ... @GenCeLiRoBot Sahib @ElnurGenCeLi .<<")
+print(f">>Aktiv ... @{BOT_USERNAME} Sahib @ElnurGenCeLi .<<")
 elnur.run_until_disconnected()
