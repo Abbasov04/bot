@@ -1,4 +1,4 @@
-# @ElnurGenCeLi @aykhan_s @edalet_22 
+# @ElnurGenCeLi  @edalet_22 
 # Bu Reponu Başqasına Satan Peysərdi
 # Öz Adına Çıxartma!
 
@@ -123,7 +123,7 @@ async def start(event):
               
 		      [Button.url('💡 Bota Keç', f'https://t.me/{BOT_USERNAME}?start=start'),
 		      
-		      Button.url('👨🏻‍💻 Sahin', f'https://t.me/{OWNER_USERNAME}')]
+		      Button.url('👨🏻‍💻 Sahib', f'https://t.me/{OWNER_USERNAME}')]
                     ),
                     link_preview=False
                    )
