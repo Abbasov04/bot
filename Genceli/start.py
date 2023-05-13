@@ -135,9 +135,10 @@ async def start(event):
     await event.respond("**Qrupa Əlavə Etmək Üçün Aşağıdaki Düyməyə Bas.❤️‍🩹**",
             buttons=(
               
-		      [Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=a'),]
-		      
-		      [Button.inline("Əmrlər❤️", data="helpdata")]
+		      [
+		        Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=a')
+		      ],[
+		        Button.inline("Əmrlər❤️", data="helpdata")]
                     ),
                     link_preview=False
                    )
