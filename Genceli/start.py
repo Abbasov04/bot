@@ -152,7 +152,7 @@ async def start(event):
 
 @elnur.on(events.callbackquery.CallbackQuery(data="start"))
 async def handler(event):
-    await event.edit(f"Qrupa Əlavə Etmək Üçün Aşağıdaki Düyməyə Bas.❤️‍🩹**",
+    await event.edit(f"**Qrupa Əlavə Etmək Üçün Aşağıdaki Düyməyə Bas.❤️‍🩹**",
             buttons=(
               
 		      [
@@ -199,7 +199,9 @@ async def handler(event):
                       ],[
                        Button.inline("Oyun", data="oyun"),
                        
-                       Button.inline("Sudo", data="sudo")
+                       Button.inline("Sudo", data="sudo"),
+                       ],[
+                       Button.inline("Geri◀️", data="start"),
                       ],
                     ),
                     link_preview=False)
