@@ -87,7 +87,7 @@ SUDO_USERS = set()
 @elnur.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   if event.is_group:
-    await event.reply(f"**[{BOT_NAME}](http://t.me/{BOT_USERNAME})'un Əmrlər üçün?.Bot'a daxil olub.**",
+    await event.reply(f"**[{BOT_NAME}](http://t.me/{BOT_USERNAME})'un Əmrlər üçün?.Bot'a daxil olun.**",
     buttons=(
               
 		      [Button.url('💡 Bota Keç', f'https://t.me/{BOT_USERNAME}?start'),
@@ -181,7 +181,7 @@ async def handler(event):
     await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/start - Botu Başlat.\n/help - Əmrlərə Bax.\n/sudolist - Bot-un Sudo İstifadəçilərini yoxlayın.\n/chatmesaj - ON - OFF.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/ship - Qrubda Cütlük Seçər.\n/bots - Qrubdaki Botları Göstərir.\n/admins - Qrubdaki Adminləri Göstərir.\n/id - Qrub Və User ID Göstərir.",
       buttons=(
                       [
-                       Button.inline("Geri", data="helpdata")
+                       Button.inline("Geri◀️", data="helpdata")
                       ],
                     ),
                     link_preview=False)
@@ -192,7 +192,7 @@ async def handler(event):
     await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/sil - Reply Atdığı Mesaji Silər.\n/purge - Reply Atılmış Söhbətləri Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/cancel - Tağ Prosesini Dayandırar.",
       buttons=(
                       [
-                       Button.inline("Geri", data="helpdata")
+                       Button.inline("Geri◀️", data="helpdata")
                       ],
                     ),
                     link_preview=False)
@@ -203,7 +203,7 @@ async def handler(event):
     await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/dc - Doğruluq Cəsarət Oyunu.",
       buttons=(
                       [
-                       Button.inline("Geri", data="helpdata")
+                       Button.inline("Geri◀️", data="helpdata")
                       ],
                     ),
                     link_preview=False)
@@ -217,7 +217,7 @@ async def handler(event):
             await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.\n/addsudo - Sudo Siyahısına Əlavə Edir.",
       buttons=(
                       [
-                       Button.inline("Geri", data="helpdata")
+                       Button.inline("Geri◀️", data="helpdata")
                       ],
                     ),
                     link_preview=False)
