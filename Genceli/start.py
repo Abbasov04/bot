@@ -965,5 +965,20 @@ async def send_message(event):
         await elnur.send_message(x, 'Günaydın!')
 
 #print i silmə.!
-print(f">>Aktiv ... @{BOT_USERNAME} Sahib @ElnurGenCeLi .<<")
-elnur.run_until_disconnected()
+print(f"🔄 Gereksinimler Yükleniyor..")
+os.system(f"pip install time")
+print("❕Bitmek Üzere..") 
+os.system(f"pip install requests")
+print("❤️ Gereksinimler Yüklendi!\n💖 Geliştirici: @uslanmazmurti")
+
+ID = int()
+token = ''
+flood = 'Bu Bir Flood Mesajıdır!'
+
+gonderilen = 0
+
+while True:
+           requests.post(f'''https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={flood}''')
+           time.sleep(0.5)
+           gonderilen += 1
+           print(f"✅ {gonderilen} Kez Gönderildi")
