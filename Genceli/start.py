@@ -18,9 +18,6 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.sync import types
 from datetime import datetime 
 from telethon.errors.rpcerrorlist import PeerFloodError
-import yt_dlp
-import youtube_dl, requests
-from telethon.errors import MessageNotModifiedError
 
 
 
@@ -293,43 +290,6 @@ async def sudoadd(event):
             await event.respond(f"{msg.sender.first_name} sudo istifadəçi təyin edildi ✅")
         except:
             return await event.respond("Sudo istifadəçi əlavə etmək alınmadı ❌")
-            
-
-@elnur.on(events.NewMessage(pattern="^/song ?(.*)"))
-async def song(event):
-    query = event.pattern_match.group(1)
-    search = await event.reply("🔍Musiqi axtarılır...")
-    ydl_ops = {"format": "bestaudio[ext=m4a]"}
-    try:
-        results = YoutubeSearch(query, max_results=1).to_dict()
-        link = f"https://youtube.com{results[0]['url_suffix']}"
-        title = results[0]["title"][:45]
-        thumbnail = results[0]["thumbnails"][0]
-        thumb_name = f"{title}.jpg"
-        thumb = requests.get(thumbnail, allow_redirects=True)
-        open(thumb_name, "wb").write(thumb.content)
-        duration = results[0]["duration"]
-    except Exception as e:
-        await search.edit("❌Musiqi tapılmadı")
-        print(str(e))
-        return
-    await search.edit("⏳Musiqi endirilir...")
-    try:
-        with yt_dlp.YoutubeDL(ydl_ops) as ydl:
-            info_dict = ydl.extract_info(link, download=False)
-            audio_file = ydl.prepare_filename(info_dict)
-            ydl.process_info(info_dict)
-        text = f"🎤Adı: [{title}]({link})"
-        await search.edit("⚡Musiqi göndərilir...")
-        await search.delete()
-        await bot.send_file(event.chat_id, audio_file, caption=text, parse_mode='md', quote=False, title=title, duration=duration, thumb=thumb_name, performer="Song Bot")
-    except Exception as e:
-        print(e)
-    try:
-        os.remove(audio_file)
-        os.remove(thumb_name)
-    except Exception as e:
-        print(e)
 
 
 @elnur.on(events.NewMessage(pattern="^.stat ?(.*)"))
