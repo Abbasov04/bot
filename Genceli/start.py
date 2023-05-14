@@ -966,9 +966,6 @@ async def send_message(event):
 
 #print i silmə.!
 print(f"🔄 Fayllar Yüklənir")
-os.system(f"pip install time")
 print("❕Bitmək Üzərə...") 
-os.system(f"pip install requests")
 print("❤️ Fayllar Yükləndi!")
-os.system(f"pip install requests")
 print(f"💖 Sahib @{OWNER_USERNAME} Bot {BOT_USERNAME} !")
