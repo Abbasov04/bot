@@ -18,7 +18,6 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.sync import types
 from datetime import datetime 
 from telethon.errors.rpcerrorlist import PeerFloodError
-import YoutubeSearch
 import yt_dlp
 import youtube_dl, requests
 from telethon.errors import MessageNotModifiedError
