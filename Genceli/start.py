@@ -84,7 +84,7 @@ SUDO_USERS = set()
     
 
 
-@elnur.on(events.NewMessage(pattern="^/start$"))
+@elnur.on(events.NewMessage(pattern="^/start ?(.*)"))
 async def start(event):
   if event.is_group:
     await event.reply(f"**[{BOT_NAME}](http://t.me/{BOT_USERNAME})'un Əmrlər üçün?.Bot'a daxil olun.**",
@@ -138,7 +138,7 @@ async def handler(event):
                    )
 
 
-@elnur.on(events.NewMessage(pattern="/help"))
+@elnur.on(events.NewMessage(pattern="^/help ?(.*)"))
 async def help(event):
         await event.reply(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:",
         buttons=(
@@ -214,7 +214,7 @@ async def handler(event):
 async def handler(event):
        sender = await event.get_sender()
        if sender.id in OWNER:
-            await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.\n/addsudo - Sudo Siyahısına Əlavə Edir.",
+            await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/alive - Botun Sahibi Botu Aktiv Olduğuna Baxar.\n/stat - Botun Sahibi Botun Neçə Qrubda Olduğuna Baxar.",
       buttons=(
                       [
                        Button.inline("Geri◀️", data="helpdata")
@@ -257,39 +257,7 @@ async def sudolist_handler(event):
     await event.respond(f'👨🏻‍💻 Sahiblər:\n{owner_list_formatted}\n\n⭐️ Sudo İstifadəçiləri:\n{sudo_list_formatted}')
     await event.delete()
 
-@elnur.on(events.NewMessage(pattern='/addsudo'))
-async def sudoadd(event):
-    try:
-        await event.delete()
-    except:
-        pass
 
-    if not event.reply_to_msg_id:
-        if len(event.text.split()) != 2:
-            return await event.respond(
-                "İstifadəçinin mesajına cavab verin və ya istifadəçi adı/istifadəçi ID-si yazın"
-            )
-
-        user = await client(GetFullUserRequest(event.text.split()[1]))
-        if int(user.user.id) in SUDO_USERS:
-            return await event.respond(f"{user.user.first_name} artıq botun sudo istifadəçisidir 👨🏻‍💻")
-
-        try:
-            SUDO_USERS.add(int(user.user.id))
-            await event.respond(f"{user.user.first_name} sudo istifadəçi təyin edildi ✅")
-        except:
-            return await event.respond("Sudo istifadəçi əlavə etmək alınmadı ❌")
-
-    else:
-        msg = await event.get_reply_message()
-        if msg.sender_id in SUDO_USERS:
-            return await event.respond(f"{msg.sender.first_name} artıq sudo istifadəçisidir ✅")
-
-        try:
-            SUDO_USERS.add(msg.sender_id)
-            await event.respond(f"{msg.sender.first_name} sudo istifadəçi təyin edildi ✅")
-        except:
-            return await event.respond("Sudo istifadəçi əlavə etmək alınmadı ❌")
 
 
 @elnur.on(events.NewMessage(pattern="^.stat ?(.*)"))
