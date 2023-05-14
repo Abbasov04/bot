@@ -938,10 +938,10 @@ async def test(event):
     qrup = event.chat_id
     if qrup not in isleyen:
         return
-    if "test1" in mesaj or "test2" in mesaj or "test3" in mesaj:
+    if "salam" in mesaj or "Salam" in mesaj:
         await event.reply("İşləyir")
-    if "elnur" in mesaj:
-        await event.reply("Sahibimdi")
+    if "Necəsən" in mesaj or "necəsən" in mesaj:
+        await event.reply("Yaxşıyam Ürəm Sən Necəsən")
 
 
 @elnur.on(events.NewMessage(pattern="^/testt ?(.*)"))
