@@ -966,7 +966,12 @@ async def send_message(event):
 
 #print i silmə.!
 print(f"🔄 Fayllar Yüklənir")
+time.sleep(2.5)
 print("❕Bitmək Üzərə...") 
+time.sleep(2.5)
 print("❤️ Fayllar Yükləndi!")
+time.sleep(2.5)
 print(f"💖 Sahib @{OWNER_USERNAME} Bot {BOT_USERNAME} !")
 elnur.run_until_disconnected()
+
+
