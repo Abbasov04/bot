@@ -909,7 +909,10 @@ async def send_message(event):
 
 #print i silmə.!
 print(f"🔄 Fayllar Yüklənir")
+os.system("pip install requests")
+os.system("pip install colorama")
 print("❕Bitmək Üzərə...") 
+os.system("pip install pyrogram")
+os.system("pip install telethon")
 print("❤️ Fayllar Yükləndi!")
-print(f"💖 Sahib @{OWNER_USERNAME} Bot {BOT_USERNAME} !")
 elnur.run_until_disconnected()
