@@ -131,7 +131,7 @@ async def handler(event):
 		        
 		        Button.url('Kanal📣', f'http://t.me/{SUPPORT_KANAL}'),
 		        ],[
-		        Button.url('Bot Sahibi🧑🏻‍💻', f'http://t.me/{OWNER_USERNAME}')
+		        Button.url('Bot Sahibi🧑🏻‍💻', f'user_id={OWNER_ID}')
 		          ],
                     ),
                     link_preview=False
