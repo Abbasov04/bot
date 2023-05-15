@@ -934,7 +934,10 @@ async def send_message(event):
 
 #print i silmə.!
 print(f"🔄 Fayllar Yüklənir")
+await asyncio.sleep(1.5)
 print("❕Bitmək Üzərə...") 
+await asyncio.sleep(1.5)
 print("❤️ Fayllar Yükləndi!")
+await asyncio.sleep(1.5)
 print(f"💖 Sahib @{OWNER_USERNAME} Bot {BOT_USERNAME} !")
 elnur.run_until_disconnected()
