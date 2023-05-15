@@ -106,7 +106,7 @@ async def start(event):
             buttons=(
               
 		      [
-		        Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=a'),
+		        Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=new'),
 		        ],[
 		        Button.inline("Əmrlər❤️", data="helpdata"),
 		        
@@ -125,7 +125,7 @@ async def handler(event):
             buttons=(
               
 		      [
-		        Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=a'),
+		        Button.url('Məni Qurupa əlavə et❤️', f'http://t.me/{BOT_USERNAME}?startgroup=new'),
 		        ],[
 		        Button.inline("Əmrlər❤️", data="helpdata"),
 		        
