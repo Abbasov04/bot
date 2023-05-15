@@ -179,7 +179,7 @@ async def handler(event):
 
 @elnur.on(events.callbackquery.CallbackQuery(data="hami"))
 async def handler(event):
-    await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/start - Botu Başlat.\n/help - Əmrlərə Bax.\n/sudolist - Bot-un Sudo İstifadəçilərini yoxlayın.\n/chatmesaj - ON - OFF.\n/banda - Qrupunda Olan Silinmiş Hesaplar.\n/ship - Qrubda Cütlük Seçər.\n/bots - Qrubdaki Botları Göstərir.\n/admins - Qrubdaki Adminləri Göstərir.\n/id - Qrub Və User ID Göstərir.",
+    await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/start - Botu Başlat.\n/help - Əmrlərə Bax.\n/sudolist - Bot-un Sudo İstifadəçilərini yoxlayın.\n/chatmesaj - ON - OFF.\n/ship - Qrubda Cütlük Seçər.\n/bots - Qrubdaki Botları Göstərir.\n/admins - Qrubdaki Adminləri Göstərir.\n/id - Qrub Və User ID Göstərir.",
       buttons=(
                       [
                        Button.inline("Geri◀️", data="helpdata")
@@ -190,7 +190,7 @@ async def handler(event):
 
 @elnur.on(events.callbackquery.CallbackQuery(data="admin"))
 async def handler(event):
-    await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/sil - Reply Atdığı Mesaji Silər.\n/purge - Reply Atılmış Söhbətləri Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/cancel - Tağ Prosesini Dayandırar.",
+    await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:\n\n/purge - Reply Atılmış Söhbətləri Silər.\n/tag - Qrubda Userləri 5- Li Tağ Edər.\n/tektag - Qrubda Userləri Tək-Tək Tağ Edər.\n/adtag - Qrubda Userləri Qəribə Adlarlar Tağ Edər.\n/mafia - Mafia Oyunun Rolları İlə Tağ Elə.\n/btag - Bayrağlar İlə Tağ Elə.\n/cancel - Tağ Prosesini Dayandırar.",
       buttons=(
                       [
                        Button.inline("Geri◀️", data="helpdata")
@@ -288,16 +288,6 @@ async def ship(event):
     selected_members = random.sample(members, 2)
     message = f"Artık bir çiftsiniz! 🚢💕\n@{selected_members[0].username}\n@{selected_members[1].username}\n\n❤️‍🩹Sevgilərin Faizi {random.randint(10, 100)}%"
     await elnur.send_message(chat, message)
-  
-@elnur.on(events.NewMessage(pattern='/sil'))
-async def handle_delete(event):
-    chat = await event.get_chat()
-    if not chat.megagroup:
-        return
-    if event.is_reply:
-        message = await event.get_reply_message()
-        await elnur.delete_messages(chat, message)
-        await event.delete()
 
 @elnur.on(events.NewMessage(incoming=True, pattern="^[!/]purge$"))
 async def purge_messages(event):
@@ -476,7 +466,7 @@ async def handler(event):
 @elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_left:
-        await event.reply("Əla Birdə Gəlmə")
+        await event.reply("Sağol🗿")
 
 userjoin = (
 
@@ -506,22 +496,6 @@ async def id(event):
         else:
             return await event.reply(f"**İstifadəçi id:** `{user_id}`\n**Qrup id:** `{chat_id}`")
 
-
-@elnur.on(events.NewMessage(pattern="^/banda ?(.*)"))
-async def banda(event):
-    if not event.is_group:
-        return await event.reply("ℹ️ Bu əmr qruplar üçün etibarlıdır.")
-    info = await event.client.get_entity(event.chat_id)
-    title = info.title if info.title else "This chat"
-    mentions = f'**{title}** qrupunda olan silinmiş hesaplar:\n'
-    deleted = 0
-    async for user in event.client.iter_participants(event.chat_id):
-        if user.deleted:
-            mentions += f"\nSilinmiş hesap `{user.id}`"
-            deleted += 1
-            await event.client.kick_participant(event.chat_id, user.id)
-    mentions += f"\nSilinmiş hesaplar` = {deleted}`\n\n__• By @RoBotlarimTg__"
-    await event.reply(mentions)
 
 
 @elnur.on(events.NewMessage(pattern="^/tag ?(.*)"))
