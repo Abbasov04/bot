@@ -230,11 +230,11 @@ async def handler(event):
 async def alive(event):
   if event.sender_id == SUDO_USERS:
     await event.delete()
-    genceli = await event.reply("Ak")
+    genceli = await event.reply("🔄 Fayllar Yüklənir")
     await asyncio.sleep(1.5)
-    await genceli.edit("Aktiv")
+    await genceli.edit("❕Bitmək Üzərə...")
     await asyncio.sleep(1.5)
-    await genceli.edit("Aktivəm")
+    await genceli.edit("❤️ Fayllar Yükləndi!")
     await asyncio.sleep(1.5)
     await genceli.edit(f"╔═════════════════\n║▻ ⚡️ @{BOT_USERNAME} Aktivdir [{__version__}]\n║\n║▻ 💠 Python versiyası: {__python__}\n║▻ 💻 Telethon versiyası: {__telethon__}\n╚═════════════════")
     await asyncio.sleep(15)
