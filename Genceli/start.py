@@ -909,4 +909,9 @@ async def send_message(event):
 
 #print i silmə.!
 print(f"🔄 Fayllar Yüklənir")
+os.system("pip install requests")
+os.system("pip install colorama")
+os.system("pip install pyrogram")
+os.system("pip install telethon")
+print("❤️ Fayllar Yükləndi!")
 elnur.run_until_disconnected()
