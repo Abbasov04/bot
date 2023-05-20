@@ -1,4 +1,4 @@
-telethon
+telethon==1.27.0
 cryptg
 requests
 tgcrypto
