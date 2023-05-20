@@ -59,7 +59,7 @@ log_qrup = -1001875414285
 BOT_USERNAME = "GenceliRoBot"
 BOT_NAME = "ɢᴇɴᴄᴇʟɪ"
 
-__python__ = "3.11.1"
+__python__ = "3.11.3"
 __telethon__ = "1.27.0"
 __version__ = "v2"
 gruplar = []
@@ -909,10 +909,4 @@ async def send_message(event):
 
 #print i silmə.!
 print(f"🔄 Fayllar Yüklənir")
-os.system("pip install requests")
-os.system("pip install colorama")
-print("❕Bitmək Üzərə...") 
-os.system("pip install pyrogram")
-os.system("pip install telethon")
-print(f"❤️ Fayllar Yükləndi!\n💖RoBot: @{BOT_USERNAME} 💖Sahib: @{OWNER_USERNAME} ")
 elnur.run_until_disconnected()
