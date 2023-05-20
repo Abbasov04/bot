@@ -1,10 +1,10 @@
-telethon==1.27.0
+telethon==1.28.5
 cryptg
 requests
 tgcrypto
 aiofiles
 telegraph
-pyrogram==1.4.16
+pyrogram==2.0.106
 py-tgcalls
 tglogging
 sqlalchemy
@@ -39,4 +39,3 @@ pymongo[srv]
 bs4
 Heroku3
 telegram
-yt-dlp
