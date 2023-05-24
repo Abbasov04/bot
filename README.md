@@ -8,4 +8,4 @@
 
 <b>HEROKU</b>
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ElnurGenCeLi/GenceliRoBot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ElnurGenCeLi/ElikoRoBot)
