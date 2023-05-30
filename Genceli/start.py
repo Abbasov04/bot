@@ -511,6 +511,7 @@ userjoin = (
 
     "Xoş Gəldin Balam❤️",
     "Kimləri Görürəm🙈",
+    "Həmişə Sən gələsən😊",
     "Sən Nə Əcəb Gəlibsən Bura?🙄",
     "Gəl Xala Qurban, Gəl Gör Nə Tapmışam😀",
 )
