@@ -499,10 +499,6 @@ c = (
 
 @elnur.on(events.ChatAction)
 async def handler(event):
-    if event.user_joined:
-
-@elnur.on(events.ChatAction)
-async def handler(event):
     if event.user_left:
         await event.reply("Səni Tanımaq Gözəl İdi")
 
