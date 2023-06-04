@@ -31,7 +31,7 @@ LOGGER = logging.getLogger(__name__)
 # config 
 API_ID = 20861666
 API_HASH = "82539501ec5d09ac20d414e377cdefd9"
-bot_token = "5597264378:AAFghbb1GYbSSKpqMeJ6a2LUMXYUb--M-Fs"
+bot_token = "5597264378:AAEXwf06SWZBXdvLK_eVMFFP2X-ZTCaKZJQ"
 
 
 anlik_calisan = []
@@ -505,12 +505,11 @@ async def handler(event):
 @elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_left:
-        await event.reply("Səni tanımaq gözəl idi")
+        await event.reply("Əla Birdə Gəlmə")
 
 userjoin = (
-MENTION = "[{}](tg://user?id={})"
+
     "Xoş Gəldin Balam❤️",
-    "Xoş Gəldin, Çıxacaqsan sa indidən çıx😒"
     "Kimləri Görürəm🙈",
     "Sən Nə Əcəb Gəlibsən Bura?🙄",
     "Gəl Xala Qurban, Gəl Gör Nə Tapmışam😀",
