@@ -509,7 +509,7 @@ async def handler(event):
 
 userjoin = (
 MENTION = "[{}](tg://user?id={})"
-    "Xoşgəldin, Çıxacaqsansa indidən çıx😒",
+    "Xoşgəldin,çıxacaqsansa indidən çıx😒",
     "Kimləri Görürəm🙈",
     "Xoş Gəldin Balam❤️",
     "Sən Nə Əcəb Gəlibsən Bura?🙄",
