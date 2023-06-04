@@ -496,14 +496,14 @@ c = (
 	"Üç çorba kaşığı acı salça veya buna benzer",
 )
 
-@elnur.on(events.ChatAction)
 MENTION = "[{}](tg://user?id={})"
+@elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_joined:
         await event.reply(random.choice(userjoin))
 
-@elnur.on(events.ChatAction)
 MENTION = "[{}](tg://user?id={})"
+@elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_left:
         await event.reply("Səni tanımaq gözəl idi")
