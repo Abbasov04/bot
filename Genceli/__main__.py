@@ -4,7 +4,7 @@ from Genceli.start import *
 
 api_id = 29918051  # API ID-nizi burada daxil edin
 api_hash = '793e62b1b2aefe53f84976d38215959e'  # API HASH-nizi burada daxil edin
-bot_token = '5746131579:AAEL2ySw1sVRwsFdqekn9L4QO6mix6do9zE'  # Botunuzun tokeni burada daxil edin
+bot_token = '5597264378:AAFghbb1GYbSSKpqMeJ6a2LUMXYUb--M-Fs'  # Botunuzun tokeni burada daxil edin
 
 elnur = TelegramClient('bot_session', api_id, api_hash).start(bot_token=bot_token)
 
