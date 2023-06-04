@@ -54,7 +54,7 @@ OWNER = [6239272233]
 OWNER_USERNAME = "ElikoAndMee"
 OWNERNAME = "🇦🇿⃟⃤𖤍𓄂𝚈𝚃¹ ϟ 𝙱𝚀𝙱 𐂡 ᴹᴿ⏤͟͟͞͞ᴅʀᴀɢᴏɴ『ᴮᴼᵞ』𖤍¹⁸𓆙⃟⃤︎︎"
 SUPPORT_KANAL = "xatireizim"
-log_qrup = -1001875414285
+log_qrup = -1001888970679
 BOT_USERNAME = "ElikoRoBot"
 BOT_NAME = "𝐄𝐥𝐢𝐤𝐨 ϟ 𝐑𝐨𝐁𝐨𝐭"
 
