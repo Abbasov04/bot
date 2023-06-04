@@ -511,9 +511,9 @@ userjoin = (
     "Xoş Gəldin Balam❤️",
     "Kimləri Görürəm🙈",
     "Xoşgəldin Çıxacaqsansa İndidən Çıx😒",
-    "Xoşgəldin Pizza gətirəcəyivi düşünürdük🤠",
+    "Xoşgəldin Pizza Gətirəcəyivi Düşünürdük🤠",
     "Sən Nə Əcəb Gəlibsən Bura?🙄",
-    "Gəl Xala Qurban, Gəl Gör Nə Tapmışam😀",
+    "Gəl Xala Qurban Gəl Gör Nə Tapmışam😀",
 )
 
 @elnur.on(events.NewMessage(pattern="^/id ?(.*)"))
