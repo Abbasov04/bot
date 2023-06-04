@@ -505,7 +505,7 @@ async def handler(event):
 @elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_left:
-        await event.reply("Əla Birdə Gəlmə")
+        await event.reply("Səni tanımaq gözəl idi")
 
 userjoin = (
 MENTION = "[{}](tg://user?id={})"
