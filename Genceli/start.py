@@ -497,18 +497,20 @@ c = (
 )
 
 @elnur.on(events.ChatAction)
+MENTION = "[{}](tg://user?id={})"
 async def handler(event):
     if event.user_joined:
         await event.reply(random.choice(userjoin))
 
 @elnur.on(events.ChatAction)
+MENTION = "[{}](tg://user?id={})"
 async def handler(event):
     if event.user_left:
-        await event.reply("Əla Birdə Gəlmə")
+        await event.reply("Səni tanımaq gözəl idi")
 
 userjoin = (
 MENTION = "[{}](tg://user?id={})"
-    "Xoşgəldin,çıxacaqsansa indidən çıx😒",
+    "Xoşgəldin,Çıxacaqsansa İndidən Çıx😒",
     "Xoş Gəldin Balam❤️"
     "Kimləri Görürəm🙈",
     "Sən Nə Əcəb Gəlibsən Bura?🙄",
