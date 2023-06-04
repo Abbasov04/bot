@@ -33,7 +33,6 @@ API_ID = 20861666
 API_HASH = "82539501ec5d09ac20d414e377cdefd9"
 bot_token = "5597264378:AAFghbb1GYbSSKpqMeJ6a2LUMXYUb--M-Fs"
 
-
 anlik_calisan = []
 tekli_calisan = []
 rxyzdev_tagTot = []
@@ -500,18 +499,17 @@ c = (
 @elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_joined:
-       await event.reply(random.choice(userjoin))
+        await event.reply(random.choice(userjoin))
 
 @elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_left:
-        await event.reply("Səni Tanımaq Gözəl İdi")
+        await event.reply("Əla Birdə Gəlmə")
 
 userjoin = (
-MENTION = "[{}](tg://user?id={})"
-    "Xoşgəldin,çıxacaqsansa indidən çıx😒",
-    "Kimləri Görürəm🙈",
+
     "Xoş Gəldin Balam❤️",
+    "Kimləri Görürəm🙈",
     "Sən Nə Əcəb Gəlibsən Bura?🙄",
     "Gəl Xala Qurban, Gəl Gör Nə Tapmışam😀",
 )
