@@ -29,8 +29,8 @@ LOGGER = logging.getLogger(__name__)
 
 
 # config 
-API_ID = 20861666
-API_HASH = "82539501ec5d09ac20d414e377cdefd9"
+API_ID = 14965050
+API_HASH = "38bab2dab10fc1b6a9ba0bf683fd7048"
 bot_token = "5597264378:AAEXwf06SWZBXdvLK_eVMFFP2X-ZTCaKZJQ"
 
 
@@ -52,7 +52,7 @@ SUDO = [6239272233]
 OWNER_ID = 6239272233 
 OWNER = [6239272233]
 OWNER_USERNAME = "ElikoAndMee"
-OWNERNAME = "🇦🇿⃟⃤𖤍𓄂𝚈𝚃¹ ϟ 𝙱𝚀𝙱 𐂡 ᴹᴿ⏤͟͟͞͞ᴅʀᴀɢᴏɴ『ᴮᴼᵞ』𖤍¹⁸𓆙⃟⃤︎︎"
+OWNERNAME = "ᅠᅠᅠᅠᅠ๛ 亗 ✸֟͜͡𝐊𝐢𝐥𝐥𝐞𝐫 🇷🇺⃟⃤亗ᅠᅠᅠᅠᅠ"
 SUPPORT_KANAL = "xatireizim"
 log_qrup = -1001875414285
 BOT_USERNAME = "ElikoRoBot"
