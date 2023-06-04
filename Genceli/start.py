@@ -505,14 +505,15 @@ async def handler(event):
 @elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_left:
-        await event.reply("Əla Birdə Gəlmə")
+        await event.reply("Səni Tanımaq Gözəl İdi")
 
 userjoin = (
 
-    "Xoş Gəldin Balam❤️",
+    "Xoşgəldin, Çıxacaqsansa indidən çıx😒",
     "Kimləri Görürəm🙈",
-    "Həmişə Sən gələsən😊",
+    "Xoş Gəldin Balam❤️",
     "Sən Nə Əcəb Gəlibsən Bura?🙄",
+    "Həmişə Sən gələsən😊",
     "Gəl Xala Qurban, Gəl Gör Nə Tapmışam😀",
 )
 
