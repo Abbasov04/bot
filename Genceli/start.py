@@ -513,7 +513,6 @@ MENTION = "[{}](tg://user?id={})"
     "Kimləri Görürəm🙈",
     "Xoş Gəldin Balam❤️",
     "Sən Nə Əcəb Gəlibsən Bura?🙄",
-    "Xoşgəldin,Pizza gətirəcəyivi ddüşünürdük 🤠",
     "Gəl Xala Qurban, Gəl Gör Nə Tapmışam😀",
 )
 
