@@ -508,8 +508,9 @@ async def handler(event):
         await event.reply("Əla Birdə Gəlmə")
 
 userjoin = (
-
+MENTION = "[{}](tg://user?id={})"
     "Xoş Gəldin Balam❤️",
+    "Xoş Gəldin, Çıxacaqsan sa indidən çıx😒"
     "Kimləri Görürəm🙈",
     "Sən Nə Əcəb Gəlibsən Bura?🙄",
     "Gəl Xala Qurban, Gəl Gör Nə Tapmışam😀",
