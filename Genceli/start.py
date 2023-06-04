@@ -510,6 +510,8 @@ async def handler(event):
 userjoin = (
     "Xoş Gəldin Balam❤️",
     "Kimləri Görürəm🙈",
+    "Xoşgəldin Çıxacaqsansa İndidən Çıx😒",
+    "Xoşgəldin Pizza gətirəcəyivi düşünürdük🤠",
     "Sən Nə Əcəb Gəlibsən Bura?🙄",
     "Gəl Xala Qurban, Gəl Gör Nə Tapmışam😀",
 )
