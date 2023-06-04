@@ -500,7 +500,6 @@ c = (
 @elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_joined:
-        await event.reply(random.choice(userjoin))
 
 @elnur.on(events.ChatAction)
 async def handler(event):
