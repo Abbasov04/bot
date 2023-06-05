@@ -52,9 +52,9 @@ SUDO = [6239272233]
 OWNER_ID = 6239272233 
 OWNER = [6239272233]
 OWNER_USERNAME = "ElikoAndMee"
-OWNERNAME = "𓄂 𝙱𝚀𝙱 𐂡 ᴹᴿ⏤͟͟͞͞ᴅʀᴀɢᴏɴ『ᴮᴼᵞ』𖤍¹⁸𓆙⃟⃤︎︎"
+OWNERNAME = "🇦🇿⃟⃤𖤍𓄂𝚈𝚃¹ ϟ 𝙱𝚀𝙱 𐂡 ᴹᴿ⏤͟͟͞͞ᴅʀᴀɢᴏɴ『ᴮᴼᵞ』𖤍¹⁸𓆙⃟⃤︎︎"
 SUPPORT_KANAL = "xatireizim"
-log_qrup = -100188897067
+log_qrup = -1001875414285
 BOT_USERNAME = "ElikoRoBot"
 BOT_NAME = "𝐄𝐥𝐢𝐤𝐨 ϟ 𝐑𝐨𝐁𝐨𝐭"
 
@@ -508,12 +508,11 @@ async def handler(event):
         await event.reply("Əla Birdə Gəlmə")
 
 userjoin = (
+
     "Xoş Gəldin Balam❤️",
     "Kimləri Görürəm🙈",
-    "Xoşgəldin Çıxacaqsansa İndidən Çıx😒",
-    "Xoşgəldin Pizza Gətirəcəyivi Düşünürdük🤠",
     "Sən Nə Əcəb Gəlibsən Bura?🙄",
-    "Gəl Xala Qurban Gəl Gör Nə Tapmışam😀",
+    "Gəl Xala Qurban, Gəl Gör Nə Tapmışam😀",
 )
 
 @elnur.on(events.NewMessage(pattern="^/id ?(.*)"))
