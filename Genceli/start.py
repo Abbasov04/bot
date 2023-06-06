@@ -54,7 +54,7 @@ OWNER = [6239272233]
 OWNER_USERNAME = "KillerAndMee"
 OWNERNAME = "ᅠᅠᅠᅠᅠʙʙ ⌁ ¦ ๛ 亗 ✸֟͜͡𝐊𝐢𝐥𝐥𝐞𝐫 🇷🇺⃟⃤亗ᅠᅠᅠᅠᅠ"
 SUPPORT_KANAL = "xatireizim"
-log_qrup = -1001875414285
+log_qrup = -1001888970679
 BOT_USERNAME = "ElikoRoBot"
 BOT_NAME = "𝐄𝐥𝐢𝐤𝐨 ϟ 𝐑𝐨𝐁𝐨𝐭"
 
