@@ -47,10 +47,10 @@ isleyen = []
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 
-SUDO_USERS = 6239272233
-SUDO = [6239272233]
-OWNER_ID = 6239272233 
-OWNER = [6239272233]
+SUDO_USERS = 5664761345
+SUDO = [5664761345]
+OWNER_ID = 5664761345 
+OWNER = [5664761345]
 OWNER_USERNAME = "ElikoAndMee"
 OWNERNAME = "ᴀᴛɢ ꑭ ᴏʟᴅ ᴇᴀɢʟᴇ𓅆⋆͜🇩🇪⃤𓃮 #ʙᴛᴀ彡"
 SUPPORT_KANAL = "ElikoBlogs"
