@@ -51,10 +51,10 @@ SUDO_USERS = 6239272233
 SUDO = [6239272233]
 OWNER_ID = 6239272233 
 OWNER = [6239272233]
-OWNER_USERNAME = "KillerAndMee"
-OWNERNAME = "ᅠᅠᅠᅠᅠʙʙ ⌁ ¦ ๛ 亗 ✸֟͜͡𝐊𝐢𝐥𝐥𝐞𝐫 🇷🇺⃟⃤亗ᅠᅠᅠᅠᅠ"
-SUPPORT_KANAL = "xatireizim"
-log_qrup = -1001888970679
+OWNER_USERNAME = "ElikoAndMee"
+OWNERNAME = "ᴀᴛɢ ꑭ ᴏʟᴅ ᴇᴀɢʟᴇ𓅆⋆͜🇩🇪⃤𓃮 #ʙᴛᴀ彡"
+SUPPORT_KANAL = "ElikoBlogs"
+log_qrup = -1001822732870
 BOT_USERNAME = "ElikoRoBot"
 BOT_NAME = "𝐄𝐥𝐢𝐤𝐨 ϟ 𝐑𝐨𝐁𝐨𝐭"
 
