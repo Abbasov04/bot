@@ -31,7 +31,7 @@ LOGGER = logging.getLogger(__name__)
 # config 
 API_ID = 14965050
 API_HASH = "38bab2dab10fc1b6a9ba0bf683fd7048"
-bot_token = "6471267140:AAHnTSByyPH5KINe-z0Z3KlR0OQGjgydTEs"
+bot_token = ""
 
 
 anlik_calisan = []
@@ -54,7 +54,7 @@ OWNER = [5664761345]
 OWNER_USERNAME = "ElikoAndMee"
 OWNERNAME = "ᴀᴛɢ ꑭ ᴏʟᴅ ᴇᴀɢʟᴇ𓅆⋆͜🇩🇪⃤𓃮 #ʙᴛᴀ彡"
 SUPPORT_KANAL = "ElikoResmi"
-log_qrup = -1001822732870
+log_qrup = -
 BOT_USERNAME = "GunayRoBot"
 BOT_NAME = "𝐆𝐮𝐧𝐚𝐲 ϟ 𝐑𝐨𝐁𝐨𝐭"
 
