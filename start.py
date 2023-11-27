@@ -503,18 +503,19 @@ async def handler(event):
         await event.reply(random.choice(userjoin))
 
 @elnur.on(events.ChatAction)
-async def handler(event):
-    if event.user_left:
-        await event.reply("Səni Tanımaq Gözəl İdi")
+elif event.user_left: 
+        user = await event.get_user() 
+        username = f"{user.first_name}"
+        await event.reply(f"{username} Əla Birdaha Gəlmə")
 
 userjoin = (
 
-    "Xoş Gəldin Balam❤️",
-    "Kimləri Görürəm🙈",
-    "Xoşgəldin,Çıxacaqsansa İndidən Çıx 😒",
-    "Sən Nə Əcəb Gəlibsən Bura?🙄",
-    "Xoşgəldin,Pizza Gətirəcəyivi Düşünürdük🤠",
-    "Gəl Xala Qurban,Gəl Gör Nə Tapmışam😀",
+   f"{username} Xoş Gəldin Balam❤️",
+   f"{username} Kimləri Görürəm🙈",
+   f"{username} Xoşgəldin,Çıxacaqsansa İndidən Çıx 😒",
+   f"{username} Sən Nə Əcəb Gəlibsən Bura?🙄",
+   f"{username} Xoşgəldin,Pizza Gətirəcəyivi Düşünürdük🤠",
+   f"{username} Gəl Xala Qurban,Gəl Gör Nə Tapmışam😀",
 )
 
 @elnur.on(events.NewMessage(pattern="^/id ?(.*)"))
