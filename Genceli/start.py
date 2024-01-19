@@ -31,7 +31,7 @@ LOGGER = logging.getLogger(__name__)
 # config 
 API_ID = 14965050
 API_HASH = "38bab2dab10fc1b6a9ba0bf683fd7048"
-bot_token = ""
+bot_token = "6471267140:AAFyUEcVstAAtorkm2V0rKJDvPRFTLa6l7k"
 
 
 anlik_calisan = []
@@ -47,16 +47,16 @@ isleyen = []
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 
-SUDO_USERS = 5664761345
-SUDO = [5664761345]
-OWNER_ID = 5664761345 
-OWNER = [5664761345]
-OWNER_USERNAME = "ElikoAndMee"
-OWNERNAME = "ᴀᴛɢ ꑭ ᴏʟᴅ ᴇᴀɢʟᴇ𓅆⋆͜🇩🇪⃤𓃮 #ʙᴛᴀ彡"
+SUDO_USERS = 6184111182
+SUDO = [6184111182]
+OWNER_ID = 6184111182 
+OWNER = [6184111182]
+OWNER_USERNAME = "TheisEliko"
+OWNERNAME = "𓄂✶‌֟፝𝐄𝐥𝐢𝐤𝐨𓅆⋆‌🇦🇿⃤ |"
 SUPPORT_KANAL = "ElikoResmi"
-log_qrup = -
+log_qrup = -1002057655400
 BOT_USERNAME = "GunayRoBot"
-BOT_NAME = "𝐆𝐮𝐧𝐚𝐲 ϟ 𝐑𝐨𝐁𝐨𝐭"
+BOT_NAME = "Gunay🤍"
 
 __python__ = "3.11.1"
 __telethon__ = "1.27.0"
