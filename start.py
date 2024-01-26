@@ -29,9 +29,9 @@ LOGGER = logging.getLogger(__name__)
 
 
 # config 
-API_ID = 14965050
-API_HASH = "38bab2dab10fc1b6a9ba0bf683fd7048"
-bot_token = "6471267140:AAFyUEcVstAAtorkm2V0rKJDvPRFTLa6l7k"
+API_ID =  
+API_HASH = ""
+bot_token = ""
 
 
 anlik_calisan = []
@@ -54,7 +54,7 @@ OWNER = [6184111182]
 OWNER_USERNAME = "TheisEliko"
 OWNERNAME = "𓄂✶‌֟፝𝐄𝐥𝐢𝐤𝐨𓅆⋆‌🇦🇿⃤ |"
 SUPPORT_KANAL = "ElikoResmi"
-log_qrup = -1002057655400
+log_qrup = 
 BOT_USERNAME = "GunayRoBot"
 BOT_NAME = "Gunay🤍"
 
@@ -552,7 +552,7 @@ async def banda(event):
             mentions += f"\nSilinmiş hesap `{user.id}`"
             deleted += 1
             await event.client.kick_participant(event.chat_id, user.id)
-    mentions += f"\nSilinmiş hesaplar` = {deleted}`\n\n__• By @RoBotlarimTg__"
+    mentions += f"\nSilinmiş hesaplar` = {deleted}`\n\n__• By @PasterBots"
     await event.reply(mentions)
 
 
