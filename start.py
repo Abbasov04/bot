@@ -29,9 +29,9 @@ LOGGER = logging.getLogger(__name__)
 
 
 # config 
-API_ID =  
-API_HASH = ""
-bot_token = ""
+API_ID = 29305609 
+API_HASH = "f17539769efceb88c4dabfb7b76baaed"
+bot_token = "6477779580:AAHyBbfyeTlybYbJgjYdCX-6Y0k-YlWJlLY"
 
 
 anlik_calisan = []
@@ -47,12 +47,12 @@ isleyen = []
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 
-SUDO_USERS = 6184111182
-SUDO = [6184111182]
-OWNER_ID = 6184111182 
-OWNER = [6184111182]
-OWNER_USERNAME = "TheisEliko"
-OWNERNAME = "𓄂✶‌֟፝𝐄𝐥𝐢𝐤𝐨𓅆⋆‌🇦🇿⃤ |"
+SUDO_USERS = 6876127666
+SUDO = [6807479412]
+OWNER_ID = 6807479412 
+OWNER = [6807479412]
+OWNER_USERNAME = "xSanalUsta"
+OWNERNAME = "𝐒𝐚𝐧𝐚𝐥 ༆ 𝐔𝐒𝐓𝐀 🇦🇿 ⩇⩇:⩇⩇"
 SUPPORT_KANAL = "ElikoResmi"
 log_qrup = 
 BOT_USERNAME = "GunayRoBot"
