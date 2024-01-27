@@ -497,7 +497,7 @@ c = (
 	"Üç çorba kaşığı acı salça veya buna benzer",
 )
 
-@client.on(events.ChatAction)
+@elnur.on(events.ChatAction)
 async def handler(event):
     if event.user_joined:
         user = await event.get_user()
