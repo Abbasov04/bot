@@ -29,9 +29,9 @@ LOGGER = logging.getLogger(__name__)
 
 
 # config 
-API_ID = 29305609
-API_HASH = "f17539769efceb88c4dabfb7b76baaed"
-bot_token = "6477779580:AAHyBbfyeTlybYbJgjYdCX-6Y0k-YlWJlLY"
+API_ID = 21236884
+API_HASH = "2e526fe32b1177ba7ce3d552640ab854"
+bot_token = "6565277854:AAG89LchVs8N3KPjOXJdW-lW1Y7xl7PN3Uo"
 
 
 anlik_calisan = []
@@ -47,16 +47,16 @@ isleyen = []
 elnur = TelegramClient('elnur', API_ID, API_HASH).start(bot_token=bot_token)
 
 
-SUDO_USERS = 6807479412
-SUDO = [6807479412]
-OWNER_ID = 6807479412 
-OWNER = [6807479412]
-OWNER_USERNAME = "xSanalUsta"
-OWNERNAME = "𝐒𝐚𝐧𝐚𝐥 ༆ 𝐔𝐒𝐓𝐀 🇦🇿 ⩇⩇:⩇⩇"
-SUPPORT_KANAL =  "ForzaBots"
-log_qrup = -1002090559181
-BOT_USERNAME = "demistorAzBot"
-BOT_NAME = "Deneme"
+SUDO_USERS = 6960862388
+SUDO = [6960862388]
+OWNER_ID = 6960862388 
+OWNER = [6960862388]
+OWNER_USERNAME = "xSanalKrayzen"
+OWNERNAME = "𝐒𝐚𝐧𝐚𝐥 #κʀɑⲩⲍ૯ⲛ"
+SUPPORT_KANAL =  "KrayzenResmi"
+log_qrup = -1002057111740
+BOT_USERNAME = "KrayzenTaggerBot"
+BOT_NAME = "Krayzen🫅"
 
 __python__ = "3.11.1"
 __telethon__ = "1.27.0"
