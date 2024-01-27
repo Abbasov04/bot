@@ -497,20 +497,20 @@ c = (
 	"Üç çorba kaşığı acı salça veya buna benzer",
 )
 
-@elnur.on(events.ChatAction)
+@client.on(events.ChatAction)
 async def handler(event):
     if event.user_joined:
-        await event.reply(random.choice(userjoin))
-
-userjoin = (
-
-   f"{username} Xoş Gəldin Balam❤️",
-   f"{username} Kimləri Görürəm🙈",
-   f"{username} Xoşgəldin,Çıxacaqsansa İndidən Çıx 😒",
-   f"{username} Sən Nə Əcəb Gəlibsən Bura?🙄",
-   f"{username} Xoşgəldin,Pizza Gətirəcəyivi Düşünürdük🤠",
-   f"{username} Gəl Xala Qurban,Gəl Gör Nə Tapmışam😀",
-)
+        user = await event.get_user()
+        username = f"{user.first_name}"
+        Aylin = (f"{username} Xoş gəldin",
+                 f"{username} Gəldi 🙄",
+                 f"{username} Sənin Gəlişin Məni Sevindirdi 🫠", 
+                 f"{username} Aramıza Xoş Gəldin 🙋🏻",
+                 f"{username} Partimizə Xoş Gəldin🥳",
+                 f"{username} Bayaqdan Səni Gözləyirəm 🤩",
+                 f"{username} Xoşgəldin, Pizza gətirəcəyivi düşünürdük. 🤠",
+                 f"{username} Xoşgəldin, Çıxacaqsansa indidən çıx 😒.",)
+        await event.reply(f"{random.choice(Aylin)}")
 
 @elnur.on(events.NewMessage(pattern="^/id ?(.*)"))
 async def id(event):
