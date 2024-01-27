@@ -935,7 +935,7 @@ async def test(event):
         return
     if "test1" in mesaj or "test2" in mesaj or "test3" in mesaj:
         await event.reply("İşləyir")
-    if "elnur" in mesaj:
+    if "Kenan" in mesaj:
         await event.reply("Sahibimdi")
 
 
