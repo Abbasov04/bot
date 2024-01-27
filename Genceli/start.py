@@ -502,12 +502,6 @@ async def handler(event):
     if event.user_joined:
         await event.reply(random.choice(userjoin))
 
-@elnur.on(events.ChatAction)
-elif event.user_left: 
-        user = await event.get_user() 
-        username = f"{user.first_name}"
-        await event.reply(f"{username} Əla Birdaha Gəlmə 🥱")
-
 userjoin = (
 
    f"{username} Xoş Gəldin Balam❤️",
