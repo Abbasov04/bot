@@ -122,7 +122,7 @@ async def start(event):
     await event.reply(f"**[{BOT_NAME}](http://t.me/{BOT_USERNAME})'un Əmrlər üçün?.Bot'a daxil olub.**",
     buttons=(
               
-		      [Button.url('💡 Bota Keç', f'https://t.me/{BOT_USERNAME}?start=start'),
+		      [Button.url('Kanal📣', f'https://t.me/{SUPPORT_KANAL}'),
 		      
 		      Button.url('👨🏻‍💻 Sahib', f'https://t.me/{OWNER_USERNAME}')]
                     ),
@@ -134,7 +134,7 @@ async def start(event):
      idd = f"{usr.id} "
      profil = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await elnur.send_message(log_qrup, f"ℹ️ **Yeni istifadəçi -**\n- {profil}\n- {idd}")
-    await event.respond("**Qrupa Əlavə Etmək Üçün Aşağıdaki Düyməyə Bas.❤️‍🩹**",
+    await event.respond("**Salam mən qrupunuzdakı bütün üzvləri tağ edə bilərəm 👀\n\n Ətraflı məlumat üçün Əmrlər bölməsinə daxil olun ✅**",
             buttons=(
               
 		      [
@@ -153,7 +153,7 @@ async def start(event):
 
 @elnur.on(events.callbackquery.CallbackQuery(data="start"))
 async def handler(event):
-    await event.edit(f"**Qrupa Əlavə Etmək Üçün Aşağıdaki Düyməyə Bas.❤️‍🩹**",
+    await event.edit(f"**Salam mən qrupunuzdakı bütün üzvləri tağ edə bilərəm 👀\n\n Ətraflı məlumat üçün Əmrlər bölməsinə daxil olun ✅**",
             buttons=(
               
 		      [
