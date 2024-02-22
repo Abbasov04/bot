@@ -987,11 +987,6 @@ Aylin = (
 )
 
 
-@elnur.on_message(filters.command("reklam") & filters.user(OWNER_ID) & filters.reply)
-async def broadcast_handler_open(_, m: Message):
-    await main_broadcast_handler(m, db)
-
-
 @elnur.on(events.NewMessage)
 async def send_message(event):
     now = datetime.now()
