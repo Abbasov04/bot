@@ -184,8 +184,7 @@ async def help(event):
                        Button.inline("Sudo", data="sudo"),
                        ],[
                        Button.inline("Geri◀️", data="start"),
-                       Button.url('Kanal📣', f'http://t.me/{SUPPORT_KANAL}'),
-                      ],
+		      ],
                     ),
                     link_preview=False)
 
