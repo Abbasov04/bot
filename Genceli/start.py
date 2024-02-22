@@ -986,6 +986,26 @@ Aylin = (
     "Sahibim Sevglisiylə Danışır\nNarahat eləmiyin!",
 )
 
+@elnur.on_message(filters.command("esq"))
+async def calculate_wealth(client, message):
+    # Rastgele bir mal varlığı yüzdesi belirleyin
+    wealth_percent = random.randint(50, 100)
+    # Kullanıcının adını alın
+    user = message.reply_to_message.from_user
+    user_name = user.first_name if not user.last_name else f"{user.first_name} {user.last_name}"
+    # Tahmin edilen mal varlığı yüzdesini mesaj olarak gönderin
+    await message.reply(f"{user_name} ilə sənin eşq faizin %{wealth_percent} 💕")
+
+
+@elnur.on_message(filters.command("mal"))
+async def calculate_wealth(client, message):
+    # Rastgele bir mal varlığı yüzdesi belirleyin
+    wealth_percent = random.randint(50, 100)
+    # Kullanıcının adını alın
+    user = message.reply_to_message.from_user
+    user_name = user.first_name if not user.last_name else f"{user.first_name} {user.last_name}"
+    # Tahmin edilen mal varlığı yüzdesini mesaj olarak gönderin
+    await message.reply(f"{user_name} şəxsin {wealth_percent}% mal olduğunu bilirəm😹")
 
 @elnur.on(events.NewMessage)
 async def send_message(event):
