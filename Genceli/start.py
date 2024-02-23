@@ -55,7 +55,7 @@ OWNER_USERNAME = "xSanalKrayzen"
 OWNERNAME = "𝐒𝐚𝐧𝐚𝐥 #κʀɑⲩⲍ૯ⲛ"
 SUPPORT_KANAL =  "KrayzenResmi"
 log_qrup = -1002057111740
-BOT_USERNAME = "https://www.t.me/KrayzenTaggerBot"
+BOT_USERNAME = "KrayzenTaggerBot"
 BOT_NAME = "Krayzen🫅"
 
 __python__ = "3.11.1"
