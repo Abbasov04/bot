@@ -153,7 +153,7 @@ async def start(event):
 
 @elnur.on(events.callbackquery.CallbackQuery(data="start"))
 async def handler(event):
-    await event.edit(f"**Salam mən qrupunuzdakı bütün üzvləri tağ edə bilərəm 👀\n\n Ətraflı məlumat üçün Əmrlər bölməsinə daxil olun ✅**",
+    await event.edit(f"**Salam mən qrupunuzdakı bütün üzvləri tağ edə bilərəm 👀\n\n Ətraflı məlumat üçün Əmrlər bölməsinə daxil olun ✅**\nSahibim ```t.me/xSanalKrayzen```",
             buttons=(
               
 		      [
@@ -191,7 +191,7 @@ async def help(event):
 
 @elnur.on(events.callbackquery.CallbackQuery(data="helpdata"))
 async def handler(event):
-    await event.edit(f"```[{BOT_NAME}](https://t.me/{BOT_USERNAME})``` Botun Əmirləri:",
+    await event.edit(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:",
         buttons=(
                       [
                        Button.inline("Hərkəs", data="hami"),
