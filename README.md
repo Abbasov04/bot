@@ -1,3 +1,4 @@
+**Telegram Hesabim İsdiyən Yaza bilər 👇**
 ```
-npm install @jcubic/tagger
+@xKurucu )
 ```
