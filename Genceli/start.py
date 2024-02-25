@@ -510,7 +510,12 @@ async def handler(event):
                  f"{username} Bayaqdan Səni Gözləyirəm 🤩",
                  f"{username} Xoşgəldin, Pizza gətirəcəyivi düşünürdük. 🤠",
                  f"{username} Xoşgəldin, Çıxacaqsansa indidən çıx 😒.",)
-        await event.reply(f"{random.choice(Aylin)}")
+        await event.reply(f"{random.choice(mesaj)}")
+
+    elif event.user_left: 
+        user = await event.get_user() 
+        username = f"{user.first_name}"
+        await event.reply(f"{username} Əla Birdaha Gəlmə 🥱")
 
 @elnur.on(events.NewMessage(pattern="^/id ?(.*)"))
 async def id(event):
