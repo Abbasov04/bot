@@ -126,7 +126,7 @@ async def start(event):
 		      
 		      Button.url('Sahib 🫅', f'https://t.me/{OWNER_USERNAME}')]
 	              ],[
-		      Button.inline("Əmrlər❤️", data="helpdata"),
+		      Button.inline("Əmrlər❤️", data="helpdata")]
                     ),
                     link_preview=False
                    )
