@@ -119,12 +119,14 @@ async def sudoadd(event):
 @elnur.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
   if event.is_group:
-    await event.reply(f"**[{BOT_NAME}](http://t.me/{BOT_USERNAME})'un Əmrlər üçün?.Bot'a daxil olub.**",
+    await event.reply(f"**Salam mən qrupunuzdakı bütün üzvləri tağ edə bilərəm 👀\n\nƏtraflı məlumat üçün Əmrlər bölməsinə daxil olun ✅**",
     buttons=(
               
 		      [Button.url('Kanal📣', f'https://t.me/{SUPPORT_KANAL}'),
 		      
-		      Button.url('👨🏻‍💻 Sahib', f'https://t.me/{OWNER_USERNAME}')]
+		      Button.url('Sahib 🫅', f'https://t.me/{OWNER_USERNAME}')]
+	              ],[
+		      Button.inline("Əmrlər❤️", data="helpdata"),
                     ),
                     link_preview=False
                    )
