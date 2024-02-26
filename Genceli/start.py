@@ -989,6 +989,16 @@ Aylin = (
     "Sahibim Sevglisiylə Danışır\nNarahat eləmiyin!",
 )
 
+@elnur.on_message(filters.command(["soxri"]))
+async def soxri(bot: app, m: Message):
+    start = time()
+    replymsg = await m.reply_text("**❤ Rondom Bir Şəkil Seçilir...**")
+    end = round(time() - start, 2)
+    photo = random.choice(mesajlar/photolist)
+    text = f"❤️ **{Config.BOT_USERNAME} Sizin Üçün Rondom Bir Şəkil Seçdi**"
+    await bot.send_photo(m.chat.id, photo=photo, caption=text)
+    await replymsg.delete()
+
 @elnur.on(events.NewMessage)
 async def send_message(event):
     now = datetime.now()
