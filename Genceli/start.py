@@ -125,9 +125,7 @@ async def start(event):
 		      [Button.url('Kanal📣', f'https://t.me/{SUPPORT_KANAL}'),
 		      
 		      Button.url('Sahib 🫅', f'https://t.me/{OWNER_USERNAME}')]
-	              ],[
-		      Button.inline("Əmrlər❤️", data="helpdata")]
-                    ),
+	              ),
                     link_preview=False
                    )
   if event.is_private:
