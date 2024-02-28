@@ -1043,7 +1043,7 @@ SOYUS_CAVAB = ["🤖 Mən Mesajı Sildim\n\n⛔ SƏBƏB:- Söyüş Tipli Sözlə
 @elnur.on(events.NewMessage(pattern='(?i)məki+'))
 async def yeni_mesaj(event: events.NewMessage.Event):
     await event.delete()
-    await event.reply(f"{random.elnur(SOYUS_CAVAB)}")
+    await event.reply(f"{random.choice(SOYUS_CAVAB)}")
 
 @elnur.on(events.NewMessage)
 async def send_message(event):
