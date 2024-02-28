@@ -1039,7 +1039,7 @@ SOYUS_CAVAB = ["🤖 Mən Mesajı Sildim\n\n⛔ SƏBƏB:- Söyüş Tipli Sözlə
 @elnur.on(events.NewMessage(pattern='(?i)sg+'))
 @elnur.on(events.NewMessage(pattern='(?i)qəhi+'))
 @elnur.on(events.NewMessage(pattern='(?i)qehi+'))
-@elmur.on(events.NewMessage(pattern='(?i)meki+'))
+@elnur.on(events.NewMessage(pattern='(?i)meki+'))
 @elnur.on(events.NewMessage(pattern='(?i)məki+'))
 async def yeni_mesaj(event: events.NewMessage.Event):
     await event.delete()
