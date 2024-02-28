@@ -989,20 +989,6 @@ Aylin = (
     "Sahibim Sevglisiylə Danışır\nNarahat eləmiyin!",
 )
 
-photolist = [
-     'https://telegra.ph/file/53e24fdc8889191a465ce.jpg'
-]
-
-@elnur.on_message(filters.command(["Sahib"]))
-async def soxri(bot: app, m: Message):
-    start = time()
-    replymsg = await m.reply_text("**❤ Sahibimin Şəkili 🙈...**")
-    end = round(time() - start, 2)
-    photo = random.choice(photolist)
-    text = f" **{Config.BOT_USERNAME}-un Sahibi Yəni Mənim Sahibim 🙈 \n\nNəysə Sözünüz Olsa yazarsiz @NatiqOwner**"
-    await bot.send_photo(m.chat.id, photo=photo, caption=text)
-    await replymsg.delete()
-
 @elnur.on(events.NewMessage)
 async def send_message(event):
     now = datetime.now()
