@@ -134,7 +134,7 @@ async def start(event):
      idd = f"{usr.id} "
      profil = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await elnur.send_message(log_qrup, f"ℹ️ **Yeni istifadəçi -**\n- {profil}\n- {idd}")
-    await event.respond("**Salam mən qrupunuzdakı bütün üzvləri tağ edə bilərəm 👀\n\n Ətraflı məlumat üçün Əmrlər bölməsinə daxil olun ✅.\n\ || @{OWNER_USERNAME} ||**",
+    await event.respond("**Salam mən qrupunuzdakı bütün üzvləri tağ edə bilərəm 👀\n\n Ətraflı məlumat üçün Əmrlər bölməsinə daxil olun ✅.\n\n || @NatiqOwner ||**",
             buttons=(
               
 		      [
