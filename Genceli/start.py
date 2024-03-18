@@ -1051,6 +1051,32 @@ async def send_message(event):
     if now.hour == 8 and now.minute == 0 and now.second == 0:
         await elnur.send_message(x, 'Günaydın!')
 
+
+SAHIB = OWNER_ID
+
+@elnur.on(events.NewMessage(pattern="^.pin ?(.*)"))
+async def pin(event):
+    if event.sender_id == SAHIB:
+        if not event.reply_to_msg_id:
+            return await event.reply("🗨 Zəhmət Olmasa Bir Mesaja Yanıt Verin")
+        await event.reply("📌 Sahibim Mesajınlz Pinləndi!")
+        await event.client.pin_message(event.chat_id, event.reply_to_msg_id, notify=True)
+    else:
+        await event.reply(f"Sən {Config.BOT_NAME} Bota Sahib Deyilsən!\n⛔ Pinləməyə Çalışma.")
+ 
+
+@elnur.on(events.NewMessage(pattern="^.unpin ?(.*)"))
+async def unpin(event):
+    if event.sender_id == SAHIB:
+        if not event.reply_to_msg_id:
+            return await event.reply("🗨 Zəhmət Olmasa Pinlənmiş Mesaja Yanıt Verin")
+        await event.reply("Sahibim Pinlənmiş Mesaj Qaldırıldı")
+        await event.client.unpin_message(event.chat_id)
+    else:
+        await event.reply(f"Sən {Config.BOT_NAME} Bota Sahib Deyilsən!\n⛔ UnPinləməyə Çalışma.")
+	    
+
+
 #print i silmə.!
 print(f">>Aktiv ... @{BOT_USERNAME} Sahib @ElnurGenCeLi .<<")
 elnur.run_until_disconnected()
