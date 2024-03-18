@@ -1076,7 +1076,7 @@ async def unpin(event):
         await event.reply(f"Sən {Config.BOT_NAME} Bota Sahib Deyilsən!\n⛔ UnPinləməyə Çalışma.")
 	    
 
-@elnur.on(events.NeəMessage(pattern="^.soxri ?(.*)"))
+@elnur.on(events.NewMessage(pattern="^.soxri ?(.*)"))
 async def soxri(bot: app, m: Message):
     start = time()
     replymsg = await m.reply_text("**❤ Rondom Bir Şəkil Seçilir...**")
