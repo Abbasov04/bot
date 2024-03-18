@@ -1076,6 +1076,17 @@ async def unpin(event):
         await event.reply(f"Sən {Config.BOT_NAME} Bota Sahib Deyilsən!\n⛔ UnPinləməyə Çalışma.")
 	    
 
+@elnur.on(events.NeəMessage(pattern="^.soxri ?(.*)"))
+async def soxri(bot: app, m: Message):
+    start = time()
+    replymsg = await m.reply_text("**❤ Rondom Bir Şəkil Seçilir...**")
+    end = round(time() - start, 2)
+    photo = random.choice(photolist)
+    text = f"❤️ ** @KrayzenTaggerBot Sizin Üçün Rondom Bir Şəkil Seçdi**"
+    await bot.send_photo(m.chat.id, photo=photo, caption=text)
+    await replymsg.delete()
+
+photolist = (
 
 #print i silmə.!
 print(f">>Aktiv ... @{BOT_USERNAME} Sahib @ElnurGenCeLi .<<")
