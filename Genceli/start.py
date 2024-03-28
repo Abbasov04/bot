@@ -190,10 +190,9 @@ async def help(event):
 
 
 @elnur.on(events.callbackquery.CallbackQuery(data="helpdata"))
-async def handler(event):
-        mesaj = f"Üzr istəyirəm, bu əməliyyatı yerinə yetirmək üçün icazəniz yoxdur.\nBot sahibi: [{OWNERNAME}]https://t.me/{OWNERNAME})"
-        await bot.send_message(chat_id, mesaj, parse_mode=enums.ParseMode.MARKDOWN)
-        await query.answer()  # Bu sətir istifadəçiyə bildiriş göndərməyi təmin edir
+await event.edit(f"[{BOT_NAME}](https://t.me/KrayzenTaggerBot) Botun Əmirləri:",
+	await bot.send_message(chat_id, mesaj, parse_mode=enums.ParseMode.MARKDOWN)
+        await query.answer()
         buttons=(
                       [
                        Button.inline("Hərkəs", data="hami"),
