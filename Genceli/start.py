@@ -207,7 +207,7 @@ async def handler(event):
                        Button.inline("Geri◀️", data="start"),
                       ],
                     ),
-                    link_preview=False)
+                    link_preview=True)
 
 
 @elnur.on(events.callbackquery.CallbackQuery(data="hami"))
