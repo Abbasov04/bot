@@ -190,7 +190,7 @@ async def help(event):
 
 
 @elnur.on(events.callbackquery.CallbackQuery(data="helpdata"))
-await event.edit(f"[{BOT_NAME}](https://t.me/KrayzenTaggerBot) Botun Əmirləri:",
+await event.edit(f"[{OWNERNAME}](https://t.me/{OWNER_USERNAME}) Sahib Üçün Əlaqə 🧑‍💻",
 	await bot.send_message(chat_id, mesaj, parse_mode=enums.ParseMode.MARKDOWN)
         await query.answer()
         buttons=(
