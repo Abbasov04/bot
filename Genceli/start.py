@@ -31,7 +31,7 @@ LOGGER = logging.getLogger(__name__)
 # config 
 API_ID = 21236884
 API_HASH = "2e526fe32b1177ba7ce3d552640ab854"
-bot_token = "6565277854:AAG2uqWhG9OB3zFJ3SG56Tl4LZv6JiFjyTs"
+bot_token = "6565277854:AAHUD19Rf3VEBe7ZtDvUxxGEKPG0LswTy64"
 
 
 anlik_calisan = []
