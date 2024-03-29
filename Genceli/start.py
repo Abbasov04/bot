@@ -190,7 +190,8 @@ async def help(event):
 
 
 @elnur.on(events.callbackquery.CallbackQuery(data="helpdata"))
-await event.edit(f"[{BOT_NAME}](https://t.me/KrayzenTaggerBot) Botun Əmirləri:",
+def help(event):
+await event.reply(f"[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Botun Əmirləri:",
         buttons=(
                       [
                        Button.inline("Hərkəs", data="hami"),
