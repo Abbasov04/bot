@@ -204,7 +204,7 @@ await event.edit(f"[{BOT_NAME}](https://t.me/KrayzenTaggerBot) Botun Əmirləri:
                        Button.inline("Geri◀️", data="start"),
                       ],
                     ),
-                    link_preview=True)
+                    link_preview=False)
 
 
 @elnur.on(events.callbackquery.CallbackQuery(data="hami"))
