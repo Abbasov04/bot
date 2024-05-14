@@ -1,1 +1,1 @@
-reponu icazəsiz götürüb satan peysərdi !
+reponu icazəsiz götürüb satan peysərdi !!
